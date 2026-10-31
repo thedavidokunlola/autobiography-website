@@ -19,6 +19,16 @@ const config: Config = {
         ivory: '#F7F3EC',
         charcoal: '#1E1E1E',
 
+        // Hero & Studiro aesthetic tokens
+        'brand-red': '#b52619',
+        'brand-red-dark': '#8b0000',
+        tertiary: '#d4af37',
+        'tertiary-container': '#cca730',
+        'on-surface': '#1a1918',
+        'on-surface-variant': '#55524e',
+        outline: '#8a857e',
+        'outline-variant': '#e2ded8',
+
         // Semantic & compatibility mappings
         primary: '#7A1418',
         'primary-dark': '#4E0C0F',
@@ -44,6 +54,8 @@ const config: Config = {
         heading: ['var(--font-playfair)', 'Playfair Display', 'serif'],
         headline: ['var(--font-playfair)', 'Playfair Display', 'serif'],
         body: ['var(--font-playfair)', 'Playfair Display', 'serif'],
+        display: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Playfair Display', 'serif'],
         ui: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       maxWidth: {

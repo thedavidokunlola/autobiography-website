@@ -59,101 +59,147 @@ export default function HomePage() {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION 1 — HERO: THE OPENING */}
+      {/* 1. HERO SECTION (Studiro Inspiration: Dramatic Warm Spotlight & Badges) */}
       {/* ========================================================================= */}
       <section
         id="hero"
-        className="relative min-h-screen bg-crimson text-ivory flex items-center overflow-hidden pt-20"
+        className="relative min-h-[94vh] pt-28 pb-16 lg:pt-32 lg:pb-24 bg-[#140b0a] text-white overflow-hidden flex items-center"
       >
-        <div className="w-full h-full flex flex-col lg:flex-row min-h-[92vh]">
-          {/* Left Zone (58% desktop): Crimson Textured Background with 8% OAF Watermark */}
-          <div className="w-full lg:w-[58%] px-6 sm:px-10 lg:px-16 py-12 lg:py-20 flex flex-col justify-center relative z-10">
-            {/* OAF Crest Watermark at 8% opacity */}
-            <div
-              className="absolute right-4 bottom-4 w-96 h-96 pointer-events-none opacity-[0.08] text-gold"
-              aria-hidden="true"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-                <path d="M12 2L3 6V12C3 17.5 6.8 22.7 12 24C17.2 22.7 21 17.5 21 12V6L12 2Z" />
-              </svg>
-            </div>
+        {/* Background Dramatic Glowing Warm Circular Spotlight / Atmosphere */}
+        <div
+          className="absolute right-[5%] lg:right-[15%] top-1/2 -translate-y-1/2 w-[520px] h-[520px] lg:w-[680px] lg:h-[680px] rounded-full bg-gradient-to-tr from-brand-red/35 via-[#e8590c]/40 to-tertiary/20 blur-[90px] pointer-events-none opacity-85"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-red/10 blur-[100px] pointer-events-none"
+          aria-hidden="true"
+        />
 
-            {/* Sub-headline */}
-            <span className="font-ui font-medium text-gold text-xs sm:text-sm tracking-[0.2em] uppercase mb-3">
-              Geologist &bull; Statesman &bull; Governor &bull; Builder of Nations
-            </span>
+        <div className="max-w-[1340px] w-full mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            {/* Left Hero Content */}
+            <div className="lg:col-span-7 flex flex-col gap-6 items-start">
+              {/* Red Bullet Accent Badges (Studiro feature list style) */}
+              <div className="flex flex-col gap-2.5">
+                <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-white/80">
+                  <span className="w-2 h-2 rounded-[2px] bg-brand-red" aria-hidden="true" />
+                  <span>Renowned Petroleum Geologist &amp; Don</span>
+                </div>
+                <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-white/80">
+                  <span className="w-2 h-2 rounded-[2px] bg-brand-red" aria-hidden="true" />
+                  <span>2nd Executive Governor of Ondo State (2003&ndash;2009)</span>
+                </div>
+                <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-white/80">
+                  <span className="w-2 h-2 rounded-[2px] bg-brand-red" aria-hidden="true" />
+                  <span>Federal Minister of Aviation &amp; Power</span>
+                </div>
+              </div>
 
-            {/* RULE-A2: exactly one H1 per page */}
-            <h1 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-[3.2rem] text-ivory leading-[1.1] mb-2 tracking-tight">
-              Dr. Olusegun Kokumo Agagu CON
-            </h1>
-
-            {/* Dates in Playfair italic ivory */}
-            <p className="font-playfair italic text-gold-light text-base sm:text-lg mb-6">
-              16 February 1948 &ndash; 13 September 2013
-            </p>
-
-            {/* Credo Placement 1: Gold italic between thin gold rules */}
-            <div className="my-4 py-3 border-y border-gold/40 max-w-xl">
-              <blockquote className="font-playfair italic text-lg sm:text-xl text-gold-light leading-relaxed">
-                &ldquo;To leave things better than he met them.&rdquo;
-              </blockquote>
-            </div>
-
-            {/* Dual CTAs */}
-            <div className="flex flex-wrap items-center gap-4 my-6">
-              <a
-                href="#the-man"
-                className="px-7 py-3 rounded-full bg-gold hover:bg-gold-light text-charcoal font-ui font-semibold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
-              >
-                Explore His Life
-              </a>
-              <a
-                href="#the-foundation"
-                className="px-7 py-3 rounded-full border border-ivory/60 hover:border-ivory text-ivory font-ui font-semibold text-xs uppercase tracking-wider transition-all focus-ring"
-              >
-                Visit the Foundation
-              </a>
-            </div>
-
-            {/* Three Stat Chips in Gold-Outlined Capsules */}
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-ivory/15">
-              <span className="px-3.5 py-1.5 rounded-full border border-gold/50 text-[11px] font-ui text-ivory/90 bg-black/15">
-                Governor of Ondo State 2003&ndash;2009
+              {/* Eyebrow label */}
+              <span className="text-xs uppercase font-extrabold tracking-[0.2em] text-white/60 pt-2">
+                PRESIDENTIAL MEMORIAL &amp; ARCHIVE
               </span>
-              <span className="px-3.5 py-1.5 rounded-full border border-gold/50 text-[11px] font-ui text-ivory/90 bg-black/15">
-                Federal Minister: Aviation &amp; Power
-              </span>
-              <span className="px-3.5 py-1.5 rounded-full border border-gold/50 text-[11px] font-ui text-ivory/90 bg-black/15">
-                Deputy Governor 1992
-              </span>
-            </div>
-          </div>
 
-          {/* Right Zone (42% desktop): Portrait Photograph with Warm CSS Filter & Gold Frame */}
-          <div className="w-full lg:w-[42%] relative flex items-center justify-center p-6 lg:p-10 bg-deep-crimson/50">
-            <div className="relative w-full max-w-[460px] aspect-[4/5] rounded-2xl overflow-hidden border-2 border-gold/40 shadow-2xl group">
-              <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
-                alt="Portrait of Dr. Olusegun Kokumo Agagu CON in presidential regalia"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover object-top portrait-filter transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-5 left-5 right-5 text-ivory">
-                <span className="font-ui text-[10px] tracking-widest uppercase font-semibold text-gold block">
-                  Official Archival Plate
+              {/* Main Headline (RULE-A2: exactly one H1 per page) */}
+              <h1 className="text-4xl sm:text-5xl lg:text-[62px] font-bold tracking-tight leading-[1.08] font-display text-white">
+                Where Legacy &amp; Vision Live Forever
+                <span className="block text-white/90 font-normal font-headline italic mt-2 text-3xl sm:text-4xl lg:text-[46px] text-tertiary">
+                  Dr. Olusegun Kokumo Agagu, CON
                 </span>
-                <span className="font-playfair text-sm text-ivory/90">
-                  H.E. Dr. Olusegun Kokumo Agagu CON
-                </span>
+              </h1>
+
+              {/* Timeline & Credo Subtitle (Placement 1) */}
+              <p className="text-base sm:text-lg text-white/75 max-w-xl font-normal leading-relaxed">
+                16 February 1948 &mdash; 13 September 2013. Dedicated to perpetuating the rigorous intellect, public ethics, and immortal creed:{' '}
+                <span className="text-white italic font-serif">&ldquo;To leave things better than we met them.&rdquo;</span>
+              </p>
+
+              {/* Dual Call to Action Buttons (Studiro Style) */}
+              <div className="flex flex-wrap items-center gap-4 pt-3">
+                <a
+                  href="#about"
+                  className="px-8 py-3.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
+                >
+                  <span>Read Autobiography</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+                <a
+                  href="#pillars"
+                  className="px-8 py-3.5 rounded-full bg-white text-[#120807] hover:bg-white/90 font-bold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
+                >
+                  Explore Spaces &amp; Pillars
+                </a>
+              </div>
+
+              {/* Micro Stats Counter Row */}
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/15 w-full max-w-lg mt-2">
+                <div>
+                  <div className="text-2xl font-bold font-display text-white">9+</div>
+                  <div className="text-[11px] text-white/60 uppercase tracking-wider font-semibold">Memorial Lectures</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold font-display text-tertiary">400+</div>
+                  <div className="text-[11px] text-white/60 uppercase tracking-wider font-semibold">Scholars Awarded</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold font-display text-white">100%</div>
+                  <div className="text-[11px] text-white/60 uppercase tracking-wider font-semibold">Endowed Legacy</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Hero Media Presentation with Floating Preview Card */}
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
+              {/* Hero Main Portrait Container (Studiro Hero Visual) */}
+              <div className="relative w-full max-w-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group bg-[#1e1110]">
+                <div className="relative w-full h-[530px]">
+                  <Image
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
+                    alt="Archival Portrait of Dr. Olusegun Kokumo Agagu CON in presidential attire"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 480px"
+                    className="object-cover object-top filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#140b0a] via-transparent to-transparent opacity-80 pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="inline-block px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold tracking-wider uppercase mb-2">
+                    Official Presidential Plate
+                  </span>
+                  <p className="text-xl font-bold text-white font-headline">H.E. Dr. Olusegun Agagu, CON</p>
+                  <p className="text-xs text-white/70">Geologist, Statesman &amp; Governor of Ondo State</p>
+                </div>
+              </div>
+
+              {/* Floating Badge / Card (Directly mirrors 'Most Popular Studio' card in Studiro reference) */}
+              <div className="absolute -bottom-6 -left-4 sm:left-4 bg-white text-on-surface p-4 rounded-2xl shadow-2xl border border-white/30 max-w-[240px] hidden sm:flex flex-col gap-2 z-20">
+                <div className="relative w-full h-24 rounded-lg overflow-hidden bg-neutral-900">
+                  <Image
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiu2zYUfMG9UhDYBlVltXMsFvqKDA7aExcLuSXS0EIDec5-Sg6pNg3v_Q0uLyDzMIOvelC_F-Z71bGMFSqjPqwN5J_Ws4TxtTtpCM9DbyBH8GCunLHeS8auDqZ31u7ixfpv648bkdt6IeDdii2R57ehgoQPxk1dwcZYkd-jhqs5XOYOsZU8ieL3FOw-D5Tp1C6jI1dajQs67rMzbDZzJCkZeBfzrZz5mE9FaFo0hB-"
+                    alt="Memorial Portrait Thumbnail"
+                    fill
+                    sizes="240px"
+                    className="object-cover object-top"
+                  />
+                  <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-red" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-on-surface leading-tight">Archival Portrait</p>
+                  <p className="text-[11px] text-on-surface-variant leading-snug mt-0.5">
+                    Dignified presidential study capturing six decades of service.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Anchor targets for both naming conventions (#about / #the-man, #pillars / #the-foundation) */}
+      <div id="about" />
 
       {/* ========================================================================= */}
       {/* SECTION 2 — THE MAN: PERSON AND FAMILY */}
@@ -582,6 +628,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* SECTION 6 — THE FOUNDATION: INTRODUCTION AND MISSION */}
       {/* ========================================================================= */}
+      <div id="pillars" />
       <section id="the-foundation" className="py-24 bg-ivory text-charcoal content-auto">
         <div className="max-w-container mx-auto px-6 lg:px-12 text-center">
           <OafCrest className="w-16 h-16 mx-auto mb-4" />
