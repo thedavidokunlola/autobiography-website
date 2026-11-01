@@ -195,25 +195,25 @@ export default function HomePage() {
               <div className="relative rounded-2xl overflow-hidden border-[12px] border-[#0c0805] shadow-2xl bg-[#0c0805] group">
                 <div className="aspect-[4/5] relative w-full overflow-hidden">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
-                    alt="Dr. Olusegun Kokumo Agagu CON standing in ceremonial agbada and coral beads"
+                    src="/images/about-portrait.jpg"
+                    alt="Official portrait for Olusegun Agagu Foundation archive record"
                     fill
                     sizes="(max-width: 1024px) 100vw, 420px"
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 </div>
                 {/* Framing caption metadata */}
                 <div className="p-4 bg-[#0c0805] text-left border-t border-white/10 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-widest text-tertiary block font-bold">
-                      ARCHIVAL PLATE 03 &bull; BIOGRAPHY
+                      ARCHIVAL RECORD &bull; OFFICIAL PORTRAIT
                     </span>
                     <p className="text-xs font-headline font-bold text-white mt-0.5">
-                      Dr. Olusegun Kokumo Agagu, CON
+                      Olusegun Agagu Foundation Record
                     </p>
                   </div>
-                  <span className="text-[11px] font-mono text-white/60">1948 &ndash; 2013</span>
+                  <span className="text-[11px] font-mono text-white/60">Verified Archive</span>
                 </div>
               </div>
 
