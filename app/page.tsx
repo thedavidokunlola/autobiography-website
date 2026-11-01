@@ -1,14 +1,31 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { biography } from '@/data/biography'
-import { trustees } from '@/data/trustees'
 import { contactInfo } from '@/data/contact'
 import { AdireDivider, AdireBackground, FilaSilhouette, OafCrest } from '@/components/CulturalElements'
 import { PowerCounter } from '@/components/PowerCounter'
 import { ScholarTimeline } from '@/components/ScholarTimeline'
+import { BiographicalChapters } from '@/components/BiographicalChapters'
 import { MemorialLectureStrip } from '@/components/MemorialLectureStrip'
 import { ScholarVoices } from '@/components/ScholarVoices'
 import { GalleryLightbox } from '@/components/GalleryLightbox'
+import { TributeRegistry } from '@/components/TributeRegistry'
+import {
+  SchoolIcon,
+  ScienceIcon,
+  BankIcon,
+  HistoryEduIcon,
+  ArrowForwardIcon,
+  VerifiedIcon,
+  StarIcon,
+  DownloadIcon,
+  CandleIcon,
+  MusicNoteIcon,
+  VolunteerActivismIcon,
+  FlightTakeoffIcon,
+  BoltIcon,
+  EngineeringIcon,
+} from '@/components/Icons'
 
 // RULE-S3: en dash U+2013 separator with one space each side
 export const metadata: Metadata = {
@@ -59,505 +76,619 @@ export default function HomePage() {
       />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION (Studiro Inspiration: Dramatic Warm Spotlight & Badges) */}
+      {/* 1. HERO SECTION (Using hero.png as Background Image) */}
       {/* ========================================================================= */}
       <section
         id="hero"
-        className="relative min-h-[94vh] pt-28 pb-16 lg:pt-32 lg:pb-24 bg-[#140b0a] text-white overflow-hidden flex items-center"
+        className="relative min-h-[100vh] pt-24 pb-12 lg:pt-28 lg:pb-16 bg-[#140b0a] text-white overflow-hidden flex items-center"
       >
-        {/* Background Dramatic Glowing Warm Circular Spotlight / Atmosphere */}
-        <div
-          className="absolute right-[5%] lg:right-[15%] top-1/2 -translate-y-1/2 w-[520px] h-[520px] lg:w-[680px] lg:h-[680px] rounded-full bg-gradient-to-tr from-brand-red/35 via-[#e8590c]/40 to-tertiary/20 blur-[90px] pointer-events-none opacity-85"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-red/10 blur-[100px] pointer-events-none"
-          aria-hidden="true"
-        />
+        {/* Hero Section Background Image (hero.png from pdf folder) */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero.png"
+            alt="Dr. Olusegun Kokumo Agagu CON Hero Background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[75%_center] lg:object-right"
+          />
+          {/* Subtle gradient overlay to ensure perfect text contrast across all viewports */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#140b0a] via-[#140b0a]/80 lg:via-[#140b0a]/45 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#140b0a] via-transparent to-black/30 lg:hidden" />
+        </div>
 
         <div className="max-w-[1340px] w-full mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* Left Hero Content */}
-            <div className="lg:col-span-7 flex flex-col gap-6 items-start">
-              {/* Red Bullet Accent Badges (Studiro feature list style) */}
-              <div className="flex flex-col gap-2.5">
-                <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-white/80">
-                  <span className="w-2 h-2 rounded-[2px] bg-brand-red" aria-hidden="true" />
-                  <span>Renowned Petroleum Geologist &amp; Don</span>
-                </div>
-                <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-white/80">
-                  <span className="w-2 h-2 rounded-[2px] bg-brand-red" aria-hidden="true" />
-                  <span>2nd Executive Governor of Ondo State (2003&ndash;2009)</span>
-                </div>
-                <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-white/80">
-                  <span className="w-2 h-2 rounded-[2px] bg-brand-red" aria-hidden="true" />
-                  <span>Federal Minister of Aviation &amp; Power</span>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
+            <div className="lg:col-span-7 flex flex-col gap-5 items-start">
+              {/* Single Refined Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wider text-white/90 font-ui">
+                <span className="w-2 h-2 rounded-full bg-brand-red" aria-hidden="true" />
+                <span>MEMORIAL ARCHIVE &bull; 1948&ndash;2013</span>
               </div>
 
-              {/* Eyebrow label */}
-              <span className="text-xs uppercase font-extrabold tracking-[0.2em] text-white/60 pt-2">
-                PRESIDENTIAL MEMORIAL &amp; ARCHIVE
-              </span>
-
               {/* Main Headline (RULE-A2: exactly one H1 per page) */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[62px] font-bold tracking-tight leading-[1.08] font-display text-white">
-                Where Legacy &amp; Vision Live Forever
-                <span className="block text-white/90 font-normal font-headline italic mt-2 text-3xl sm:text-4xl lg:text-[46px] text-tertiary">
+              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight leading-[1.1] font-display text-white drop-shadow-md">
+                Where Vision &amp; Integrity Endure
+                <span className="block text-tertiary font-serif italic font-normal text-3xl sm:text-4xl lg:text-[44px] mt-1.5">
                   Dr. Olusegun Kokumo Agagu, CON
                 </span>
               </h1>
 
-              {/* Timeline & Credo Subtitle (Placement 1) */}
-              <p className="text-base sm:text-lg text-white/75 max-w-xl font-normal leading-relaxed">
-                16 February 1948 &mdash; 13 September 2013. Dedicated to perpetuating the rigorous intellect, public ethics, and immortal creed:{' '}
-                <span className="text-white italic font-serif">&ldquo;To leave things better than we met them.&rdquo;</span>
+              {/* Concise Subtitle with Sovereign Credo (Placement 1) */}
+              <p className="text-sm sm:text-base text-white/85 max-w-xl font-normal leading-relaxed font-body drop-shadow">
+                Renowned petroleum geologist, Federal Minister, and 2nd Executive Governor of Ondo State. Dedicated to his immortal credo:{' '}
+                <span className="text-white italic font-serif">&ldquo;To leave things better than he met them.&rdquo;</span>
               </p>
 
-              {/* Dual Call to Action Buttons (Studiro Style) */}
-              <div className="flex flex-wrap items-center gap-4 pt-3">
+              {/* Dual Call to Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-1">
                 <a
                   href="#about"
-                  className="px-8 py-3.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
+                  className="px-7 py-3 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
                 >
-                  <span>Read Autobiography</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <span>Explore Biography</span>
+                  <ArrowForwardIcon className="w-4 h-4" />
                 </a>
                 <a
-                  href="#pillars"
-                  className="px-8 py-3.5 rounded-full bg-white text-[#120807] hover:bg-white/90 font-bold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
+                  href="#foundation"
+                  className="px-7 py-3 rounded-full bg-black/40 hover:bg-black/60 text-white border border-white/25 backdrop-blur-sm font-bold text-xs uppercase tracking-wider transition-all focus-ring"
                 >
-                  Explore Spaces &amp; Pillars
+                  The Foundation
                 </a>
               </div>
 
-              {/* Micro Stats Counter Row */}
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/15 w-full max-w-lg mt-2">
+              {/* Empirical Micro Stats Row directly from PDF */}
+              <div className="grid grid-cols-3 gap-6 pt-5 border-t border-white/15 w-full max-w-md mt-1 backdrop-blur-sm">
                 <div>
                   <div className="text-2xl font-bold font-display text-white">9+</div>
-                  <div className="text-[11px] text-white/60 uppercase tracking-wider font-semibold">Memorial Lectures</div>
+                  <div className="text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Memorial Lectures</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold font-display text-tertiary">400+</div>
-                  <div className="text-[11px] text-white/60 uppercase tracking-wider font-semibold">Scholars Awarded</div>
+                  <div className="text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Scholars Awarded</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold font-display text-white">100%</div>
-                  <div className="text-[11px] text-white/60 uppercase tracking-wider font-semibold">Endowed Legacy</div>
+                  <div className="text-2xl font-bold font-display text-white">&#8358;25M</div>
+                  <div className="text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">E-Library Fund</div>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Media Presentation with Floating Preview Card */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              {/* Hero Main Portrait Container (Studiro Hero Visual) */}
-              <div className="relative w-full max-w-[480px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group bg-[#1e1110]">
-                <div className="relative w-full h-[530px]">
-                  <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
-                    alt="Archival Portrait of Dr. Olusegun Kokumo Agagu CON in presidential attire"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 480px"
-                    className="object-cover object-top filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#140b0a] via-transparent to-transparent opacity-80 pointer-events-none" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <span className="inline-block px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold tracking-wider uppercase mb-2">
-                    Official Presidential Plate
-                  </span>
-                  <p className="text-xl font-bold text-white font-headline">H.E. Dr. Olusegun Agagu, CON</p>
-                  <p className="text-xs text-white/70">Geologist, Statesman &amp; Governor of Ondo State</p>
-                </div>
+            {/* Right Hero Space — Lets Dr. Agagu's portrait in hero.png take center stage */}
+            <div className="hidden lg:flex lg:col-span-5 h-[480px] items-end justify-end pb-4" aria-hidden="true">
+              <div className="px-4 py-2.5 rounded-2xl bg-black/50 backdrop-blur-md border border-white/15 text-right shadow-xl">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block font-ui">
+                  Official Presidential Portrait
+                </span>
+                <p className="text-sm font-bold text-white font-headline">H.E. Dr. Olusegun Agagu, CON</p>
+                <p className="text-[11px] text-white/70 font-ui">1948 &ndash; 2013</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Floating Badge / Card (Directly mirrors 'Most Popular Studio' card in Studiro reference) */}
-              <div className="absolute -bottom-6 -left-4 sm:left-4 bg-white text-on-surface p-4 rounded-2xl shadow-2xl border border-white/30 max-w-[240px] hidden sm:flex flex-col gap-2 z-20">
-                <div className="relative w-full h-24 rounded-lg overflow-hidden bg-neutral-900">
+      {/* ========================================================================= */}
+      {/* 2. ABOUT DR. OLUSEGUN KOKUMO AGAGU CON (Biography from PDF Pages 2 & 3) */}
+      {/* ========================================================================= */}
+      <section className="py-24 bg-white text-on-surface" id="about">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+              Biography &bull; PDF Archive
+            </span>
+          </div>
+
+          <div className="max-w-4xl mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-on-surface leading-[1.18]">
+              About Dr. Olusegun Kokumo Agagu CON
+            </h2>
+          </div>
+
+          {/* Asymmetric Multi-Panel Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Inset Archival Photo & Highlights */}
+            <div className="lg:col-span-6 flex flex-col gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+                <div className="sm:col-span-5 rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square bg-surface-container relative shadow-md">
                   <Image
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiu2zYUfMG9UhDYBlVltXMsFvqKDA7aExcLuSXS0EIDec5-Sg6pNg3v_Q0uLyDzMIOvelC_F-Z71bGMFSqjPqwN5J_Ws4TxtTtpCM9DbyBH8GCunLHeS8auDqZ31u7ixfpv648bkdt6IeDdii2R57ehgoQPxk1dwcZYkd-jhqs5XOYOsZU8ieL3FOw-D5Tp1C6jI1dajQs67rMzbDZzJCkZeBfzrZz5mE9FaFo0hB-"
-                    alt="Memorial Portrait Thumbnail"
+                    alt="Dr. Olusegun Kokumo Agagu CON archival photo in native cap and agbada"
                     fill
-                    sizes="240px"
-                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 220px"
+                    className="object-cover object-top hover:scale-105 transition-transform duration-500 portrait-filter"
                   />
-                  <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-red" aria-hidden="true" />
+                  <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/70 text-white text-[10px] font-mono">
+                    PLATE 02-B
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold text-sm text-on-surface leading-tight">Archival Portrait</p>
-                  <p className="text-[11px] text-on-surface-variant leading-snug mt-0.5">
-                    Dignified presidential study capturing six decades of service.
+
+                <div className="sm:col-span-7 flex flex-col items-start gap-4">
+                  <p className="text-sm sm:text-base text-on-surface-variant leading-relaxed font-body">
+                    Born on the 16th of February 1948, Dr. Olusegun Kokumo Agagu began his career in public service in 1992 as Deputy Governor of Ondo State, subsequently serving as Federal Minister of Aviation, Federal Minister of Power &amp; Steel, and Executive Governor of Ondo State (2003&ndash;2009).
                   </p>
+                  <a
+                    href="#chapters"
+                    className="px-6 py-2.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md focus-ring"
+                  >
+                    Explore Life Chapters
+                  </a>
+                </div>
+              </div>
+
+              {/* Key Highlights Dossier from PDF Pages 2 & 3 */}
+              <div className="bg-surface-container p-6 rounded-2xl flex flex-col gap-4 border border-outline-variant/60">
+                <h3 className="font-bold text-sm uppercase tracking-wider text-on-surface flex items-center gap-2 font-ui">
+                  <VerifiedIcon className="text-brand-red w-[18px] h-[18px]" />
+                  Curated Career &amp; Academic Dossier
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-ui">
+                  <div className="p-3 bg-white rounded-xl">
+                    <span className="text-outline uppercase block font-semibold text-[10px]">Academic Pedigree</span>
+                    <span className="font-bold text-on-surface mt-0.5 block">M.Sc. Univ of Texas (1974) &bull; Ph.D. UI (1978)</span>
+                    <span className="text-on-surface-variant">US Atomic Energy Commission Geothermal Scientist</span>
+                  </div>
+                  <div className="p-3 bg-white rounded-xl">
+                    <span className="text-outline uppercase block font-semibold text-[10px]">Public Service</span>
+                    <span className="font-bold text-on-surface mt-0.5 block">Governor of Ondo State (2003&ndash;2009)</span>
+                    <span className="text-on-surface-variant">Deputy Governor (1992) &bull; Federal Minister (1999&ndash;2002)</span>
+                  </div>
+                  <div className="p-3 bg-white rounded-xl">
+                    <span className="text-outline uppercase block font-semibold text-[10px]">Oil-Producing Status</span>
+                    <span className="font-bold text-on-surface mt-0.5 block">Deputy Governor (1992)</span>
+                    <span className="text-on-surface-variant">Led untiring efforts for Ondo to become an Oil-Producing State</span>
+                  </div>
+                  <div className="p-3 bg-white rounded-xl">
+                    <span className="text-outline uppercase block font-semibold text-[10px]">Power Sector Turnaround</span>
+                    <span className="font-bold text-on-surface mt-0.5 block">Minister for Power &amp; Steel</span>
+                    <span className="text-on-surface-variant">Grew generation from 1,425 MW to 4,000+ MW</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Family Tribute from PDF Page 3 */}
+              <div className="p-6 bg-white rounded-2xl border border-outline-variant/60 shadow-sm">
+                <blockquote className="font-playfair text-[1.12rem] text-brand-red leading-snug mb-2 font-medium">
+                  &ldquo;A loving family man married to his school sweetheart and dance partner, Mrs. Olufunke Agagu, for more than 39 years. Their union was blessed with three children. He is also survived by seven grandchildren...and counting.&rdquo;
+                </blockquote>
+                <span className="font-ui text-xs font-semibold text-tertiary uppercase tracking-wider block">
+                  &mdash; Page 3, Official Biography Record
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Study Portrait Frame */}
+            <div className="lg:col-span-6">
+              <div className="relative w-full rounded-3xl overflow-hidden shadow-xl aspect-[4/4.8] sm:aspect-[4/4.2] lg:aspect-[4/4.6] bg-neutral-900 group">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
+                  alt="Dr Olusegun Agagu in ceremonial agbada"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <span className="text-xs uppercase tracking-widest text-tertiary font-bold block mb-1 font-ui">
+                    The Sovereign Credo
+                  </span>
+                  <blockquote className="text-xl sm:text-2xl font-headline italic leading-snug">
+                    &ldquo;To leave things better than he met them.&rdquo;
+                  </blockquote>
+                  <p className="text-xs text-white/70 mt-2 font-mono">16 February 1948 &mdash; 13 September 2013</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Anchor targets for both naming conventions (#about / #the-man, #pillars / #the-foundation) */}
-      <div id="about" />
-
-      {/* ========================================================================= */}
-      {/* SECTION 2 — THE MAN: PERSON AND FAMILY */}
-      {/* ========================================================================= */}
-      <section id="the-man" className="py-24 bg-ivory text-charcoal">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Column: Candid Smiling Portrait, Family Tribute & Reserved Space */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="relative aspect-[4/4.5] w-full rounded-2xl overflow-hidden shadow-lg bg-border">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiu2zYUfMG9UhDYBlVltXMsFvqKDA7aExcLuSXS0EIDec5-Sg6pNg3v_Q0uLyDzMIOvelC_F-Z71bGMFSqjPqwN5J_Ws4TxtTtpCM9DbyBH8GCunLHeS8auDqZ31u7ixfpv648bkdt6IeDdii2R57ehgoQPxk1dwcZYkd-jhqs5XOYOsZU8ieL3FOw-D5Tp1C6jI1dajQs67rMzbDZzJCkZeBfzrZz5mE9FaFo0hB-"
-                  alt="Candid Smiling Portrait of Dr. Olusegun Agagu in beige buba"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-top portrait-filter"
-                />
-              </div>
-
-              <span className="font-playfair italic text-gold text-sm block">
-                Born, Ondo State &bull; 16 February 1948
-              </span>
-
-              {/* Elevated Family Tribute Block */}
-              <div className="p-6 bg-white rounded-2xl border border-border shadow-sm">
-                <blockquote className="font-playfair text-[1.18rem] text-crimson leading-snug mb-2 font-medium">
-                  &ldquo;Married to his school sweetheart and dance partner, Mrs. Olufunke Agagu, for more
-                  than 39 years.&rdquo;
-                </blockquote>
-                <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block">
-                  Three children &bull; Seven grandchildren
-                </span>
-              </div>
-
-              {/* Reserved Space for Mrs. Agagu's Future Words */}
-              <div className="p-6 bg-ivory rounded-2xl border-2 border-dashed border-crimson/40 text-center">
-                <p className="font-playfair italic text-text-secondary text-sm">
-                  &ldquo;This space is reserved for her words, when she is ready to share them.&rdquo;
-                </p>
-                <span className="font-ui text-[10px] uppercase tracking-widest text-text-secondary/70 block mt-2">
-                  Family Memorial Archive
-                </span>
-              </div>
-            </div>
-
-            {/* Right Column: Editorial Bio Narrative */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <span className="section-label text-crimson block">WHO HE WAS</span>
-
-              <h2 className="font-playfair font-bold text-3xl sm:text-4xl text-charcoal leading-[1.2]">
-                A Life Defined By Quiet Resolve, Family Devotion &amp; Human Elevation
-              </h2>
-
-              <div className="space-y-5 text-base sm:text-[1.05rem] text-charcoal/90 leading-[1.85] font-body">
-                <p>
-                  Beyond the corridors of regional and federal power, Olusegun Agagu was by instinct a
-                  scholar, a builder, and a mentor. Raised with unyielding Ikale discipline in Okitipupa, his
-                  temperament was shaped by patient observation and profound empathy. He possessed a rare
-                  intellectual resourcefulness that elevated every institution he touched.
-                </p>
-
-                <p>
-                  His daily choices were guided by an unwavering life philosophy: that no office, wealth, or
-                  privilege had meaning unless it served to uplift fellow human beings. Whether lecturing at
-                  the University of Ibadan, designing fiscal masterplans for Ondo State, or opening his home to
-                  young students, he lived his personal creed in quiet, consistent deeds.
-                </p>
-
-                <p className="border-l-2 border-crimson pl-4 text-charcoal font-medium">
-                  His passing on 13 September 2013 came as a massive shock to the nation. Yet the
-                  architectural foundations he laid in education, civic infrastructure, and public integrity
-                  remain immutable monuments to a life consecrated to service.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Biographical Chapters Interactive Timeline */}
+          <BiographicalChapters />
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 2B — CULTURAL INTERLUDE: ONDO SON */}
+      {/* 2B. CULTURAL HERITAGE & ACADEMIC REPUTE (Earth Scientist & Pioneer) */}
       {/* ========================================================================= */}
-      <section className="relative py-20 bg-crimson text-ivory overflow-hidden flex flex-col items-center justify-center text-center">
-        {/* Subtle Adire Pattern Background (6% opacity) */}
-        <AdireBackground className="absolute inset-0 pointer-events-none opacity-[0.06]" />
+      <section className="relative py-20 bg-[#140b0a] text-white overflow-hidden flex flex-col items-center justify-center text-center">
+        <AdireBackground className="absolute inset-0 pointer-events-none opacity-[0.05]" />
 
-        <div className="max-w-3xl mx-auto px-6 relative z-10 flex flex-col items-center">
-          {/* Traditional Fila (Cap) Silhouette SVG */}
-          <div className="mb-4 text-gold" aria-hidden="true">
-            <FilaSilhouette className="w-20 h-14" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
+          <div className="flex items-center gap-4 mb-4 text-tertiary" aria-hidden="true">
+            <OafCrest className="w-10 h-10" light={true} />
+            <FilaSilhouette className="w-16 h-12" />
           </div>
 
-          <h2 className="font-playfair font-normal text-2xl sm:text-3xl lg:text-[2.4rem] text-ivory leading-snug mb-5">
-            Ondo Son. Nigerian Leader. African Visionary.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-white leading-snug mb-4">
+            Geological Consultant, Entrepreneur &amp; Statesman
           </h2>
 
-          <div className="space-y-4 max-w-xl text-base sm:text-lg font-playfair italic text-gold-light leading-relaxed">
+          <div className="space-y-4 max-w-2xl text-base sm:text-lg font-playfair italic text-white/80 leading-relaxed font-body">
             <p>
-              Deeply rooted in the ancient coastal soil of Ondo State, his identity was anchored in the
-              generations of Ikale statesmen who measured honor by community welfare.
+              Dr. Olusegun Agagu established many successful private businesses including a water borehole drilling company, a kaolin mining and processing company, and several mining companies spanning marble, feldspar, and granite across Nigeria.
             </p>
             <p>
-              The Yoruba tradition of intellectual inquiry and public stewardship formed his moral compass,
-              instilling the belief that leadership is a sacred communal trust.
-            </p>
-            <p>
-              He succeeded on the national stage not in spite of his ancestral origins, but precisely
-              because he drew unending strength from the earth that gave him birth.
+              His scientific discipline and administrative prudence anchored the philosophy that leadership is a sacred public trust.
             </p>
           </div>
-        </div>
 
-        {/* Adire Pattern Divider leading into Section 3 */}
-        <div className="w-full mt-12">
-          <AdireDivider className="opacity-70" />
-        </div>
-      </section>
+          {/* Academic Journey Timeline */}
+          <div className="my-10 w-full text-left">
+            <ScholarTimeline />
+          </div>
 
-      {/* ========================================================================= */}
-      {/* SECTION 3 — THE SCHOLAR: EDUCATION AND EXPERTISE */}
-      {/* ========================================================================= */}
-      <section id="the-scholar" className="py-24 bg-slate text-ivory content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-12">
-            <span className="section-label text-gold-light block mb-2">
-              ACADEMIC FOUNDATION
+          {/* Geological Consulting Clients in Sleek Capsules (Direct from PDF Page 3) */}
+          <div className="mt-12 pt-8 border-t border-white/15 w-full">
+            <span className="text-xs uppercase tracking-widest text-tertiary font-semibold block mb-4 font-ui">
+              Geological Consultant to Governments &amp; Industry (PDF Page 3)
             </span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl text-ivory mb-2">
-              A Mind Forged in Science
-            </h2>
-            <p className="font-playfair italic text-gold-light text-lg">
-              The Academic and Research Years
-            </p>
-          </div>
-
-          {/* Education Timeline (5 Nodes with native details/summary) */}
-          <ScholarTimeline />
-
-          {/* Consultancy Section */}
-          <div className="mt-16 pt-12 border-t border-gold/30">
-            <h3 className="font-playfair italic text-xl text-gold-light mb-6">
-              Geological Consultant to:
-            </h3>
-
-            {/* 10 Name Pills in Gold-Outlined Capsules */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-2.5">
               {[
+                'Shell Petroleum Development Company',
+                'Mobil Producing Nigeria',
+                'Texaco',
+                'Nigeria Agip Oil Company',
+                'Lexington Exploration U.S.A.',
+                'Nitex Exploration U.S.A.',
                 'Government of Oyo State',
                 'Government of Ogun State',
                 'Government of Osun State',
                 'Government of Ondo State',
-                'Shell Petroleum Development Company',
-                'Mobil Producing Nigeria',
-                'Texaco Overseas Petroleum',
-                'Nigeria Agip Oil Company',
-                'Lexington Exploration USA',
-                'Nitex Exploration USA',
               ].map((client, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-2 rounded-full border border-gold/40 bg-black/20 text-xs sm:text-sm font-ui text-ivory/90"
+                  className="px-3.5 py-1.5 rounded-full border border-white/20 bg-white/5 text-xs text-white/85 font-ui"
                 >
                   {client}
                 </span>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Entrepreneurship Section (3 Minimal Text Blocks — No icon decoration) */}
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-black/20 rounded-2xl border border-gold/20">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                Water Resources
+        <div className="w-full mt-12">
+          <AdireDivider className="opacity-60" />
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. ABOUT THE FOUNDATION & 8 FOCAL AREAS (PDF Page 4) */}
+      {/* ========================================================================= */}
+      <section className="py-24 bg-surface-container-low text-on-surface" id="foundation">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          {/* Eyebrow & Mission Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+                About The Foundation &bull; Established 2014
               </span>
-              <h4 className="font-playfair font-bold text-base text-ivory mb-1">
-                Water Borehole Drilling Enterprises
-              </h4>
-              <p className="font-playfair italic text-xs text-ivory/80">
-                Pioneering subterranean aquifer extraction across southwestern Nigeria.
-              </p>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-on-surface">
+              Mission &amp; Focal Areas
+            </h2>
+            <p className="text-sm sm:text-base text-on-surface-variant mt-4 font-body">
+              {biography.missionIntro}
+            </p>
+          </div>
+
+          {/* 3 Mission Points (PDF Page 4) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="bg-white p-7 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red font-bold text-xs flex items-center justify-center mb-4 font-ui">
+                  01
+                </span>
+                <h3 className="text-lg font-bold font-display text-on-surface mb-2">Immortalise His Name &amp; Legacy</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed font-body">
+                  Immortalise the name and legacy of the late Dr. Olusegun Agagu through enduring institutions, archives, and academic endowments.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 bg-black/20 rounded-2xl border border-gold/20">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                Mineral Processing
-              </span>
-              <h4 className="font-playfair font-bold text-base text-ivory mb-1">
-                Kaolin Mining &amp; Processing
-              </h4>
-              <p className="font-playfair italic text-xs text-ivory/80">
-                Establishing industrial mineral value chains for domestic manufacturing.
-              </p>
+            <div className="bg-white p-7 rounded-3xl border-2 border-brand-red shadow-md flex flex-col justify-between">
+              <div>
+                <span className="w-8 h-8 rounded-full bg-brand-red text-white font-bold text-xs flex items-center justify-center mb-4 font-ui">
+                  02
+                </span>
+                <h3 className="text-lg font-bold font-display text-on-surface mb-2">Actualise His Personal Credo</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed font-body">
+                  Live up to and seek to actualise his personal credo which was{' '}
+                  <strong className="text-brand-red italic">&lsquo;to leave things better than he met them&rsquo;</strong>.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 bg-black/20 rounded-2xl border border-gold/20">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                Solid Minerals
-              </span>
-              <h4 className="font-playfair font-bold text-base text-ivory mb-1">
-                Marble, Feldspar &amp; Granite Concessions
-              </h4>
-              <p className="font-playfair italic text-xs text-ivory/80">
-                Sustainable quarrying and mineral mapping across the federation.
-              </p>
+            <div className="bg-white p-7 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red font-bold text-xs flex items-center justify-center mb-4 font-ui">
+                  03
+                </span>
+                <h3 className="text-lg font-bold font-display text-on-surface mb-2">Further His Passionate Ideals</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed font-body">
+                  Further the ideals he lived by and worked passionately towards, particularly intellectual excellence, good governance and national development.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section Sub-header: The 8 Focal Areas */}
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red font-ui block mb-2">
+              Eight Pillars of Impact
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-bold font-display text-on-surface">
+              The Foundation&apos;s Focal Areas
+            </h3>
+          </div>
+
+          {/* 8 Focal Areas Grid (Directly from PDF Page 4) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Focal Area 1: Academia */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <SchoolIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Academia
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Promoting intellectual excellence, tertiary research bursaries, and faculty awards across Nigerian universities.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 01
+              </div>
+            </div>
+
+            {/* Focal Area 2: Geology */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <ScienceIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Geology
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Endowing prizes and scholarships for undergraduate and postgraduate earth sciences scholars (UI, AAUA, FUTA, OAUSTECH).
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 02
+              </div>
+            </div>
+
+            {/* Focal Area 3: Petroleum Engineering */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <EngineeringIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Petroleum Engineering
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Fostering technical engineering education, exploration research, and local content capacity in hydrocarbons.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 03
+              </div>
+            </div>
+
+            {/* Focal Area 4: Energy */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <BoltIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Energy
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Advancing sustainable power infrastructure, transmission policy, and rural electrification initiatives.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 04
+              </div>
+            </div>
+
+            {/* Focal Area 5: Politics / Good Governance */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <BankIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Politics / Good Governance
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Convening policy dialogues, publishing policy compendiums, and mentoring leaders in transparent public administration.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 05
+              </div>
+            </div>
+
+            {/* Focal Area 6: Culture and Arts (Highlife Music) */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <MusicNoteIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Culture &amp; Arts (Highlife)
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Honoring African heritage through Highlife music talent shows, live instrumentation, and youth artistic empowerment.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 06
+              </div>
+            </div>
+
+            {/* Focal Area 7: Service */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <VolunteerActivismIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Service
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Upholding community welfare, secondary school bursaries, youth mentorship, and selfless civic stewardship.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 07
+              </div>
+            </div>
+
+            {/* Focal Area 8: Aviation Trauma */}
+            <div className="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                  <FlightTakeoffIcon className="w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold font-display text-on-surface mb-1 group-hover:text-brand-red transition-colors">
+                  Aviation Trauma
+                </h4>
+                <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                  Advancing air travel safety research, passenger advocacy, and trauma support systems across Nigeria.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 text-[11px] font-mono text-outline">
+                Focal Pillar 08
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4 — THE JOURNEY: PUBLIC SERVICE TIMELINE */}
+      {/* 4. OUR ACTIVITIES & EMPIRICAL IMPACT (PDF Pages 6 & 7) */}
       {/* ========================================================================= */}
-      <section id="the-journey" className="py-24 bg-ivory text-charcoal content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-16">
-            <span className="section-label text-crimson block mb-2">BIOGRAPHICAL SPINE</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-charcoal mb-2">
-              A Life in Service
-            </h2>
-            <p className="font-playfair italic text-gold text-lg">
-              From Ondo to Abuja and back &mdash; a journey of transformation.
+      <section className="py-20 bg-white border-y border-outline-variant/60" id="impact">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+                  Our Activities [1/12 &amp; 2/12]
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-on-surface">
+                Impact In Concrete Numbers
+              </h2>
+            </div>
+            <p className="text-sm text-on-surface-variant max-w-md mt-2 md:mt-0 font-body">
+              Verified historical record of bursaries, full scholarships, E-Library donations, and university endowments.
             </p>
           </div>
 
-          {/* Timeline Nodes */}
-          <div className="space-y-12 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-[2px] before:bg-crimson/30">
-            {/* Node 1 — 1992: Deputy Governor */}
-            <div className="relative flex flex-col sm:flex-row items-center">
-              <div className="flex items-center justify-start sm:justify-end w-full sm:w-1/2 sm:pr-8 pl-12 sm:pl-0">
-                <div className="bg-white p-6 sm:p-7 rounded-2xl border-l-4 border-crimson shadow-sm max-w-lg">
-                  <span className="px-3 py-1 rounded-full bg-crimson text-ivory font-ui text-[11px] font-bold uppercase tracking-wider">
-                    1992 &bull; Deputy Governor
-                  </span>
-                  <h3 className="font-playfair font-bold text-xl text-charcoal mt-3 mb-2">
-                    The First Call to Serve
-                  </h3>
-                  <p className="text-sm text-charcoal/80 leading-relaxed font-body mb-3">
-                    His resourcefulness, geologic knowledge, and untiring efforts led to Ondo State becoming
-                    recognized as an Oil-Producing State, fundamentally expanding its economic revenue base.
-                  </p>
-                  <span className="inline-block px-3 py-1 rounded-full border border-gold text-xs font-ui text-crimson font-medium bg-ivory">
-                    Ondo: Oil-Producing State
-                  </span>
-                  <p className="font-playfair italic text-xs text-charcoal/70 mt-3">
-                    His performance paved the way for what was to come.
-                  </p>
-                </div>
-              </div>
-              <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gold border-2 border-crimson" />
+          {/* 5 Impact Metrics from PDF Pages 6 & 7 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/50 text-center flex flex-col justify-center items-center">
+              <span className="text-4xl lg:text-5xl font-bold font-display text-brand-red">9+</span>
+              <span className="text-xs uppercase font-bold tracking-wider text-on-surface mt-2 font-ui">Memorial Lectures</span>
+              <span className="text-[11px] text-outline mt-1 font-body">Organised annually on passing anniversary</span>
             </div>
-
-            {/* Node 2 — 1999: Federal Minister of Aviation */}
-            <div className="relative flex flex-col sm:flex-row items-center">
-              <div className="hidden sm:block w-1/2" />
-              <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gold border-2 border-crimson" />
-              <div className="flex items-center justify-start w-full sm:w-1/2 sm:pl-8 pl-12">
-                <div className="bg-white p-6 sm:p-7 rounded-2xl border-l-4 border-crimson shadow-sm max-w-lg">
-                  <span className="px-3 py-1 rounded-full bg-crimson text-ivory font-ui text-[11px] font-bold uppercase tracking-wider">
-                    1999 &bull; Federal Minister
-                  </span>
-                  <h3 className="font-playfair font-bold text-xl text-charcoal mt-3 mb-2">
-                    Ministry of Aviation
-                  </h3>
-                  <p className="text-sm text-charcoal/80 leading-relaxed font-body mb-3">
-                    Appointed by President Olusegun Obasanjo at the dawn of the Fourth Republic. His
-                    one-year stint resulted in a dramatic turnaround of Nigerian airport safety and radar
-                    overhauls.
-                  </p>
-                  <span className="inline-block px-3 py-1 rounded-full border border-gold text-xs font-ui text-crimson font-medium bg-ivory">
-                    Sector Transformed in 12 Months
-                  </span>
-                </div>
-              </div>
+            <div className="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/50 text-center flex flex-col justify-center items-center">
+              <span className="text-4xl lg:text-5xl font-bold font-display text-on-surface">400+</span>
+              <span className="text-xs uppercase font-bold tracking-wider text-on-surface mt-2 font-ui">Secondary Bursaries</span>
+              <span className="text-[11px] text-outline mt-1 font-body">Awards &amp; cash prizes given so far</span>
             </div>
-
-            {/* Node 3 — 2000 to 2002: Federal Minister of Power and Steel (CENTERPIECE) */}
-            <div className="relative flex flex-col items-center">
-              <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-0 w-5 h-5 rounded-full bg-crimson border-2 border-gold" />
-              <div className="w-full pl-12 sm:pl-0 pt-4">
-                <div className="max-w-3xl mx-auto">
-                  <span className="px-3.5 py-1.5 rounded-full bg-crimson text-ivory font-ui text-xs font-bold uppercase tracking-wider block w-fit mb-3">
-                    2000&ndash;2002 &bull; Federal Minister of Power &amp; Steel
-                  </span>
-                  {/* Animated Power Counter */}
-                  <PowerCounter />
-                </div>
-              </div>
+            <div className="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/50 text-center flex flex-col justify-center items-center">
+              <span className="text-4xl lg:text-5xl font-bold font-display text-brand-red">50+</span>
+              <span className="text-xs uppercase font-bold tracking-wider text-on-surface mt-2 font-ui">Tertiary Beneficiaries</span>
+              <span className="text-[11px] text-outline mt-1 font-body">Across 4 tertiary institutions</span>
             </div>
-
-            {/* Node 4 — November 2002: The Resignation */}
-            <div className="relative flex flex-col sm:flex-row items-center">
-              <div className="flex items-center justify-start sm:justify-end w-full sm:w-1/2 sm:pr-8 pl-12 sm:pl-0">
-                <div className="bg-white p-6 rounded-2xl border-l-4 border-slate shadow-sm max-w-lg">
-                  <span className="font-ui text-xs font-bold uppercase tracking-wider text-charcoal/60">
-                    November 2002
-                  </span>
-                  <h3 className="font-playfair font-bold text-lg text-charcoal mt-1 mb-2">
-                    Answering a Higher Calling
-                  </h3>
-                  <p className="text-sm text-charcoal/80 leading-relaxed font-body">
-                    He resigned from the Federal Cabinet to contest the governorship on the platform of the
-                    PDP, answering a higher calling to serve the people of Ondo State directly.
-                  </p>
-                </div>
-              </div>
-              <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gold border-2 border-slate" />
+            <div className="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/50 text-center flex flex-col justify-center items-center">
+              <span className="text-4xl lg:text-5xl font-bold font-display text-on-surface">75</span>
+              <span className="text-xs uppercase font-bold tracking-wider text-on-surface mt-2 font-ui">Full Scholarships</span>
+              <span className="text-[11px] text-outline mt-1 font-body">35 Adeleke Univ + 40 Premier &amp; Adeleke High</span>
             </div>
-
-            {/* Node 5 — May 2003 to February 2009: Governor of Ondo State */}
-            <div className="relative flex flex-col sm:flex-row items-center">
-              <div className="hidden sm:block w-1/2" />
-              <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gold border-2 border-crimson" />
-              <div className="flex items-center justify-start w-full sm:w-1/2 sm:pl-8 pl-12">
-                <div className="bg-white p-6 sm:p-8 rounded-2xl border-l-4 border-crimson shadow-md max-w-lg">
-                  <span className="px-3 py-1 rounded-full bg-crimson text-ivory font-ui text-[11px] font-bold uppercase tracking-wider">
-                    2003&ndash;2009 &bull; Executive Governor
-                  </span>
-                  <h3 className="font-playfair font-bold text-2xl text-charcoal mt-3 mb-2">
-                    Six Years of Visible Transformation
-                  </h3>
-                  <p className="font-playfair italic text-crimson text-sm font-semibold mb-3">
-                    Transparent. Focused. Prudent. Visionary.
-                  </p>
-                  <p className="text-sm text-charcoal/80 leading-relaxed font-body mb-3">
-                    He instituted the scientifically budgeted &ldquo;Roadmap to Progress&rdquo;, established
-                    OAUSTECH, constructed thousands of kilometers of roads, and left an unprecedented fiscal
-                    surplus.
-                  </p>
-                  <p className="font-playfair italic text-crimson text-sm font-medium">
-                    He didn&apos;t just govern Ondo State. He elevated it.
-                  </p>
-                  <div className="mt-4 pt-3 border-t border-border text-[11px] font-ui text-text-secondary">
-                    May 2003 &rarr; February 2009 &bull; Ondo State, Nigeria
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Closing Moment — 13 September 2013 */}
-            <div className="relative flex flex-col items-center pt-8">
-              <div className="w-5 h-5 rounded-full bg-gold border-2 border-crimson mb-4" />
-              <span className="font-playfair italic text-xl text-crimson font-bold">
-                13 September 2013
-              </span>
-              <p className="font-playfair italic text-sm text-text-secondary mt-1 text-center">
-                His passing came as a massive shock to the nation.
-              </p>
+            <div className="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/50 text-center flex flex-col justify-center items-center col-span-2 md:col-span-1">
+              <span className="text-4xl lg:text-5xl font-bold font-display text-brand-red">&#8358;25M</span>
+              <span className="text-xs uppercase font-bold tracking-wider text-on-surface mt-2 font-ui">E-Library Donation</span>
+              <span className="text-[11px] text-outline mt-1 font-body">Donated to OAUSTECH</span>
             </div>
           </div>
+
+          {/* Tertiary Endowment Fund Detail Box (PDF Page 7) */}
+          <div className="mt-12 p-8 bg-surface-container-low rounded-3xl border border-outline-variant/60">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-outline-variant/50">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
+                  Permanent University Endowment Fund (PDF Page 7)
+                </span>
+                <h3 className="text-2xl font-bold font-display text-on-surface">
+                  Geology Cash Awards Across Four Tertiary Institutions
+                </h3>
+              </div>
+              <div className="flex items-center gap-4 text-xs font-ui">
+                <span className="px-4 py-2 rounded-full bg-white border border-outline-variant/60 font-semibold text-on-surface">
+                  100&ndash;300 Level: &#8358;50,000 Award
+                </span>
+                <span className="px-4 py-2 rounded-full bg-brand-red text-white font-bold">
+                  400 Level: &#8358;100,000 Award
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+              {[
+                { name: 'University of Ibadan (UI)', desc: 'Premier Geology Department' },
+                { name: 'Adekunle Ajasin University (AAUA)', desc: 'Akungba-Akoko, Ondo State' },
+                { name: 'Federal University of Technology, Akure (FUTA)', desc: 'Applied Geology & Geophysics' },
+                { name: 'Olusegun Agagu University of Science & Technology (OAUSTECH)', desc: 'Okitipupa, Ondo State' },
+              ].map((inst, i) => (
+                <div key={i} className="p-4 bg-white rounded-2xl border border-outline-variant/50">
+                  <span className="text-[10px] uppercase font-bold text-outline font-ui block mb-1">
+                    Endowed Institution 0{i + 1}
+                  </span>
+                  <h4 className="font-bold text-sm text-on-surface font-display">{inst.name}</h4>
+                  <p className="text-xs text-on-surface-variant mt-1 font-body">{inst.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Infrastructure Milestone: National Power Generation Scaling */}
+          <div className="mt-16 pt-12 border-t border-outline-variant/60">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-red block mb-1 font-ui">
+                Federal Minister for Power &amp; Steel (2000&ndash;2002)
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold font-display text-on-surface">
+                Scaling National Electrical Generation Capacity
+              </h3>
+              <p className="text-sm text-on-surface-variant mt-1 font-body">
+                As recorded in the official biography (PDF Page 2): power generation increased dramatically from 1,425 MW in 2000 to over 4,000 MW in 2002 with complementary reinforcement of transmission and distribution networks.
+              </p>
+            </div>
+            <PowerCounter />
+          </div>
+
+          {/* Scholar Testimonials */}
+          <ScholarVoices />
         </div>
 
-        {/* Credo Placement 2: Full-Width Crimson Rising Band */}
-        <div className="mt-16 bg-crimson text-ivory py-14 px-6 text-center shadow-inner">
+        {/* Credo Placement 2: Full-Width Crimson Band */}
+        <div className="mt-20 bg-crimson text-ivory py-14 px-6 text-center shadow-inner">
           <div className="max-w-3xl mx-auto">
             <blockquote className="font-playfair italic text-2xl sm:text-3xl lg:text-4xl text-gold-light leading-relaxed">
-              &ldquo;To leave things better than we met them.&rdquo;
+              &ldquo;To leave things better than he met them.&rdquo;
             </blockquote>
-            <p className="font-ui text-sm sm:text-base text-ivory/80 mt-3 font-medium">
+            <p className="font-ui text-sm sm:text-base text-ivory/90 mt-3 font-medium">
               And so, in 2014, the Foundation was born.
             </p>
           </div>
@@ -565,473 +696,408 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 5 — THE STATESMAN: IMPACT IN NUMBERS */}
+      {/* 5. MEMORIAL LECTURES ARCHIVE (2014 – 2023 Decade of Legacy) */}
       {/* ========================================================================= */}
-      <section className="py-20 bg-crimson text-ivory content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-12">
-            <h2 className="font-playfair font-normal text-3xl sm:text-4xl text-ivory">
-              The Measure of a Leader
+      <section className="py-24 bg-surface-container-low text-on-surface" id="lectures">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+                Our Activities [3/12 to 12/12]
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-on-surface">
+              The Annual Memorial Lectures (2014&ndash;2023)
             </h2>
-            <p className="font-playfair italic text-gold-light text-base mt-1">
-              Numbers that tell only part of the story.
+            <p className="text-sm sm:text-base text-on-surface-variant mt-3 font-body">
+              Memorial lectures held every year on the anniversary of the passing of Dr. Olusegun Agagu, addressed by African heads of state, ministers, and eminent scholars.
             </p>
           </div>
 
-          {/* 6 Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
-            {[
-              { num: '1992', label: 'First Public Office (Deputy Governor)' },
-              { num: '4,000+ MW', label: 'National Power by 2002' },
-              { num: '6 Years', label: 'as Governor of Ondo State' },
-              { num: '2 Ministries', label: 'Served as Federal Minister' },
-              { num: '1 Year', label: 'Aviation Sector Turnaround' },
-              { num: '1 State', label: 'Transformed into Oil Producer' },
-            ].map((st, i) => (
-              <div key={i} className="pt-3 border-t border-gold/40">
-                <span className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-gold block mb-1">
-                  {st.num}
-                </span>
-                <span className="font-ui text-xs sm:text-sm text-ivory/80 font-medium block">
-                  {st.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Focal Areas Strip (Native CSS Horizontal Scroll) */}
-          <div className="pt-8 border-t border-ivory/20">
-            <span className="font-ui text-xs text-gold uppercase tracking-widest block mb-4">
-              Spheres of Enduring Consequence
-            </span>
-            <div className="flex items-center gap-4 overflow-x-auto no-scrollbar py-2 text-sm sm:text-base font-playfair italic text-gold-light whitespace-nowrap">
-              <span>Academia</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Geology</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Petroleum Engineering</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Energy</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Politics &amp; Good Governance</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Culture and Arts (Highlife Music)</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Service</span>
-              <span className="text-gold/40" aria-hidden="true">|</span>
-              <span>Aviation</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SECTION 6 — THE FOUNDATION: INTRODUCTION AND MISSION */}
-      {/* ========================================================================= */}
-      <div id="pillars" />
-      <section id="the-foundation" className="py-24 bg-ivory text-charcoal content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12 text-center">
-          <OafCrest className="w-16 h-16 mx-auto mb-4" />
-          <h2 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-crimson mb-2">
-            The Olusegun Agagu Foundation
-          </h2>
-          <p className="font-ui text-xs sm:text-sm uppercase tracking-widest text-text-secondary mb-16">
-            Established 2014 &bull; Keeping the Legacy Alive
-          </p>
-
-          {/* Three Mission Pillar Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
-            {/* Pillar 1 — Immortalise */}
-            <div className="bg-white p-8 rounded-2xl border-t-[3px] border-crimson border-x border-b border-border shadow-sm flex flex-col justify-between">
+          {/* Key Editions Cards (Direct from PDF Pages 8-17) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* 2014 Inaugural Lecture (PDF Page 8) */}
+            <div className="bg-white p-7 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
               <div>
-                <span className="font-ui text-xs font-semibold text-crimson uppercase tracking-wider block mb-2">
-                  Pillar I
-                </span>
-                <h3 className="font-playfair font-bold text-2xl text-crimson mb-3">
-                  Immortalise His Name
-                </h3>
-                <p className="font-playfair text-sm sm:text-base text-charcoal/80 leading-relaxed">
-                  The Foundation was born to ensure the name, memory, and profound public contributions of
-                  Dr. Olusegun Kokumo Agagu endure across generations of Nigerian scholars and citizens.
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider font-ui">
+                    Inaugural &bull; 2014
+                  </span>
+                  <span className="text-xs font-mono text-outline">LEC-2014-01</span>
+                </div>
+                <h3 className="text-xl font-bold font-display text-on-surface mb-2">Keynote Address on Good Governance</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4 font-body">
+                  Delivered by H.E. Festus Gontebanye Mogae, Former President of Botswana (represented by the Ambassador of Botswana to Nigeria).
                 </p>
-              </div>
-            </div>
-
-            {/* Pillar 2 — Actualise (Credo Placement 3) */}
-            <div className="bg-white p-8 rounded-2xl border-t-[3px] border-gold border-x border-b border-border shadow-md flex flex-col justify-between relative">
-              <div>
-                <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                  Pillar II &bull; Core Compass
-                </span>
-                <h3 className="font-playfair font-bold text-2xl text-charcoal mb-4">
-                  Actualise His Credo
-                </h3>
-                <blockquote className="font-playfair italic text-lg sm:text-xl text-gold font-bold leading-relaxed mb-4">
-                  &ldquo;To leave things better than he met them.&rdquo;
-                </blockquote>
-                <p className="font-playfair text-sm text-charcoal/80 leading-relaxed">
-                  The Foundation&apos;s living operational compass in every tertiary endowment, educational
-                  bursary, and public symposium it convenes.
-                </p>
-              </div>
-            </div>
-
-            {/* Pillar 3 — Further */}
-            <div className="bg-white p-8 rounded-2xl border-t-[3px] border-crimson border-x border-b border-border shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="font-ui text-xs font-semibold text-crimson uppercase tracking-wider block mb-2">
-                  Pillar III
-                </span>
-                <h3 className="font-playfair font-bold text-2xl text-crimson mb-3">
-                  Further His Ideals
-                </h3>
-                <div className="space-y-2 text-base font-playfair italic text-charcoal/90 pt-1">
-                  <p>Intellectual excellence.</p>
-                  <p>Good governance.</p>
-                  <p>National development.</p>
+                <div className="p-3 bg-surface-container rounded-xl text-xs text-on-surface mb-2 font-ui space-y-1">
+                  <div><strong className="text-brand-red">Chaired by:</strong> H.E. Chief Olusegun Obasanjo (GCON), Former President of Nigeria</div>
+                  <div><strong className="text-on-surface">Guest Speakers:</strong> Mrs. Omobola Johnson, Mr. A. Oba Otudeko (CFR), Chief Olusola Oke</div>
                 </div>
               </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+                  Inaugural Convocation
+                </span>
+                <span className="text-[10px] font-mono text-outline">Lagos, Nigeria</span>
+              </div>
             </div>
-          </div>
 
-          {/* Focal Areas Grid (4x2 text-only grid) */}
-          <div className="pt-12 border-t border-border text-left">
-            <span className="section-label text-crimson block mb-6">
-              FOUNDATION FOCAL PORTFOLIOS
-            </span>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { name: 'Academia', desc: 'Tertiary bursaries & research endowments' },
-                { name: 'Geology', desc: 'Subsurface research & laboratory equipment' },
-                { name: 'Petroleum Engineering', desc: 'Energy transition & extractive science' },
-                { name: 'Energy', desc: 'Sustainable power systems & research' },
-                { name: 'Politics & Governance', desc: 'Civil integrity colloquia & statecraft' },
-                { name: 'Culture & Highlife', desc: 'Preserving African musical heritage' },
-                { name: 'Service', desc: 'Community health & riverine interventions' },
-                { name: 'Aviation Trauma', desc: 'Support interventions & safety advocacy' },
-              ].map((f, i) => (
-                <div key={i} className="p-4 bg-white rounded-xl border border-border">
-                  <h4 className="font-playfair font-semibold text-base text-charcoal">
-                    {f.name}
-                  </h4>
-                  <p className="font-ui text-xs text-text-secondary mt-1">
-                    {f.desc}
-                  </p>
+            {/* 2016 3rd Lecture (PDF Page 10) */}
+            <div className="bg-white p-7 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full bg-surface-container text-on-surface text-[11px] font-bold uppercase tracking-wider font-ui">
+                    3rd Lecture &bull; 2016
+                  </span>
+                  <span className="text-xs font-mono text-outline">LEC-2016-03</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SECTION 7 — FOUNDATION IMPACT: PROGRAMMES AND SCHOLAR VOICES */}
-      {/* ========================================================================= */}
-      <section className="py-24 bg-forest-green text-ivory content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-16">
-            <span className="section-label text-gold block mb-2">PHILANTHROPIC STEWARDSHIP</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-ivory mb-2">
-              A Decade of Impact
-            </h2>
-            <p className="font-playfair italic text-gold-light text-lg">
-              2014&ndash;2023 &bull; What We Have Built
-            </p>
-          </div>
-
-          {/* 4 Impact Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-16 border-b border-gold/25">
-            <div>
-              <span className="font-playfair font-bold text-4xl lg:text-5xl text-gold block">9</span>
-              <span className="font-ui text-xs uppercase tracking-wider text-ivory/80 font-medium block mt-1">
-                Memorial Lectures Organized
-              </span>
-            </div>
-            <div>
-              <span className="font-playfair font-bold text-4xl lg:text-5xl text-gold block">400+</span>
-              <span className="font-ui text-xs uppercase tracking-wider text-ivory/80 font-medium block mt-1">
-                Awards &amp; Secondary Prizes
-              </span>
-            </div>
-            <div>
-              <span className="font-playfair font-bold text-4xl lg:text-5xl text-gold block">50+</span>
-              <span className="font-ui text-xs uppercase tracking-wider text-ivory/80 font-medium block mt-1">
-                Tertiary Beneficiaries Awarded
-              </span>
-            </div>
-            <div>
-              <span className="font-playfair font-bold text-4xl lg:text-5xl text-gold block">75</span>
-              <span className="font-ui text-xs uppercase tracking-wider text-ivory/80 font-medium block mt-1">
-                Full University Scholarships
-              </span>
-            </div>
-          </div>
-
-          {/* Three Programme Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-14">
-            <div className="bg-black/20 p-7 rounded-2xl border border-gold/30">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                Programme 01
-              </span>
-              <h3 className="font-playfair font-bold text-xl text-ivory mb-3">
-                Scholarships &amp; Bursaries
-              </h3>
-              <p className="font-playfair text-sm text-ivory/85 leading-relaxed">
-                35 full scholarships at Adeleke University; 40 full scholarships into Premier College (Ijebu
-                Ode) and Adeleke High School (Ede); alongside 400+ cash prizes for secondary students.
-              </p>
+                <h3 className="text-xl font-bold font-display text-on-surface mb-2">Regional Cooperation &amp; Integration in Africa</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4 font-body">
+                  Keynote Address by H.E. Benjamin Mkapa, Former President of Tanzania.
+                </p>
+                <div className="p-3 bg-surface-container rounded-xl text-xs text-on-surface mb-2 font-ui space-y-1">
+                  <div><strong className="text-brand-red">Chaired by:</strong> H.E. Asiwaju Bola Ahmed Tinubu</div>
+                  <div><strong className="text-on-surface">Special Guest:</strong> H.E. Ambassador Baba Gana Kingibe</div>
+                  <div><strong className="text-on-surface">Goodwill Message:</strong> H.E. Chief Olusegun Obasanjo, GCFR</div>
+                </div>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+                  Continental Forum
+                </span>
+                <span className="text-[10px] font-mono text-outline">Lagos, Nigeria</span>
+              </div>
             </div>
 
-            <div className="bg-black/20 p-7 rounded-2xl border border-gold/30">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                Programme 02
-              </span>
-              <h3 className="font-playfair font-bold text-xl text-ivory mb-3">
-                University Endowment Fund
-              </h3>
-              <p className="font-playfair text-sm text-ivory/85 leading-relaxed">
-                Endowments at the University of Ibadan, Adekunle Ajasin University, FUTA, and OAUSTECH. Cash
-                prizes of &#8358;50,000 for 100&ndash;300 Level and &#8358;100,000 for 400 Level best Geology
-                scholars.
-              </p>
+            {/* 2018 5th Lecture (PDF Page 12) */}
+            <div className="bg-white p-7 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full bg-surface-container text-on-surface text-[11px] font-bold uppercase tracking-wider font-ui">
+                    5th Lecture &bull; 2018
+                  </span>
+                  <span className="text-xs font-mono text-outline">LEC-2018-05</span>
+                </div>
+                <h3 className="text-xl font-bold font-display text-on-surface mb-2">Women: A Needed Force in Politics and the Polity</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4 font-body">
+                  Keynote Address by Her Excellency, Former President Dr. Joyce Banda of Malawi.
+                </p>
+                <div className="p-3 bg-surface-container rounded-xl text-xs text-on-surface mb-2 font-ui space-y-1">
+                  <div><strong className="text-brand-red">Chairman:</strong> H.R.H. Muhammadu Sanusi II (The Emir of Kano)</div>
+                  <div><strong className="text-on-surface">Guest Speakers:</strong> Chief Folake Solanke SAN CON, Prof. Sheila Tlou (UN)</div>
+                  <div><strong className="text-on-surface">Grand Patron:</strong> Chief Olusegun Obasanjo, GCFR</div>
+                </div>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+                  Women in Leadership
+                </span>
+                <span className="text-[10px] font-mono text-outline">Lagos, Nigeria</span>
+              </div>
             </div>
 
-            <div className="bg-black/20 p-7 rounded-2xl border border-gold/30">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                Programme 03
-              </span>
-              <h3 className="font-playfair font-bold text-xl text-ivory mb-3">
-                OAUSTECH E-Library
-              </h3>
-              <p className="font-playfair text-sm text-ivory/85 leading-relaxed">
-                &#8358;25 million donated to the Olusegun Agagu University of Science and Technology to
-                establish a high-speed digital e-library, honoring his lifelong commitment to tertiary research.
-              </p>
+            {/* 2019 6th Lecture (PDF Page 13) */}
+            <div className="bg-white p-7 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full bg-surface-container text-on-surface text-[11px] font-bold uppercase tracking-wider font-ui">
+                    6th Lecture &bull; 2019
+                  </span>
+                  <span className="text-xs font-mono text-outline">LEC-2019-06</span>
+                </div>
+                <h3 className="text-xl font-bold font-display text-on-surface mb-2">Climate Change &amp; Population Migration in Africa</h3>
+                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-4 font-body">
+                  Keynote Address by Her Excellency, Former President Dr. Ameenah Fakim-Gurib of Mauritius.
+                </p>
+                <div className="p-3 bg-surface-container rounded-xl text-xs text-on-surface mb-2 font-ui space-y-1">
+                  <div><strong className="text-brand-red">Chairman:</strong> Chief Emeka Anyaoku (Former Commonwealth Sec-Gen)</div>
+                  <div><strong className="text-on-surface">Chief Host:</strong> H.E. Babajide Sanwo-Olu (Governor of Lagos)</div>
+                  <div><strong className="text-on-surface">Goodwill:</strong> Ms. Amina Mohammed OFR (UN Deputy Sec-General)</div>
+                </div>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+                  Climate &amp; Migration
+                </span>
+                <span className="text-[10px] font-mono text-outline">Lagos, Nigeria</span>
+              </div>
             </div>
-          </div>
 
-          {/* 2023 Milestone Banner: Split Halves */}
-          <div className="bg-crimson rounded-2xl p-8 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 text-ivory shadow-lg">
-            <div>
-              <span className="font-ui text-xs text-gold uppercase tracking-widest font-semibold block mb-1">
-                2023 Decennial Milestone &bull; Book Launch
-              </span>
-              <h4 className="font-playfair font-bold text-2xl text-ivory mb-2">
-                A Decade of Legacy Compendium
-              </h4>
-              <p className="text-xs sm:text-sm text-ivory/80 leading-relaxed font-body">
-                Curated as a premier reference compendium and critical resource on good governance, archiving
-                ten years of policy papers from African heads of state.
-              </p>
-            </div>
-            <div className="md:border-l md:border-ivory/20 md:pl-8">
-              <span className="font-ui text-xs text-gold uppercase tracking-widest font-semibold block mb-1">
-                Decennial Cultural Celebration
-              </span>
-              <h4 className="font-playfair font-bold text-2xl text-ivory mb-2">
-                Highlife Music Talent Concert
-              </h4>
-              <p className="text-xs sm:text-sm text-ivory/80 leading-relaxed font-body">
-                Showcasing emerging young Nigerian Highlife artists, uniting generations through live
-                brass, soulful melodies, and honoring his deep appreciation for traditional musical art.
-              </p>
+            {/* 2023 Decennial Milestone & Book Launch (PDF Page 17 - Double Width) */}
+            <div className="bg-white p-7 rounded-3xl border-2 border-brand-red shadow-lg flex flex-col justify-between hover:shadow-xl transition-shadow md:col-span-2">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 font-ui">
+                    <StarIcon className="w-3.5 h-3.5" />
+                    Decennial Milestone &bull; 2023
+                  </span>
+                  <span className="text-xs font-mono text-brand-red font-bold">PDF Page 17</span>
+                </div>
+                <h3 className="text-2xl font-bold font-display text-on-surface mb-2">
+                  Compendium Launch &amp; Highlife Talent Show (2023)
+                </h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-4 font-body">
+                  Marking a decade of legacy with two historic cultural and policy milestones celebrating Dr. Agagu&apos;s enduring impact on good governance and African heritage.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 font-ui">
+                  <div className="p-4 bg-surface-container rounded-2xl text-xs text-on-surface">
+                    <strong className="text-brand-red block mb-1 text-sm font-display">Book Launch: A DECADE OF LEGACY</strong>
+                    <p className="text-on-surface-variant leading-relaxed">
+                      A Compendium of Policy Papers from the Olusegun Agagu Memorial Lectures was curated and launched with the aim of having it be a reference book and critical resource on good governance.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-surface-container rounded-2xl text-xs text-on-surface">
+                    <strong className="text-brand-red block mb-1 text-sm font-display">Highlife Music Concert</strong>
+                    <p className="text-on-surface-variant leading-relaxed">
+                      Featured and supported young Nigerian Highlife musicians, showcasing the richness of African heritage through electrifying performances, live instrumentation, and soulful melodies.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-4 mt-4 border-t border-outline-variant/40 flex items-center justify-between">
+                <a
+                  href={`mailto:${contactInfo.pressEmail}?subject=Compendium%20Inquiry%20%E2%80%93%20A%20Decade%20of%20Legacy`}
+                  className="px-5 py-2 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md flex items-center gap-1.5 focus-ring"
+                >
+                  <DownloadIcon className="w-4 h-4" />
+                  Inquire For Compendium Book
+                </a>
+                <span className="text-xs text-outline font-semibold font-ui">Permanent Policy Reference</span>
+              </div>
             </div>
           </div>
 
-          {/* Scholar Voices Testimonial Component */}
-          <ScholarVoices />
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SECTION 8 — MEMORIAL LECTURES: YEAR STRIP AND DETAIL PANELS */}
-      {/* ========================================================================= */}
-      <section id="lectures" className="py-24 bg-ivory text-charcoal content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-12">
-            <span className="section-label text-crimson block mb-2">GLOBAL DISCOURSE</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-charcoal mb-2">
-              The Memorial Lectures
-            </h2>
-            <p className="font-playfair italic text-gold text-lg">
-              Nine Years &bull; Nine Conversations &bull; One Enduring Purpose
-            </p>
-            <span className="font-ui text-xs text-text-secondary block mt-2">
-              Held annually on the anniversary of Dr. Agagu&apos;s passing &mdash; 13 September
-            </span>
-          </div>
-
-          {/* Layer 1 Year Strip & Layer 2 Slide-Over Panel */}
+          {/* Interactive Native Lecture Slide-Over Strip */}
           <MemorialLectureStrip />
-
-          {/* Prestige Callout Band */}
-          <div className="mt-12 bg-crimson text-ivory p-8 rounded-2xl text-center relative overflow-hidden">
-            <p className="font-playfair italic text-lg sm:text-xl text-ivory max-w-2xl mx-auto leading-relaxed">
-              &ldquo;Nine keynote addresses by former Heads of State and Heads of Government from across
-              Africa and the world.&rdquo;
-            </p>
-          </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 9 — BOARD OF TRUSTEES */}
+      {/* 6. BOARD OF TRUSTEES (PDF Page 5) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-slate text-ivory content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-12">
-            <span className="section-label text-gold-light block mb-2">FIDUCIARY CUSTODIANSHIP</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl text-ivory mb-2">
-              The Guardians of the Legacy
-            </h2>
-            <p className="font-ui text-xs sm:text-sm text-gold-light uppercase tracking-widest">
-              Board of Trustees &bull; The Olusegun Agagu Foundation
-            </p>
-          </div>
-
-          {/* Phase 1 Typeset List */}
-          <div className="bg-black/25 p-8 sm:p-12 rounded-3xl border border-gold/30 max-w-4xl">
-            {/* Chairman */}
-            <div className="pb-6 border-b border-gold/30">
-              <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-1">
-                Chairman of the Board
-              </span>
-              <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-gold">
-                Dr. Deji Adeleke
-              </h3>
-            </div>
-
-            {/* Remaining Trustees List */}
-            <div className="py-8 space-y-4 font-playfair text-base sm:text-lg text-ivory leading-[2.2]">
-              {trustees
-                .filter((t) => t.name !== 'Dr. Deji Adeleke' && t.name !== 'Mr. Feyi Agagu' && !t.status)
-                .map((trustee, idx) => (
-                  <p key={idx} className="border-b border-ivory/10 pb-2">
-                    {trustee.name}
-                  </p>
-                ))}
-            </div>
-
-            {/* Secretary */}
-            <div className="py-6 border-t border-b border-gold/30">
-              <span className="font-ui text-xs font-semibold text-gold-light uppercase tracking-wider block mb-1">
-                Secretary to the Board
-              </span>
-              <p className="font-playfair italic text-xl text-gold-light font-bold">
-                Mr. Feyi Agagu
-              </p>
-            </div>
-
-            {/* In Memoriam / Transition Row */}
-            <div className="pt-6">
-              <span className="font-playfair italic text-xs text-ivory/60 block mb-2">
-                In Memoriam &bull; Honor Roll:
-              </span>
-              <div className="flex flex-wrap gap-4 text-xs font-ui text-ivory/70">
-                <span>Prince Yemi Adefulu MFR (Late)</span>
-                <span>&bull;</span>
-                <span>Professor Dele Fawole (stepped down 2018)</span>
-                <span>&bull;</span>
-                <span>Mr. Akin Aruwajoye (appointed 2018)</span>
-                <span>&bull;</span>
-                <span>Mr. Kayode Falowo (appointed 2018)</span>
+      <section className="py-24 bg-white text-on-surface" id="board">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+                  About The Foundation &bull; PDF Page 5
+                </span>
               </div>
+              <h2 className="text-3xl sm:text-4xl font-bold font-display text-on-surface">
+                The Board of Trustees
+              </h2>
+            </div>
+            <p className="text-sm text-on-surface-variant max-w-md mt-2 md:mt-0 font-body">
+              The assiduous team that keeps this legacy going, stewarding Dr. Agagu&apos;s philanthropic vision and fiduciary excellence.
+            </p>
+          </div>
+
+          {/* Active Trustees Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {biography.boardOfTrustees
+              .filter((t) => !t.role.includes('Emeritus') && !t.role.includes('Memoriam'))
+              .map((trustee, idx) => {
+                const initials = trustee.name
+                  .replace(/^(Dr\.|Chief|Mrs\.|Alhaji|Ms\.|Mr\.|Prof\.)\s*/g, '')
+                  .split(' ')
+                  .map((w) => w[0])
+                  .filter(Boolean)
+                  .slice(0, 2)
+                  .join('')
+
+                return (
+                  <div
+                    key={idx}
+                    className="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/60 flex flex-col justify-between hover:shadow-lg transition-all group"
+                  >
+                    <div>
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 rounded-2xl bg-white border border-outline-variant/60 flex items-center justify-center font-display font-bold text-xl text-brand-red shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors">
+                          {initials}
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block font-ui">
+                            {trustee.role}
+                          </span>
+                          <h3 className="font-bold text-base text-on-surface font-display">
+                            {trustee.name}
+                          </h3>
+                        </div>
+                      </div>
+                      <p className="text-xs text-on-surface-variant leading-relaxed font-body">
+                        {trustee.role === 'Chairman' &&
+                          'Providing overarching fiduciary direction, institutional partnerships, and endowment leadership.'}
+                        {trustee.role === 'Secretary' &&
+                          'Directing secretariat operations, tertiary scholarship verifications, and administrative compliance.'}
+                        {trustee.role === 'Trustee' &&
+                          'Contributing strategic oversight, educational endowment governance, and civic stewardship.'}
+                      </p>
+                    </div>
+                    <div className="text-[11px] font-mono text-outline pt-3 border-t border-outline-variant/40 mt-4">
+                      {trustee.note ? trustee.note : 'Board of Trustees &bull; Active'}
+                    </div>
+                  </div>
+                )
+              })}
+          </div>
+
+          {/* Historic & Emeritus Trustees (PDF Page 5) */}
+          <div className="mt-12 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/50 text-xs font-ui text-on-surface-variant flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span className="font-bold uppercase tracking-wider text-on-surface block mb-1">
+                Historic Trustees &bull; PDF Page 5:
+              </span>
+              <span>
+                Professor Dele Fawole (stepped down 2018) &bull; Prince Yemi Adefulu MFR (Late)
+              </span>
+            </div>
+            <div className="text-outline font-mono">
+              In Perpetual Honor of Foundation Founders
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 10 — FUTURE INITIATIVES: THE WORK CONTINUES */}
+      {/* 7. FUTURE INITIATIVES (PDF Page 18) */}
       {/* ========================================================================= */}
-      <section id="legacy" className="py-24 bg-ivory text-charcoal content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-14">
-            <span className="section-label text-crimson block mb-2">HORIZON VISION</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-crimson mb-2">
-              The Work Continues
+      <section className="py-24 bg-surface-container-low text-on-surface" id="initiatives">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+                Strategic Horizons &bull; PDF Page 18
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-on-surface">
+              Future Initiatives
             </h2>
-            <p className="font-playfair italic text-text-secondary text-lg">
-              Because the mission to leave things better is never finished.
+            <p className="text-base text-on-surface-variant mt-3 font-body">
+              Expanding the Foundation&apos;s reach through multi-year strategic programmes across universities, literature, and aviation safety.
             </p>
           </div>
 
-          {/* Three Initiative Descriptions (Side-by-Side Desktop) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-2xl border border-border shadow-sm flex flex-col justify-between">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Initiative 1: Scholarships and Awards Programme (PDF Page 18) */}
+            <div className="bg-white p-8 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
               <div>
-                <span className="font-ui text-xs font-semibold text-crimson uppercase tracking-wider block mb-2">
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
+                  <SchoolIcon className="w-7 h-7" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
                   Initiative I
                 </span>
-                <h3 className="font-playfair font-bold text-xl text-crimson mb-3">
-                  Expand. Deepen. Reach Further.
+                <h3 className="text-xl font-bold font-display text-on-surface mb-3">
+                  Scholarships &amp; Awards Expansion
                 </h3>
-                <p className="font-playfair text-sm text-charcoal/80 leading-relaxed">
-                  Add one new university every five years to the endowment scheme, providing awards for
-                  three students per university in Geology or Petroleum Engineering, while scaling award values.
-                </p>
+                <ul className="text-xs text-on-surface-variant space-y-2 mb-6 font-body list-disc pl-4">
+                  {biography.futureInitiatives.scholarshipsAndAwards.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-3 bg-surface-container rounded-xl flex items-center justify-between text-xs font-ui">
+                <span className="text-outline">Geology &amp; Petroleum Eng.</span>
+                <span className="font-bold text-brand-red">Active Scheme</span>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-border shadow-sm flex flex-col justify-between">
+            {/* Initiative 2: Autobiography (PDF Page 18) */}
+            <div className="bg-white p-8 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
               <div>
-                <span className="font-ui text-xs font-semibold text-crimson uppercase tracking-wider block mb-2">
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
+                  <HistoryEduIcon className="w-7 h-7" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
                   Initiative II
                 </span>
-                <h3 className="font-playfair font-bold text-xl text-crimson mb-3">
-                  His Story, For All Time
+                <h3 className="text-xl font-bold font-display text-on-surface mb-3">
+                  Official Autobiography Publication
                 </h3>
-                <p className="font-playfair text-sm text-charcoal/80 leading-relaxed mb-3">
-                  Publishing the comprehensive official autobiography of Dr. Olusegun Agagu to educate the
-                  public on his lifetime and impart his rigorous principles of governance.
-                </p>
-                <p className="font-playfair italic text-crimson text-xs font-semibold">
-                  So that the next generation knows the name, knows the man, knows what he stood for.
-                </p>
+                <ul className="text-xs text-on-surface-variant space-y-2 mb-6 font-body list-disc pl-4">
+                  {biography.futureInitiatives.autobiography.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-3 bg-surface-container rounded-xl flex items-center justify-between text-xs font-ui">
+                <span className="text-outline">Memoir &amp; Archives</span>
+                <span className="font-bold text-brand-red">In Development</span>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-border shadow-sm flex flex-col justify-between">
+            {/* Initiative 3: Other Initiatives (PDF Page 18) */}
+            <div className="bg-white p-8 rounded-3xl border border-outline-variant/60 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
               <div>
-                <span className="font-ui text-xs font-semibold text-crimson uppercase tracking-wider block mb-2">
+                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
+                  <FlightTakeoffIcon className="w-7 h-7" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
                   Initiative III
                 </span>
-                <h3 className="font-playfair font-bold text-xl text-crimson mb-3">
-                  New Fronts, Same Mission
+                <h3 className="text-xl font-bold font-display text-on-surface mb-3">
+                  Research &amp; Aviation Safety Interventions
                 </h3>
-                <div className="space-y-2 font-playfair italic text-xs sm:text-sm text-charcoal/85">
-                  <p>&bull; Essay &amp; Research Paper competitions</p>
-                  <p>&bull; Volunteer teaching and youth mentoring</p>
-                  <p>&bull; Aviation safety intervention and trauma advocacy</p>
-                </div>
+                <ul className="text-xs text-on-surface-variant space-y-2 mb-6 font-body list-disc pl-4">
+                  {biography.futureInitiatives.otherInitiatives.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-3 bg-surface-container rounded-xl flex items-center justify-between text-xs font-ui">
+                <span className="text-outline">Aviation Safety &amp; Mentoring</span>
+                <span className="font-bold text-brand-red">Strategic Action</span>
               </div>
             </div>
+          </div>
+
+          {/* Institutional Partnership Call Card */}
+          <div className="bg-white p-8 lg:p-10 rounded-3xl border border-outline-variant/70 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold font-display text-on-surface">Partner with the Olusegun Agagu Foundation</h3>
+              <p className="text-sm text-on-surface-variant mt-1 font-body">We welcome university endowments, research affiliations, and community education partnerships.</p>
+            </div>
+            <a
+              className="px-8 py-3.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-md focus-ring"
+              href={`mailto:${contactInfo.pressEmail}?subject=Institutional%20Partnership%20Inquiry%20%E2%80%93%20OAF`}
+            >
+              Inquire for Partnership &rarr;
+            </a>
           </div>
 
           {/* Credo Placement 4: Full-Width Crimson Closing Banner */}
-          <div className="bg-crimson text-ivory py-14 px-6 rounded-2xl text-center shadow-lg">
+          <div className="mt-14 bg-crimson text-ivory py-14 px-6 rounded-3xl text-center shadow-lg">
             <blockquote className="font-playfair italic text-2xl sm:text-3xl lg:text-4xl text-gold-light leading-relaxed max-w-3xl mx-auto">
-              &ldquo;Together, we hope to continue &mdash; to leave things better than we met them.&rdquo;
+              &ldquo;Together, we hope we can continue to do more &lsquo;to leave things better than we met them&rsquo;.&rdquo;
             </blockquote>
             <span className="font-ui text-xs uppercase tracking-widest text-ivory/80 block mt-4 font-semibold">
-              &mdash; The Olusegun Agagu Foundation
+              &mdash; Our Thanks &bull; PDF Page 19
             </span>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 11 — GALLERY: MOMENTS IN A LIFE WELL LIVED */}
+      {/* 8. PHOTOGRAPHIC MEMOIR ARCHIVE */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-charcoal text-ivory content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
+      <section className="py-24 bg-[#140b0a] text-white" id="gallery">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-12">
-            <span className="section-label text-gold block mb-2">PHOTOGRAPHIC ARCHIVE</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-ivory mb-2">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/70 font-ui">
+                Photographic Archive
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-white">
               Moments in a Life Well Lived
             </h2>
-            <p className="font-playfair italic text-gold-light text-base">
-              An Archival Photographic Memoir
+            <p className="text-sm sm:text-base text-white/70 mt-2 font-body">
+              An Archival Photographic Memoir capturing six decades of scholarship, statesmanship, and grace.
             </p>
           </div>
 
@@ -1040,184 +1106,162 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 12 — APPLY / SUPPORT: SPLIT LANDING */}
+      {/* 9. CLOSING TRIBUTE, OUR THANKS & DIGITAL CONDOLENCE BOOK (PDF Page 19) */}
       {/* ========================================================================= */}
-      <section id="apply-support" className="py-24 bg-ivory text-charcoal content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="section-label text-crimson block mb-2">DUAL ENGAGEMENT PATHWAY</span>
-            <h2 className="font-playfair font-bold text-3xl sm:text-4xl text-charcoal mb-2">
-              What brings you here today?
-            </h2>
-            <p className="font-playfair italic text-text-secondary text-base">
-              Dedicated pathways for prospective scholarship students and institutional philanthropic partners.
-            </p>
-          </div>
-
-          {/* Split Landing Tiles */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Path A — Students (Forest Green) */}
-            <div className="bg-forest-green text-ivory p-8 sm:p-10 rounded-3xl shadow-lg flex flex-col justify-between">
-              <div>
-                <span className="font-ui text-xs font-semibold text-gold uppercase tracking-wider block mb-2">
-                  Path A &bull; For Beneficiaries
-                </span>
-                <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-ivory mb-4">
-                  I&apos;m a student looking for scholarships
-                </h3>
-                <p className="font-playfair text-sm text-ivory/85 leading-relaxed mb-6">
-                  Access fully endowed tuition bursaries, secondary school academic prizes, and university
-                  undergraduate support across our affiliated partner varsities (Adeleke, OAUSTECH, UI,
-                  AAUA, and FUTA).
-                </p>
-                <div className="space-y-2 text-xs font-ui text-ivory/90 mb-6 bg-black/20 p-4 rounded-xl border border-gold/30">
-                  <p>&bull; Full tuition bursaries for Geology &amp; Earth Sciences</p>
-                  <p>&bull; Adeleke High School &amp; Premier College entry grants</p>
-                  <p>&bull; Verification managed directly by OAF Secretariat</p>
+      <section className="py-24 bg-[#140b0a] text-white relative overflow-hidden" id="tribute">
+        <div
+          className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-brand-red/20 blur-[100px] pointer-events-none"
+          aria-hidden="true"
+        />
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+            {/* Portrait Vignette */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-neutral-900 group">
+                <div className="relative w-full h-[480px]">
+                  <Image
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
+                    alt="Archival Memorial Portrait of Dr. Olusegun Kokumo Agagu CON"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-              </div>
-
-              <div className="pt-4 border-t border-gold/30">
-                <a
-                  href={`mailto:${contactInfo.pressEmail}?subject=Scholarship%20Application%20Inquiry%20%E2%80%93%20OAF`}
-                  className="w-full inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold hover:bg-gold-light text-charcoal font-ui font-bold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
-                >
-                  Start Your Application &rarr;
-                </a>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="text-xs uppercase tracking-widest text-tertiary font-bold block mb-1 font-ui">In Loving Memory</span>
+                  <p className="text-xl font-bold font-headline">H.E. Dr. Olusegun Kokumo Agagu, CON</p>
+                  <p className="text-xs text-white/70 font-mono mt-1">16 February 1948 &mdash; 13 September 2013</p>
+                </div>
               </div>
             </div>
 
-            {/* Path B — Donors & Partners (Crimson) */}
-            <div className="bg-crimson text-ivory p-8 sm:p-10 rounded-3xl shadow-lg flex flex-col justify-between">
-              <div>
-                <span className="font-ui text-xs font-semibold text-gold-light uppercase tracking-wider block mb-2">
-                  Path B &bull; For Philanthropic Partners
-                </span>
-                <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-ivory mb-4">
-                  I want to support or partner with the Foundation
-                </h3>
-                <p className="font-playfair text-sm text-ivory/85 leading-relaxed mb-6">
-                  Collaborate with the Board of Trustees on university endowment co-sponsorships, annual
-                  memorial lecture patronage, digital e-library expansion, or youth leadership fellowships.
-                </p>
-                <div className="space-y-2 text-xs font-ui text-ivory/90 mb-6 bg-black/20 p-4 rounded-xl border border-gold/30">
-                  <p>&bull; 100% fiduciary transparency guaranteed by Board</p>
-                  <p>&bull; Institutional university endowment expansion</p>
-                  <p>&bull; Memorial lecture series &amp; policy compendium sponsorship</p>
-                </div>
+            {/* Memorial Text & Our Thanks (PDF Page 19) */}
+            <div className="lg:col-span-7 flex flex-col gap-6 items-start">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-tertiary text-xs uppercase font-bold tracking-wider font-ui">
+                <CandleIcon className="w-4 h-4" />
+                Perpetual Remembrance &bull; Our Thanks (PDF Page 19)
               </div>
-
-              <div className="pt-4 border-t border-gold/30">
+              <h2 className="text-3xl sm:text-5xl font-bold font-display text-white leading-tight">
+                Our Thanks &amp; Living Tribute
+              </h2>
+              <div className="p-6 bg-white/5 border-l-4 border-brand-red rounded-r-2xl w-full space-y-3">
+                <p className="text-sm sm:text-base text-white/90 leading-relaxed font-body">
+                  &ldquo;We thank all those who have supported the initiative and enabled these good works to continue.&rdquo;
+                </p>
+                <blockquote className="text-xl sm:text-2xl font-headline italic text-tertiary leading-snug">
+                  &ldquo;Together, we hope we can continue to do more &lsquo;to leave things better than we met them&rsquo;.&rdquo;
+                </blockquote>
+                <span className="text-xs uppercase tracking-wider text-white/60 block mt-2 font-bold font-ui">
+                  &mdash; The Olusegun Agagu Foundation
+                </span>
+              </div>
+              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-body">
+                Visitors, scholars, and citizens are warmly invited to inscribe their personal reflections, reminiscences, and tributes into the permanent digital memorial registry.
+              </p>
+              <div className="flex items-center gap-4 pt-2">
                 <a
-                  href={`mailto:${contactInfo.pressEmail}?subject=Institutional%20Partnership%20Inquiry%20%E2%80%93%20OAF`}
-                  className="w-full inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-ivory hover:bg-gold-light text-crimson font-ui font-bold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
+                  className="px-8 py-3.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md focus-ring"
+                  href="#tribute-form"
                 >
-                  Partner With Us &rarr;
+                  Inscribe in Condolence Book
+                </a>
+                <a
+                  className="text-xs uppercase tracking-wider font-semibold text-white/80 hover:text-white transition-colors focus-ring"
+                  href="#contact"
+                >
+                  Contact Secretariat &rarr;
                 </a>
               </div>
             </div>
           </div>
+
+          {/* Interactive Digital Book of Condolences */}
+          <TributeRegistry />
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 13 — CONTACT */}
+      {/* 10. OFFICIAL SECRETARIAT CONTACT (PDF Page 20) */}
       {/* ========================================================================= */}
-      <section id="contact" className="py-24 bg-ivory text-charcoal content-auto">
-        <div className="max-w-container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Left Column — Contact Card on Crimson Background */}
-            <div className="lg:col-span-6 bg-crimson text-ivory p-8 sm:p-12 rounded-3xl shadow-xl flex flex-col justify-between">
+      <section className="py-20 bg-surface-container-low text-on-surface border-t border-outline-variant/60" id="contact">
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
+                Contact Us &bull; PDF Page 20
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-on-surface">
+              The Olusegun Agagu Foundation Secretariat
+            </h2>
+            <p className="text-sm text-on-surface-variant mt-2 font-body">
+              For bursaries, university endowments, Memorial Lecture papers, and institutional correspondence.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-outline-variant/60 shadow-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
-                <OafCrest className="w-12 h-12 mb-4" light={true} />
-                <span className="font-playfair italic text-gold-light text-sm block">
-                  {biography.name}
+                <span className="text-xs font-bold uppercase tracking-wider text-outline block mb-1 font-ui">
+                  Organization
                 </span>
-                <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-ivory mt-1 mb-2">
-                  Secretariat Directory
+                <h3 className="font-bold text-lg text-on-surface font-display">
+                  Olusegun Agagu Foundation
                 </h3>
-                <p className="font-playfair text-base text-ivory/90 font-medium">
-                  Mr. Feyisayo Agagu, Secretary, Board of Trustees
+                <p className="text-xs text-on-surface-variant mt-1 font-body">
+                  A registered philanthropic endowment and memorial trust.
                 </p>
 
-                <div className="space-y-4 pt-6 text-sm font-ui text-ivory/85">
-                  <p className="flex flex-col">
-                    <span className="text-xs uppercase tracking-widest text-gold">Official Email</span>
-                    <a
-                      href={`mailto:${contactInfo.pressEmail}`}
-                      className="text-base text-gold-light hover:underline min-h-[44px] flex items-center focus-ring rounded"
-                    >
-                      {contactInfo.pressEmail}
-                    </a>
-                  </p>
-                  {contactInfo.phone && (
-                    <p className="flex flex-col">
-                      <span className="text-xs uppercase tracking-widest text-gold">Telephone Desk</span>
-                      <a
-                        href={`tel:${contactInfo.phone}`}
-                        className="text-base text-gold-light hover:underline min-h-[44px] flex items-center focus-ring rounded"
-                      >
-                        {contactInfo.phone}
-                      </a>
-                    </p>
-                  )}
-                  <p className="flex flex-col">
-                    <span className="text-xs uppercase tracking-widest text-gold">Permanent Domain</span>
-                    <a
-                      href={contactInfo.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base text-gold-light hover:underline min-h-[44px] flex items-center focus-ring rounded"
-                    >
-                      {contactInfo.website.replace('https://', '')}
-                      <span className="sr-only">(opens in new tab)</span>
-                    </a>
-                  </p>
+                <div className="mt-6">
+                  <span className="text-xs font-bold uppercase tracking-wider text-outline block mb-1 font-ui">
+                    Secretariat Contact Person
+                  </span>
+                  <p className="font-bold text-sm text-on-surface font-ui">Mr. Feyisayo Agagu</p>
+                  <p className="text-xs text-brand-red font-semibold font-ui">Secretary, Board of Trustees</p>
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-ivory/20 text-xs font-ui text-ivory/70">
-                Liaison offices in Ibadan (Bodija Estate) &amp; Akure (Alagbaka GRA).
-              </div>
-            </div>
+              <div className="space-y-4 text-xs font-ui">
+                <div className="p-4 bg-surface-container rounded-2xl">
+                  <span className="text-outline uppercase block font-semibold text-[10px] mb-1">
+                    Official Email
+                  </span>
+                  <a
+                    href="mailto:fagagu@yahoo.com"
+                    className="text-brand-red font-bold text-sm hover:underline focus-ring rounded"
+                  >
+                    fagagu@yahoo.com
+                  </a>
+                </div>
 
-            {/* Right Column — CTA Card on Ivory Background */}
-            <div className="lg:col-span-6 bg-white p-8 sm:p-12 rounded-3xl border border-border shadow-sm flex flex-col justify-between">
-              <div>
-                <span className="section-label text-crimson block mb-2">CIVIC STEWARDSHIP</span>
-                <h3 className="font-playfair font-bold text-3xl text-crimson mb-4">
-                  Help Us Leave Things Better
-                </h3>
-                <p className="font-playfair text-base text-charcoal/80 leading-relaxed mb-6 font-body">
-                  The Foundation depends on the generosity, scholarship partnerships, and civic alliances of
-                  individuals and corporations who share Dr. Agagu&apos;s lifelong devotion to education,
-                  scientific integrity, and national development.
-                </p>
-              </div>
+                <div className="p-4 bg-surface-container rounded-2xl">
+                  <span className="text-outline uppercase block font-semibold text-[10px] mb-1">
+                    Telephone Line
+                  </span>
+                  <a
+                    href="tel:+2348030597100"
+                    className="text-on-surface font-bold text-sm hover:underline focus-ring rounded"
+                  >
+                    +2348030597100
+                  </a>
+                </div>
 
-              {/* Three CTA Buttons Stacked Vertically */}
-              <div className="flex flex-col gap-3.5 pt-4">
-                <a
-                  href={`mailto:${contactInfo.pressEmail}?subject=Support%20a%20Scholarship`}
-                  className="w-full min-h-[44px] inline-flex items-center justify-center px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-charcoal font-ui font-semibold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
-                >
-                  Support a Scholarship
-                </a>
-                <a
-                  href={`mailto:${contactInfo.pressEmail}?subject=Institutional%20Partnership`}
-                  className="w-full min-h-[44px] inline-flex items-center justify-center px-6 py-3 rounded-full bg-crimson hover:bg-deep-crimson text-ivory font-ui font-semibold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
-                >
-                  Partner With Us
-                </a>
-                <a
-                  href={contactInfo.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full min-h-[44px] inline-flex items-center justify-center px-6 py-3 rounded-full border border-crimson text-crimson hover:bg-crimson hover:text-ivory font-ui font-semibold text-xs uppercase tracking-wider transition-all focus-ring"
-                >
-                  <span>Visit OAF Website &nbsp;&nearr;</span>
-                  <span className="sr-only">(opens in new tab)</span>
-                </a>
+                <div className="p-4 bg-surface-container rounded-2xl">
+                  <span className="text-outline uppercase block font-semibold text-[10px] mb-1">
+                    Official Web Portal
+                  </span>
+                  <a
+                    href="https://olusegunagagufoundation.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-red font-bold text-sm hover:underline focus-ring rounded inline-flex items-center gap-1"
+                  >
+                    <span>https://olusegunagagufoundation.org</span>
+                    <span className="sr-only">(opens in new tab)</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

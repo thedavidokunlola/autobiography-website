@@ -16,5 +16,11 @@ export const contactInfo = {
   website: 'https://olusegunagagufoundation.org',
   officeAddress:
     'Ibadan Secretariat: Bodija Estate, Ibadan, Oyo State, Nigeria\nAkure Liaison: Alagbaka GRA, Akure, Ondo State, Nigeria',
-  socials: [] as SocialLink[],
+  socials: [
+    {
+      platform: 'Foundation Portal',
+      handle: 'olusegunagagufoundation.org',
+      url: 'https://olusegunagagufoundation.org',
+    },
+  ] as SocialLink[],
 }

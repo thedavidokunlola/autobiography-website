@@ -209,3 +209,69 @@ export function MilitaryTechIcon({ className = 'w-6 h-6' }: IconProps) {
   )
 }
 
+export function MusicNoteIcon({ className = 'w-6 h-6' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+    </svg>
+  )
+}
+
+export function VolunteerActivismIcon({ className = 'w-6 h-6' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+    </svg>
+  )
+}
+
+export function FlightTakeoffIcon({ className = 'w-6 h-6' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10 8.46 3.98l-1.58.42 3.65 6.6-4.57 1.23L4.1 10.7l-1.18.32 1.74 3.08 1.48 2.62 14.86-3.98c.8-.22 1.28-1.04 1.07-1.84z" />
+    </svg>
+  )
+}
+
+export function BoltIcon({ className = 'w-6 h-6' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.58 11 21 11 21z" />
+    </svg>
+  )
+}
+
+export function EngineeringIcon({ className = 'w-6 h-6' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-8c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm-7 8c0 2.21 3.58 4 8 4s8-1.79 8-4v-1.12c-.93.68-2.3 1.12-4 1.12-2.76 0-5-2.24-5-5 0-.41.06-.8.16-1.18C10.59 10.15 8.92 11 7 11c-1.3 0-2.42-.4-3.23-1.04-.49.62-.77 1.35-.77 2.16V15z" />
+    </svg>
+  )
+}
+
+

@@ -15,11 +15,13 @@ interface HeaderProps {
 
 const NAV_LINKS = [
   { href: '/#hero', label: 'Home', sectionId: 'hero' },
-  { href: '/#the-man', label: 'The Man', sectionId: 'the-man' },
-  { href: '/#the-journey', label: 'The Journey', sectionId: 'the-journey' },
-  { href: '/#the-foundation', label: 'The Foundation', sectionId: 'the-foundation' },
-  { href: '/#legacy', label: 'Legacy', sectionId: 'legacy' },
-  { href: '/press', label: 'Press Archive', sectionId: 'press' },
+  { href: '/#about', label: 'Biography', sectionId: 'about' },
+  { href: '/#foundation', label: 'The Foundation', sectionId: 'foundation' },
+  { href: '/#impact', label: 'Impact & Endowments', sectionId: 'impact' },
+  { href: '/#lectures', label: 'Memorial Lectures', sectionId: 'lectures' },
+  { href: '/#board', label: 'Trustees', sectionId: 'board' },
+  { href: '/#initiatives', label: 'Future Initiatives', sectionId: 'initiatives' },
+  { href: '/#tribute', label: 'Condolences', sectionId: 'tribute' },
 ]
 
 export function Header({ siteName, pressEmail }: HeaderProps) {
@@ -43,7 +45,7 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
 
       // Track active section for anchor links on home page
       if (pathname === '/') {
-        const sections = ['hero', 'the-man', 'the-journey', 'the-foundation', 'legacy', 'apply-support', 'contact']
+        const sections = ['hero', 'about', 'foundation', 'impact', 'lectures', 'board', 'initiatives', 'tribute', 'gallery']
         for (const sec of sections) {
           const el = document.getElementById(sec)
           if (el) {
@@ -191,20 +193,20 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
             Press Desk
           </a>
 
-          {/* Apply / Support (Gold filled button — student & donor pathway) */}
+          {/* Explore Archive Button */}
           <Link
-            href="/#apply-support"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-gold hover:bg-gold-light text-charcoal font-ui font-semibold text-xs uppercase tracking-wider transition-all shadow-md focus-ring"
+            href="/#gallery"
+            className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-white text-[#120807] font-semibold text-xs uppercase tracking-wider hover:bg-brand-red hover:text-white transition-all shadow-md focus-ring"
           >
-            Apply / Support
+            Explore Archive
           </Link>
 
-          {/* Contact (Outlined button) */}
+          {/* Sign Ledger (Brand Red Button) */}
           <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-ivory/40 hover:border-ivory text-ivory font-ui font-medium text-xs uppercase tracking-wider transition-all focus-ring"
+            href="/#tribute-form"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-red text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#c41e15] transition-all shadow-lg shadow-brand-red/25 focus-ring"
           >
-            Contact
+            Sign Ledger
           </Link>
         </div>
 
@@ -288,14 +290,21 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
             </button>
           </div>
 
-          {/* Gold Apply/Support Button at top of mobile overlay */}
-          <div className="pt-6 pb-2">
+          {/* Mobile Action Buttons */}
+          <div className="pt-6 pb-2 flex flex-col gap-3">
             <Link
-              href="/#apply-support"
+              href="/#tribute-form"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-gold text-charcoal font-ui font-bold text-xs uppercase tracking-wider shadow-lg focus-ring"
+              className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-brand-red text-white font-ui font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-red/30 focus-ring"
             >
-              Apply / Support Foundation
+              Sign Ledger
+            </Link>
+            <Link
+              href="/#gallery"
+              onClick={closeMenu}
+              className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-[#120807] font-ui font-semibold text-xs uppercase tracking-wider shadow-md focus-ring"
+            >
+              Explore Archive
             </Link>
           </div>
 
