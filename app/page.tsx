@@ -154,16 +154,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Hero Space — Lets Dr. Agagu's portrait in hero.png take center stage */}
-            <div className="hidden lg:flex lg:col-span-5 h-[480px] items-end justify-end pb-4" aria-hidden="true">
-              <div className="px-4 py-2.5 rounded-2xl bg-black/50 backdrop-blur-md border border-white/15 text-right shadow-xl">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block font-ui">
-                  Official Presidential Portrait
-                </span>
-                <p className="text-sm font-bold text-white font-headline">H.E. Dr. Olusegun Agagu, CON</p>
-                <p className="text-[11px] text-white/70 font-ui">1948 &ndash; 2013</p>
-              </div>
-            </div>
+            {/* Right Hero Space — Unobstructed view of Dr. Agagu's portrait in hero.png */}
+            <div className="hidden lg:block lg:col-span-5" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -201,19 +193,6 @@ export default function HomePage() {
                     sizes="(max-width: 1024px) 100vw, 420px"
                     className="object-cover object-[center_15%] transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                </div>
-                {/* Framing caption metadata */}
-                <div className="p-4 bg-[#0c0805] text-left border-t border-white/10 flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-tertiary block font-bold">
-                      ARCHIVAL RECORD &bull; OFFICIAL PORTRAIT
-                    </span>
-                    <p className="text-xs font-headline font-bold text-white mt-0.5">
-                      Olusegun Agagu Foundation Record
-                    </p>
-                  </div>
-                  <span className="text-[11px] font-mono text-white/60">Verified Archive</span>
                 </div>
               </div>
 
