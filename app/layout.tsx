@@ -56,6 +56,37 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+      <head>
+        {/* Suppress unhandled errors from conflicting third-party browser extensions (e.g. EVM wallet evmMask.js) in dev mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                var isExtensionErr = function(msg, file, stack) {
+                  return (
+                    (msg && (msg.indexOf('ethereum') !== -1 || msg.indexOf('redefine property') !== -1)) ||
+                    (file && file.indexOf('chrome-extension://') !== -1) ||
+                    (stack && stack.indexOf('chrome-extension://') !== -1)
+                  );
+                };
+                window.addEventListener('error', function(e) {
+                  if (isExtensionErr(e.message, e.filename, e.error && e.error.stack)) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+                window.addEventListener('unhandledrejection', function(e) {
+                  var reason = e.reason || {};
+                  if (isExtensionErr(reason.message, '', reason.stack)) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+              }
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased">
         <Header siteName={biography.name} pressEmail={contactInfo.pressEmail} />
         <main className="flex-1">{children}</main>
