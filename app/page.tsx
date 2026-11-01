@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { biography } from '@/data/biography'
 import { contactInfo } from '@/data/contact'
-import { AdireDivider, AdireBackground, FilaSilhouette, OafCrest } from '@/components/CulturalElements'
+import { AdireBackground } from '@/components/CulturalElements'
 import { PowerCounter } from '@/components/PowerCounter'
-import { ScholarTimeline } from '@/components/ScholarTimeline'
 import { BiographicalChapters } from '@/components/BiographicalChapters'
 import { MemorialLectureStrip } from '@/components/MemorialLectureStrip'
 import { ScholarVoices } from '@/components/ScholarVoices'
@@ -170,160 +169,324 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. ABOUT DR. OLUSEGUN KOKUMO AGAGU CON (Biography from PDF Pages 2 & 3) */}
+      {/* 2. AUTOBIOGRAPHY & LIFE RECORD (Inspired by Weblium Actor Portfolio Design) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-white text-on-surface" id="about">
-        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-on-surface font-ui">
-              Biography &bull; PDF Archive
-            </span>
-          </div>
+      <section className="py-24 bg-[#1e110b] text-white relative overflow-hidden" id="about">
+        {/* Subtle background ambient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#140b0a] via-[#1e110b] to-[#140b0a] pointer-events-none" />
+        <AdireBackground className="absolute inset-0 pointer-events-none opacity-[0.03]" />
 
-          <div className="max-w-4xl mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-on-surface leading-[1.18]">
-              About Dr. Olusegun Kokumo Agagu CON
+        <div className="max-w-[1340px] mx-auto px-6 lg:px-12 relative z-10">
+          {/* Section Header with Signature Weblium Pipe Eyebrow */}
+          <div className="mb-14">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-tertiary font-ui mb-3">
+              | ABOUT DR. OLUSEGUN AGAGU |
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-[1.15]">
+              A Life of Scientific Distinction, Enterprise &amp; Servant Leadership
             </h2>
           </div>
 
-          {/* Asymmetric Multi-Panel Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Inset Archival Photo & Highlights */}
-            <div className="lg:col-span-6 flex flex-col gap-8">
-              <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-                <div className="sm:col-span-5 rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square bg-surface-container relative shadow-md">
+          {/* 2-Column Luxury Autobiography Grid (Weblium #about Layout) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Left Column: Signature Framed Archival Portrait (12px frame) & Distinctions List */}
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              {/* Weblium Signature Luxury Framed Portrait */}
+              <div className="relative rounded-2xl overflow-hidden border-[12px] border-[#0c0805] shadow-2xl bg-[#0c0805] group">
+                <div className="aspect-[4/5] relative w-full overflow-hidden">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiu2zYUfMG9UhDYBlVltXMsFvqKDA7aExcLuSXS0EIDec5-Sg6pNg3v_Q0uLyDzMIOvelC_F-Z71bGMFSqjPqwN5J_Ws4TxtTtpCM9DbyBH8GCunLHeS8auDqZ31u7ixfpv648bkdt6IeDdii2R57ehgoQPxk1dwcZYkd-jhqs5XOYOsZU8ieL3FOw-D5Tp1C6jI1dajQs67rMzbDZzJCkZeBfzrZz5mE9FaFo0hB-"
-                    alt="Dr. Olusegun Kokumo Agagu CON archival photo in native cap and agbada"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
+                    alt="Dr. Olusegun Kokumo Agagu CON standing in ceremonial agbada and coral beads"
                     fill
-                    sizes="(max-width: 640px) 100vw, 220px"
-                    className="object-cover object-top hover:scale-105 transition-transform duration-500 portrait-filter"
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/70 text-white text-[10px] font-mono">
-                    PLATE 02-B
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none" />
                 </div>
-
-                <div className="sm:col-span-7 flex flex-col items-start gap-4">
-                  <p className="text-sm sm:text-base text-on-surface-variant leading-relaxed font-body">
-                    Born on the 16th of February 1948, Dr. Olusegun Kokumo Agagu began his career in public service in 1992 as Deputy Governor of Ondo State, subsequently serving as Federal Minister of Aviation, Federal Minister of Power &amp; Steel, and Executive Governor of Ondo State (2003&ndash;2009).
-                  </p>
-                  <a
-                    href="#chapters"
-                    className="px-6 py-2.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md focus-ring"
-                  >
-                    Explore Life Chapters
-                  </a>
+                {/* Framing caption metadata */}
+                <div className="p-4 bg-[#0c0805] text-left border-t border-white/10 flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-tertiary block font-bold">
+                      ARCHIVAL PLATE 03 &bull; BIOGRAPHY
+                    </span>
+                    <p className="text-xs font-headline font-bold text-white mt-0.5">
+                      Dr. Olusegun Kokumo Agagu, CON
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-mono text-white/60">1948 &ndash; 2013</span>
                 </div>
               </div>
 
-              {/* Key Highlights Dossier from PDF Pages 2 & 3 */}
-              <div className="bg-surface-container p-6 rounded-2xl flex flex-col gap-4 border border-outline-variant/60">
-                <h3 className="font-bold text-sm uppercase tracking-wider text-on-surface flex items-center gap-2 font-ui">
-                  <VerifiedIcon className="text-brand-red w-[18px] h-[18px]" />
-                  Curated Career &amp; Academic Dossier
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-ui">
-                  <div className="p-3 bg-white rounded-xl">
-                    <span className="text-outline uppercase block font-semibold text-[10px]">Academic Pedigree</span>
-                    <span className="font-bold text-on-surface mt-0.5 block">M.Sc. Univ of Texas (1974) &bull; Ph.D. UI (1978)</span>
-                    <span className="text-on-surface-variant">US Atomic Energy Commission Geothermal Scientist</span>
-                  </div>
-                  <div className="p-3 bg-white rounded-xl">
-                    <span className="text-outline uppercase block font-semibold text-[10px]">Public Service</span>
-                    <span className="font-bold text-on-surface mt-0.5 block">Governor of Ondo State (2003&ndash;2009)</span>
-                    <span className="text-on-surface-variant">Deputy Governor (1992) &bull; Federal Minister (1999&ndash;2002)</span>
-                  </div>
-                  <div className="p-3 bg-white rounded-xl">
-                    <span className="text-outline uppercase block font-semibold text-[10px]">Oil-Producing Status</span>
-                    <span className="font-bold text-on-surface mt-0.5 block">Deputy Governor (1992)</span>
-                    <span className="text-on-surface-variant">Led untiring efforts for Ondo to become an Oil-Producing State</span>
-                  </div>
-                  <div className="p-3 bg-white rounded-xl">
-                    <span className="text-outline uppercase block font-semibold text-[10px]">Power Sector Turnaround</span>
-                    <span className="font-bold text-on-surface mt-0.5 block">Minister for Power &amp; Steel</span>
-                    <span className="text-on-surface-variant">Grew generation from 1,425 MW to 4,000+ MW</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Family Tribute from PDF Page 3 */}
-              <div className="p-6 bg-white rounded-2xl border border-outline-variant/60 shadow-sm">
-                <blockquote className="font-playfair text-[1.12rem] text-brand-red leading-snug mb-2 font-medium">
-                  &ldquo;A loving family man married to his school sweetheart and dance partner, Mrs. Olufunke Agagu, for more than 39 years. Their union was blessed with three children. He is also survived by seven grandchildren...and counting.&rdquo;
-                </blockquote>
-                <span className="font-ui text-xs font-semibold text-tertiary uppercase tracking-wider block">
-                  &mdash; Page 3, Official Biography Record
-                </span>
-              </div>
-            </div>
-
-            {/* Right Column: Visual Study Portrait Frame */}
-            <div className="lg:col-span-6">
-              <div className="relative w-full rounded-3xl overflow-hidden shadow-xl aspect-[4/4.8] sm:aspect-[4/4.2] lg:aspect-[4/4.6] bg-neutral-900 group">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
-                  alt="Dr Olusegun Agagu in ceremonial agbada"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="text-xs uppercase tracking-widest text-tertiary font-bold block mb-1 font-ui">
-                    The Sovereign Credo
+              {/* Curated Honors & National Recognition (Modeled after Weblium Awards List) */}
+              <div className="bg-[#140b0a]/90 border border-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
+                  <VerifiedIcon className="w-4 h-4 text-tertiary" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-white font-ui">
+                    National Honours &amp; Institutional Distinctions
                   </span>
-                  <blockquote className="text-xl sm:text-2xl font-headline italic leading-snug">
+                </div>
+                <ul className="space-y-3 text-xs text-white/80 font-ui">
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-tertiary font-bold">&bull;</span>
+                    <span>
+                      <strong className="text-white">Commander of the Order of the Niger (CON)</strong> &mdash; National Honour of the Federal Republic of Nigeria.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-tertiary font-bold">&bull;</span>
+                    <span>
+                      <strong className="text-white">Doctor of Science (Honoris Causa)</strong> &mdash; In recognition of landmark public governance &amp; institution building.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-tertiary font-bold">&bull;</span>
+                    <span>
+                      <strong className="text-white">Fellow, Nigerian Mining &amp; Geosciences Society (NMGS)</strong> &mdash; For seminal contributions to earth sciences.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-tertiary font-bold">&bull;</span>
+                    <span>
+                      <strong className="text-white">Fellow, Nigerian Association of Petroleum Explorationists (NAPE)</strong>.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-tertiary font-bold">&bull;</span>
+                    <span>
+                      <strong className="text-white">Pioneer Deputy Governor (1992)</strong> &mdash; Architect of untiring efforts that secured Ondo&apos;s Oil-Producing Status.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="text-tertiary font-bold">&bull;</span>
+                    <span>
+                      <strong className="text-white">National Power Turnaround (1999&ndash;2002)</strong> &mdash; Grew grid generation from 1,425 MW to 4,000+ MW.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Column: Narrative Autobiography (Weblium Typography & Flow) */}
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              {/* Lead Highlight Statement */}
+              <p className="text-xl sm:text-2xl font-serif text-white/95 leading-relaxed font-normal">
+                Born on 16 February 1948, Dr. Olusegun Kokumo Agagu&apos;s life was a testament to academic rigor, industrial enterprise, and selfless public stewardship &mdash; dedicated to leaving every institution and community better than he met it.
+              </p>
+
+              {/* Narrative Paragraphs Direct from Official PDF Record */}
+              <div className="space-y-4 text-sm sm:text-base text-[#c1c0c0] leading-relaxed font-body">
+                <p>
+                  As a scholar with an unyielding passion for education, Olusegun Agagu obtained a Master&apos;s degree in Geology from the University of Texas, Austin, USA in 1974. He then served as a Research Scientist with the University of Texas for the United States Atomic Energy Commission on Geothermal Energy. Returning to Nigeria, he joined the faculty of the Geology Department at the University of Ibadan, where he earned his Ph.D. in Petroleum Geology in 1978 and trained a generation of Nigeria&apos;s leading earth scientists.
+                </p>
+                <p>
+                  Dr. Agagu served as a geological consultant to numerous multinational corporations and sovereign governments, including Shell Petroleum Development Company, Mobil Producing Nigeria, Texaco, Nigeria Agip Oil Company, Lexington Exploration U.S.A., Nitex Exploration U.S.A., and the Governments of Oyo, Ogun, Osun, and Ondo States.
+                </p>
+                <p>
+                  A visionary industrialist, he founded successful private enterprises across Nigeria, including a commercial water borehole drilling enterprise, a kaolin mining and processing company, and multiple quarrying ventures in marble, feldspar, and granite.
+                </p>
+                <p>
+                  In public service, he made indelible national impacts: as Deputy Governor of Ondo State (1992), Federal Minister of Aviation (1999&ndash;2000), Federal Minister of Power and Steel (2000&ndash;2002), and Executive Governor of Ondo State (2003&ndash;2009), where he founded the Ondo State University of Science and Technology (now OAUSTECH) and instituted the visionary &ldquo;Roadmap to Progress&rdquo;.
+                </p>
+              </div>
+
+              {/* Family & Devotion Tribute Card (Direct from PDF Page 3) */}
+              <div className="p-6 rounded-2xl bg-[#0c0805] border border-white/10 shadow-lg mt-2">
+                <blockquote className="font-serif italic text-base sm:text-lg text-white/95 leading-snug mb-3">
+                  &ldquo;Until he passed on, Dr. Olusegun Agagu was a loving family man married to his school sweetheart and dance partner, Mrs. Olufunke Agagu, for more than 39 years. Their union was blessed with three children. He is also survived by seven grandchildren...and counting.&rdquo;
+                </blockquote>
+                <div className="flex items-center justify-between text-xs font-mono text-tertiary">
+                  <span>&mdash; Official Biography Record, Page 3</span>
+                  <span className="text-white/50">39+ Years of Devotion</span>
+                </div>
+              </div>
+
+              {/* Sovereign Credo Banner */}
+              <div className="p-5 rounded-2xl bg-gradient-to-r from-brand-red/20 to-transparent border-l-4 border-brand-red flex items-center justify-between mt-1">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-tertiary block font-ui">
+                    HIS GUIDING CREDO
+                  </span>
+                  <p className="text-base sm:text-lg font-serif italic text-white font-medium">
                     &ldquo;To leave things better than he met them.&rdquo;
-                  </blockquote>
-                  <p className="text-xs text-white/70 mt-2 font-mono">16 February 1948 &mdash; 13 September 2013</p>
+                  </p>
+                </div>
+                <a
+                  href="#chapters"
+                  className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all focus-ring"
+                >
+                  Life Chapters &darr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* ========================================================================= */}
+          {/* EDUCATION & PEDIGREE (Weblium #education Section Layout) */}
+          {/* ========================================================================= */}
+          <div className="mt-24 pt-16 border-t border-white/10" id="education">
+            <div className="mb-10">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-tertiary font-ui mb-2">
+                | EDUCATION &amp; PEDIGREE |
+              </p>
+              <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
+                Academic Pedigree &amp; Scientific Research
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* University of Texas Austin */}
+              <div className="p-6 rounded-2xl bg-[#0c0805] border border-white/10 flex flex-col justify-between hover:border-tertiary/50 transition-colors shadow-lg">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono text-white/50 mb-3">
+                    <span>Austin, Texas, USA</span>
+                    <span className="text-tertiary font-bold">1974</span>
+                  </div>
+                  <h4 className="text-lg font-bold font-display text-white mb-1">
+                    University of Texas, Austin
+                  </h4>
+                  <p className="text-xs font-semibold text-tertiary uppercase tracking-wider mb-3 font-ui">
+                    M.Sc. in Geology
+                  </p>
+                  <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                    Appointed Research Scientist for the United States Atomic Energy Commission on Geothermal Energy, pioneering high-temperature energy reservoir analysis.
+                  </p>
+                </div>
+                <div className="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono text-white/60">
+                  Atomic Energy Commission Scholar
+                </div>
+              </div>
+
+              {/* University of Ibadan - Ph.D. */}
+              <div className="p-6 rounded-2xl bg-[#0c0805] border border-white/10 flex flex-col justify-between hover:border-tertiary/50 transition-colors shadow-lg">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono text-white/50 mb-3">
+                    <span>Ibadan, Oyo State, Nigeria</span>
+                    <span className="text-tertiary font-bold">1978</span>
+                  </div>
+                  <h4 className="text-lg font-bold font-display text-white mb-1">
+                    University of Ibadan
+                  </h4>
+                  <p className="text-xs font-semibold text-tertiary uppercase tracking-wider mb-3 font-ui">
+                    Ph.D. in Petroleum Geology
+                  </p>
+                  <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                    Earned doctorate in Petroleum Geology and lectured for sixteen years at the prestigious Department of Geology, authoring seminal sedimentary papers.
+                  </p>
+                </div>
+                <div className="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono text-white/60">
+                  Doctoral Scholar &bull; Department of Geology
+                </div>
+              </div>
+
+              {/* University of Ibadan - B.Sc. */}
+              <div className="p-6 rounded-2xl bg-[#0c0805] border border-white/10 flex flex-col justify-between hover:border-tertiary/50 transition-colors shadow-lg">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-mono text-white/50 mb-3">
+                    <span>Ibadan, Oyo State, Nigeria</span>
+                    <span className="text-tertiary font-bold">1971</span>
+                  </div>
+                  <h4 className="text-lg font-bold font-display text-white mb-1">
+                    University of Ibadan
+                  </h4>
+                  <p className="text-xs font-semibold text-tertiary uppercase tracking-wider mb-3 font-ui">
+                    B.Sc. (Hons) in Geology
+                  </p>
+                  <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                    Graduated with top academic honours in Geology, laying the empirical foundation for a pioneering scientific, commercial, and political career.
+                  </p>
+                </div>
+                <div className="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono text-white/60">
+                  Bachelor of Science with Honours
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Biographical Chapters Interactive Timeline */}
-          <BiographicalChapters />
-        </div>
-      </section>
+          {/* ========================================================================= */}
+          {/* CORE ATTRIBUTES & ASPECTS (Weblium #features-icons Layout) */}
+          {/* ========================================================================= */}
+          <div className="mt-20 pt-16 border-t border-white/10" id="features">
+            <div className="mb-10">
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-tertiary font-ui mb-2">
+                | CORE ATTRIBUTES |
+              </p>
+              <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
+                Highlighting Key Aspects of a Consequential Life
+              </h3>
+            </div>
 
-      {/* ========================================================================= */}
-      {/* 2B. CULTURAL HERITAGE & ACADEMIC REPUTE (Earth Scientist & Pioneer) */}
-      {/* ========================================================================= */}
-      <section className="relative py-20 bg-[#140b0a] text-white overflow-hidden flex flex-col items-center justify-center text-center">
-        <AdireBackground className="absolute inset-0 pointer-events-none opacity-[0.05]" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Feature 1: Dedication to Scientific Craft */}
+              <div className="p-6 rounded-2xl bg-[#140b0a] border border-white/10 hover:border-white/25 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-brand-red/20 text-brand-red flex items-center justify-center mb-4">
+                  <ScienceIcon className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold font-display text-white mb-1">
+                  Scientific Rigour
+                </h4>
+                <p className="text-xs text-tertiary font-ui font-semibold mb-2">
+                  Empirical precision in all things
+                </p>
+                <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                  Whether analyzing geothermal reservoirs at UT Austin or managing public budgets in Ondo State, he brought data-driven scientific integrity to every challenge.
+                </p>
+              </div>
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-          <div className="flex items-center gap-4 mb-4 text-tertiary" aria-hidden="true">
-            <OafCrest className="w-10 h-10" light={true} />
-            <FilaSilhouette className="w-16 h-12" />
-          </div>
+              {/* Feature 2: Industrial & Mining Enterprise */}
+              <div className="p-6 rounded-2xl bg-[#140b0a] border border-white/10 hover:border-white/25 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-tertiary/20 text-tertiary flex items-center justify-center mb-4">
+                  <EngineeringIcon className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold font-display text-white mb-1">
+                  Industrial Enterprise
+                </h4>
+                <p className="text-xs text-tertiary font-ui font-semibold mb-2">
+                  Building indigenous industry
+                </p>
+                <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                  Founded thriving private ventures in borehole drilling, kaolin processing, and granite mining across Nigeria, generating jobs and domestic industrial value.
+                </p>
+              </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-white leading-snug mb-4">
-            Geological Consultant, Entrepreneur &amp; Statesman
-          </h2>
+              {/* Feature 3: Technocratic Statesmanship */}
+              <div className="p-6 rounded-2xl bg-[#140b0a] border border-white/10 hover:border-white/25 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-brand-red/20 text-brand-red flex items-center justify-center mb-4">
+                  <BoltIcon className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold font-display text-white mb-1">
+                  Technocratic Vision
+                </h4>
+                <p className="text-xs text-tertiary font-ui font-semibold mb-2">
+                  Transforming public administration
+                </p>
+                <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                  Spearheaded national electric power capacity scaling, instituted the &lsquo;Roadmap to Progress&rsquo;, and established OAUSTECH for sustainable youth advancement.
+                </p>
+              </div>
 
-          <div className="space-y-4 max-w-2xl text-base sm:text-lg font-playfair italic text-white/80 leading-relaxed font-body">
-            <p>
-              Dr. Olusegun Agagu established many successful private businesses including a water borehole drilling company, a kaolin mining and processing company, and several mining companies spanning marble, feldspar, and granite across Nigeria.
-            </p>
-            <p>
-              His scientific discipline and administrative prudence anchored the philosophy that leadership is a sacred public trust.
-            </p>
-          </div>
-
-          {/* Academic Journey Timeline */}
-          <div className="my-10 w-full text-left">
-            <ScholarTimeline />
+              {/* Feature 4: Devotion & Unshakable Faith */}
+              <div className="p-6 rounded-2xl bg-[#140b0a] border border-white/10 hover:border-white/25 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-tertiary/20 text-tertiary flex items-center justify-center mb-4">
+                  <StarIcon className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold font-display text-white mb-1">
+                  Patriarch &amp; Philanthropist
+                </h4>
+                <p className="text-xs text-tertiary font-ui font-semibold mb-2">
+                  Compassionate family legacy
+                </p>
+                <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
+                  A loving husband of 39+ years, father, grandfather, and approachable mentor who touched thousands of lives with quiet generosity and unwavering moral dignity.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Geological Consulting Clients in Sleek Capsules (Direct from PDF Page 3) */}
-          <div className="mt-12 pt-8 border-t border-white/15 w-full">
-            <span className="text-xs uppercase tracking-widest text-tertiary font-semibold block mb-4 font-ui">
-              Geological Consultant to Governments &amp; Industry (PDF Page 3)
-            </span>
+          <div className="mt-16 pt-10 border-t border-white/10 text-center">
+            <p className="text-xs uppercase tracking-widest text-tertiary font-semibold mb-4 font-ui">
+              Geological Consultant to Governments &amp; Industry (Official Record)
+            </p>
             <div className="flex flex-wrap justify-center gap-2.5">
               {[
                 'Shell Petroleum Development Company',
@@ -339,17 +502,18 @@ export default function HomePage() {
               ].map((client, idx) => (
                 <span
                   key={idx}
-                  className="px-3.5 py-1.5 rounded-full border border-white/20 bg-white/5 text-xs text-white/85 font-ui"
+                  className="px-3.5 py-1.5 rounded-full border border-white/15 bg-white/5 text-xs text-white/85 font-ui hover:border-tertiary transition-colors"
                 >
                   {client}
                 </span>
               ))}
             </div>
           </div>
-        </div>
 
-        <div className="w-full mt-12">
-          <AdireDivider className="opacity-60" />
+          {/* Interactive Biographical Chapters (Preserved in Dark Luxury Theme) */}
+          <div className="mt-20 pt-16 border-t border-white/10">
+            <BiographicalChapters />
+          </div>
         </div>
       </section>
 

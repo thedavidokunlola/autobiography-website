@@ -90,13 +90,13 @@ export function BiographicalChapters() {
   const activeChapter = CHAPTERS.find((c) => c.id === activeChapterId) || CHAPTERS[0]
 
   return (
-    <div className="mt-16 pt-12 border-t border-outline-variant/60" id="chapters">
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+    <div className="mt-20 pt-16 border-t border-white/10" id="chapters">
+      <div className="flex flex-wrap items-center justify-between gap-6 mb-8">
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-red block mb-1">
-            Chronological Ledger
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-tertiary font-ui block mb-2">
+            | BIOGRAPHICAL CHRONOLOGY |
           </span>
-          <h3 className="text-2xl font-bold font-headline text-on-surface">
+          <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
             The 5 Chapters of a Consequential Life
           </h3>
         </div>
@@ -114,8 +114,8 @@ export function BiographicalChapters() {
                 onClick={() => setActiveChapterId(ch.id)}
                 className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all focus-ring ${
                   isActive
-                    ? 'bg-brand-red text-white shadow-sm'
-                    : 'bg-surface-container text-on-surface hover:bg-surface-container-high'
+                    ? 'bg-brand-red text-white shadow-lg'
+                    : 'bg-[#0c0805] text-white/75 border border-white/10 hover:border-tertiary hover:text-white'
                 }`}
               >
                 {ch.numeral}. {ch.shortTitle}
@@ -130,27 +130,27 @@ export function BiographicalChapters() {
         id={`panel-${activeChapter.id}`}
         role="tabpanel"
         aria-labelledby={`tab-${activeChapter.id}`}
-        className="bg-surface-container-low border border-outline-variant/50 p-8 rounded-3xl shadow-sm flex flex-col gap-4 transition-all duration-300"
+        className="bg-[#0c0805] border border-white/10 p-8 sm:p-10 rounded-3xl shadow-2xl flex flex-col gap-5 transition-all duration-300"
       >
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-brand-red">
-            Chapter {activeChapter.numeral} • {activeChapter.period}
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-tertiary">
+            Chapter {activeChapter.numeral} &bull; {activeChapter.period}
           </span>
-          <span className="text-xs text-outline font-mono">
+          <span className="text-xs text-white/50 font-mono">
             ARCHIVE CODE: {activeChapter.code}
           </span>
         </div>
 
-        <h4 className="text-xl font-bold text-on-surface font-headline">
+        <h4 className="text-xl sm:text-2xl font-bold text-white font-headline">
           {activeChapter.headline}
         </h4>
 
-        <p className="text-base text-on-surface-variant leading-relaxed">
+        <p className="text-base text-[#c1c0c0] leading-relaxed font-body">
           {activeChapter.content}
         </p>
 
         {activeChapter.quote && (
-          <div className="p-4 bg-white rounded-xl text-xs sm:text-sm italic font-headline text-on-surface border-l-4 border-brand-red mt-2">
+          <div className="p-5 bg-[#140b0a] rounded-xl text-sm italic font-headline text-white/95 border-l-4 border-brand-red mt-2">
             {activeChapter.quote}
           </div>
         )}
@@ -160,7 +160,7 @@ export function BiographicalChapters() {
             {activeChapter.highlights.map((h, i) => (
               <div
                 key={i}
-                className="px-4 py-2 bg-white rounded-xl text-xs font-semibold text-on-surface border border-outline-variant/40"
+                className="px-4 py-2 bg-[#140b0a] rounded-xl text-xs font-semibold text-white/90 border border-white/10"
               >
                 {h.label}
               </div>
