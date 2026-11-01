@@ -7,7 +7,8 @@ import { PowerCounter } from '@/components/PowerCounter'
 import { BiographicalChapters } from '@/components/BiographicalChapters'
 import { MemorialLectureStrip } from '@/components/MemorialLectureStrip'
 import { ScholarVoices } from '@/components/ScholarVoices'
-import { GalleryLightbox } from '@/components/GalleryLightbox'
+import { PhotoGallery } from '@/components/PhotoGallery'
+import { galleryPhotos } from '@/data/photos'
 import { TributeRegistry } from '@/components/TributeRegistry'
 import {
   SchoolIcon,
@@ -1244,7 +1245,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <GalleryLightbox />
+          <PhotoGallery photos={galleryPhotos} />
         </div>
       </section>
 

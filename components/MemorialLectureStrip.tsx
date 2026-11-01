@@ -1,4 +1,5 @@
 'use client'
+// Client Component: requires React state (useState, useRef) and DOM APIs for horizontal drag-scroll & modal lecture view — RULE-B4
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 

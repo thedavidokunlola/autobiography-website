@@ -1,4 +1,5 @@
 'use client'
+// Client Component: requires React state (useState) for interactive chapter tab navigation — RULE-B4
 
 import { useState } from 'react'
 

@@ -1,4 +1,5 @@
 'use client'
+// Client Component: requires React state (useState, useRef) and IntersectionObserver for animated stat counting — RULE-B4
 
 import { useEffect, useRef, useState } from 'react'
 
