@@ -101,7 +101,8 @@ export default function HomePage() {
             {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
             <div className="lg:col-span-7 flex flex-col items-start pt-20 lg:pt-24">
               {/* Main Headline: Two deliberate intentional lines + Name Line with 8px gap */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] font-bold tracking-tight leading-[1.14] font-display text-white drop-shadow-md">
+              {/* Headline font size is exactly 20% larger than name line (24->28.8px, 30->36px, 36->43.2px, 40->48px) with comfortable line-height */}
+              <h1 className="text-[28.8px] sm:text-[36px] lg:text-[43.2px] xl:text-[48px] font-bold tracking-tight leading-[1.3] font-display text-white drop-shadow-md">
                 <span className="block">A Life Given to Service.</span>
                 <span className="block">A Legacy Built to Last.</span>
                 <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] mt-2">
