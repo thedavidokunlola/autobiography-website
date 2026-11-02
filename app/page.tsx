@@ -27,9 +27,8 @@ import {
   EngineeringIcon,
 } from '@/components/Icons'
 
-// RULE-S3: en dash U+2013 separator with one space each side
 export const metadata: Metadata = {
-  title: `${biography.personName} \u2013 Presidential Memorial Archive`,
+  title: 'Home | Dr. Olusegun Kokumo Agagu, CON',
   description: `Official Presidential Memorial Archive & Foundation for ${biography.personName} (1948\u20132013). Renowned petroleum geologist, Federal Minister, 2nd Executive Governor of Ondo State.`,
   openGraph: {
     type: 'website',
@@ -76,11 +75,11 @@ export default function HomePage() {
       />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION (Takes full viewport height 100vh) */}
+      {/* 1. HERO SECTION (Takes full viewport height 100vh & Vertically Centered) */}
       {/* ========================================================================= */}
       <section
         id="hero"
-        className="relative h-screen min-h-screen max-h-screen pt-20 pb-6 lg:pt-24 lg:pb-8 bg-[#140b0a] text-white overflow-hidden flex items-center"
+        className="relative h-screen min-h-screen max-h-screen py-20 bg-[#140b0a] text-white overflow-hidden flex items-center"
       >
         {/* Hero Section Background Image (hero.png from pdf folder) */}
         <div className="absolute inset-0 z-0">
@@ -97,25 +96,26 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#140b0a] via-transparent to-black/30 lg:hidden" />
         </div>
 
-        <div className="max-w-[1340px] w-full mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-12 lg:pl-24 lg:pr-12 xl:pl-28 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
-            <div className="lg:col-span-7 flex flex-col gap-4 lg:gap-5 items-start">
-              {/* Main Headline (RULE-A2: exactly one H1 per page) */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-bold tracking-tight leading-[1.12] font-display text-white drop-shadow-md">
-                A Life Given to Service. A Legacy Built to Last.
-                <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] mt-2">
+            <div className="lg:col-span-7 flex flex-col items-start">
+              {/* Main Headline: Two deliberate intentional lines + Name Line with 8px gap */}
+              <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] font-bold tracking-tight leading-[1.14] font-display text-white drop-shadow-md">
+                <span className="block">A Life Given to Service.</span>
+                <span className="block">A Legacy Built to Last.</span>
+                <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] mt-2">
                   Dr. Olusegun Kokumo Agagu, CON
                 </span>
               </h1>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-white/85 max-w-xl font-normal leading-relaxed font-body drop-shadow">
-                Petroleum geologist and Former Governor of Ondo State. He lived by one credo &ldquo;To leave things better than he met them.&rdquo;
+              {/* Full Description with 20px gap and 520px max-width */}
+              <p className="text-sm sm:text-[15px] lg:text-base text-white/85 max-w-[520px] font-normal leading-relaxed font-body drop-shadow mt-5">
+                Petroleum geologist, Federal Minister, and Former Governor of Ondo State. As Minister for Power and Steel, he oversaw a rise in power generation from 1,425 to over 4,000 megawatts. As Governor, he transformed Ondo State across every critical sector. He lived by one credo &mdash; &ldquo;To leave things better than he met them.&rdquo;
               </p>
 
-              {/* Dual Call to Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3.5 pt-1">
+              {/* Dual Call to Action Buttons with 32px gap */}
+              <div className="flex flex-wrap items-center gap-3.5 mt-8">
                 <a
                   href="#about"
                   className="px-6 sm:px-7 py-3 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
@@ -131,19 +131,27 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Empirical Micro Stats Row directly from PDF */}
-              <div className="grid grid-cols-3 gap-6 pt-4 border-t border-white/15 w-full max-w-md mt-1 backdrop-blur-sm">
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold font-display text-white">9+</div>
-                  <div className="text-[10px] sm:text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Memorial Lectures</div>
-                </div>
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold font-display text-tertiary">400+</div>
-                  <div className="text-[10px] sm:text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Scholars Awarded</div>
-                </div>
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold font-display text-white">&#8358;25M</div>
-                  <div className="text-[10px] sm:text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">E-Library Fund</div>
+              {/* Stats Row with 48px gap, generous horizontal spacing & non-truncated labels */}
+              <div className="mt-12 pt-7 border-t border-white/15 w-full max-w-xl backdrop-blur-sm">
+                <div className="flex items-center gap-8 sm:gap-12 lg:gap-14">
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold font-display text-white leading-none">9+</div>
+                    <div className="text-[11px] sm:text-xs text-white/70 uppercase tracking-wider font-semibold font-ui whitespace-nowrap mt-2">
+                      Memorial Lectures
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold font-display text-tertiary leading-none">400+</div>
+                    <div className="text-[11px] sm:text-xs text-white/70 uppercase tracking-wider font-semibold font-ui whitespace-nowrap mt-2">
+                      Scholars Awarded
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold font-display text-white leading-none">&#8358;25M</div>
+                    <div className="text-[11px] sm:text-xs text-white/70 uppercase tracking-wider font-semibold font-ui whitespace-nowrap mt-2">
+                      E-Library Fund
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

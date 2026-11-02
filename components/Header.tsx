@@ -3,13 +3,21 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { sendGAEvent } from '@next/third-parties/google'
-import { OafCrest } from './CulturalElements'
 
 interface HeaderProps {
   siteName: string
   pressEmail: string
+}
+
+const PAGE_TITLES: Record<string, string> = {
+  hero: 'Home | Dr. Olusegun Kokumo Agagu, CON',
+  about: 'Biography | Dr. Olusegun Kokumo Agagu, CON',
+  foundation: 'The Foundation | OAF Archive',
+  impact: 'Impact & Endowments | OAF Archive',
+  lectures: 'Memorial Lectures | OAF Archive',
 }
 
 const NAV_LINKS = [
@@ -51,6 +59,30 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [pathname])
+
+  // Dynamic document title update based on active page/section
+  useEffect(() => {
+    if (pathname === '/') {
+      const title = PAGE_TITLES[activeSection]
+      if (title && document.title !== title) {
+        document.title = title
+      }
+    }
+  }, [activeSection, pathname])
+
+  // Hash change and direct anchor link title sync
+  useEffect(() => {
+    function handleHash() {
+      const hash = window.location.hash.replace('#', '')
+      if (hash && PAGE_TITLES[hash]) {
+        setActiveSection(hash)
+        document.title = PAGE_TITLES[hash]
+      }
+    }
+    handleHash()
+    window.addEventListener('hashchange', handleHash)
+    return () => window.removeEventListener('hashchange', handleHash)
+  }, [])
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
@@ -119,13 +151,20 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
       }`}
     >
       <div className="max-w-container mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-        {/* Left: OAF crest logo links to top */}
+        {/* Left: OAF logo links to top */}
         <Link
           href="/#hero"
           className="flex items-center gap-3 group focus-ring rounded-lg"
           aria-label={`${siteName} - Return to top`}
         >
-          <OafCrest className="w-10 h-10 group-hover:scale-105" light={true} />
+          <Image
+            src="/images/logo.png"
+            alt="The Olusegun Agagu Foundation Logo"
+            width={48}
+            height={44}
+            className="w-10 h-10 object-contain group-hover:scale-105 transition-transform"
+            priority
+          />
           <div className="flex flex-col">
             <span className="font-playfair font-bold text-lg text-ivory tracking-tight leading-none">
               OAF Archive
@@ -236,7 +275,13 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
           {/* Top Bar with OAF crest & Close button */}
           <div className="flex items-center justify-between h-14 border-b border-ivory/15 pb-4">
             <div className="flex items-center gap-2.5">
-              <OafCrest className="w-8 h-8" light={true} />
+              <Image
+                src="/images/logo.png"
+                alt="The Olusegun Agagu Foundation Logo"
+                width={36}
+                height={33}
+                className="w-8 h-8 object-contain"
+              />
               <span className="font-playfair font-bold text-base text-ivory">OAF Archive</span>
             </div>
             <button

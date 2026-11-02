@@ -22,8 +22,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: `${biography.name} \u2013 ${biography.tagline}`,
+  title: 'Home | Dr. Olusegun Kokumo Agagu, CON',
   description: `The official website of ${biography.name}. Honouring the legacy of ${biography.personName} through intellectual excellence, good governance and national development.`,
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
   openGraph: {
     type: 'website',
     siteName: biography.name,
