@@ -99,13 +99,11 @@ export default function HomePage() {
         <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-12 lg:pl-24 lg:pr-12 xl:pl-28 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
-            <div className="lg:col-span-7 flex flex-col items-start pt-20 lg:pt-24">
-              {/* Main Headline: Two deliberate intentional lines + Name Line with 8px gap */}
-              {/* Headline font size is exactly 20% larger than name line (24->28.8px, 30->36px, 36->43.2px, 40->48px) with comfortable line-height */}
+            <div className="lg:col-span-7 flex flex-col items-start pt-16 sm:pt-20 lg:pt-20">
+              {/* Main Headline: Single deliberate line + Name Line */}
               <h1 className="text-[28.8px] sm:text-[36px] lg:text-[43.2px] xl:text-[48px] font-bold tracking-tight leading-[1.3] font-display text-white drop-shadow-md">
                 <span className="block">A Life Given to Service.</span>
-                <span className="block">A Legacy Built to Last.</span>
-                <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] mt-2">
+                <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] mt-2.5">
                   Dr. Olusegun Kokumo Agagu, CON
                 </span>
               </h1>
@@ -115,8 +113,8 @@ export default function HomePage() {
                 Petroleum geologist and Former Governor of Ondo State. He lived by one credo &mdash; &ldquo;To leave things better than he met them.&rdquo;
               </p>
 
-              {/* Dual Call to Action Buttons with 32px gap */}
-              <div className="flex flex-wrap items-center gap-3.5 mt-8">
+              {/* Dual Call to Action Buttons with rebalanced vertical gap */}
+              <div className="flex flex-wrap items-center gap-3.5 mt-7">
                 <a
                   href="#about"
                   className="px-6 sm:px-7 py-3 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
@@ -132,8 +130,8 @@ export default function HomePage() {
                 </a>
               </div>
 
-              {/* Stats Row with 48px gap, generous horizontal spacing & non-truncated labels */}
-              <div className="mt-12 pt-7 border-t border-white/15 w-full max-w-xl backdrop-blur-sm">
+              {/* Stats Row with rebalanced vertical gap, generous horizontal spacing & non-truncated labels */}
+              <div className="mt-10 pt-6 border-t border-white/15 w-full max-w-xl backdrop-blur-sm">
                 <div className="flex items-center gap-8 sm:gap-12 lg:gap-14">
                   <div>
                     <div className="text-2xl sm:text-3xl font-bold font-display text-white leading-none">9+</div>
