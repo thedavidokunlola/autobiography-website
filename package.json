@@ -11,7 +11,6 @@
     "prebuild:win": "npx ts-node --project tsconfig.scripts.json scripts/detect-placeholders.ts; if ($LASTEXITCODE -eq 0) { npx ts-node --project tsconfig.scripts.json scripts/validate-data.ts }"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^16.3.0",
     "@next/third-parties": "^14.2.35",
     "next": "14.2.35",
     "react": "^18",
@@ -28,5 +27,8 @@
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "@next/swc-win32-x64-msvc": "*"
   }
 }
