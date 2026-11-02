@@ -99,7 +99,7 @@ export default function HomePage() {
         <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-12 lg:pl-24 lg:pr-12 xl:pl-28 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
-            <div className="lg:col-span-7 flex flex-col items-start">
+            <div className="lg:col-span-7 flex flex-col items-start pt-20 lg:pt-24">
               {/* Main Headline: Two deliberate intentional lines + Name Line with 8px gap */}
               <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] font-bold tracking-tight leading-[1.14] font-display text-white drop-shadow-md">
                 <span className="block">A Life Given to Service.</span>
@@ -111,7 +111,7 @@ export default function HomePage() {
 
               {/* Full Description with 20px gap and 520px max-width */}
               <p className="text-sm sm:text-[15px] lg:text-base text-white/85 max-w-[520px] font-normal leading-relaxed font-body drop-shadow mt-5">
-                Petroleum geologist, Federal Minister, and Former Governor of Ondo State. As Minister for Power and Steel, he oversaw a rise in power generation from 1,425 to over 4,000 megawatts. As Governor, he transformed Ondo State across every critical sector. He lived by one credo &mdash; &ldquo;To leave things better than he met them.&rdquo;
+                Petroleum geologist and Former Governor of Ondo State. He lived by one credo &mdash; &ldquo;To leave things better than he met them.&rdquo;
               </p>
 
               {/* Dual Call to Action Buttons with 32px gap */}
