@@ -1,6 +1,5 @@
 'use client'
-// Client Component: requires scroll listener for 80px background transition,
-// active section observation, mobile nav focus trap (RULE-A3), and GA tracking (RULE-P9).
+// Client Component: active section observation, mobile nav focus trap (RULE-A3), and GA tracking (RULE-P9).
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
@@ -23,7 +22,6 @@ const NAV_LINKS = [
 
 export function Header({ siteName, pressEmail }: HeaderProps) {
   const pathname = usePathname()
-  const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -31,16 +29,9 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
   const toggleRef = useRef<HTMLButtonElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
-  // Scroll listener: transparent over hero, solid crimson (#7A1418) after 80px
+  // Track active section for anchor links on home page
   useEffect(() => {
     function handleScroll() {
-      if (window.scrollY > 80) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-
-      // Track active section for anchor links on home page
       if (pathname === '/') {
         const sections = ['hero', 'about', 'foundation', 'impact', 'lectures']
         for (const sec of sections) {
@@ -121,8 +112,8 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || pathname !== '/'
+      className={`absolute top-0 left-0 right-0 w-full z-20 ${
+        pathname !== '/'
           ? 'bg-crimson text-ivory shadow-lg border-b border-gold/20'
           : 'bg-transparent text-ivory border-b border-white/10'
       }`}
