@@ -101,7 +101,7 @@ export default function HomePage() {
             {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
             <div className="lg:col-span-7 flex flex-col items-start pt-16 sm:pt-20 lg:pt-20">
               {/* Main Headline: Single deliberate line + Name Line */}
-              <h1 className="text-[28.8px] sm:text-[36px] lg:text-[43.2px] xl:text-[48px] font-bold tracking-tight leading-[1.3] font-display text-white drop-shadow-md">
+              <h1 className="text-[32px] sm:text-[42px] lg:text-[52px] xl:text-[60px] font-extrabold tracking-tight leading-[1.3] font-display text-[#FFFFFF] drop-shadow-md">
                 <span className="block">A Life Given to Service.</span>
                 <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] mt-2.5">
                   Dr. Olusegun Kokumo Agagu, CON
