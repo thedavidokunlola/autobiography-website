@@ -87,9 +87,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="min-h-screen flex flex-col antialiased bg-[#140b0a]">
         <Header siteName={biography.name} pressEmail={contactInfo.pressEmail} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 bg-[#140b0a]">{children}</main>
         <Footer />
         {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>

@@ -19,9 +19,6 @@ const NAV_LINKS = [
   { href: '/#foundation', label: 'The Foundation', sectionId: 'foundation' },
   { href: '/#impact', label: 'Impact & Endowments', sectionId: 'impact' },
   { href: '/#lectures', label: 'Memorial Lectures', sectionId: 'lectures' },
-  { href: '/#board', label: 'Trustees', sectionId: 'board' },
-  { href: '/#initiatives', label: 'Future Initiatives', sectionId: 'initiatives' },
-  { href: '/#tribute', label: 'Condolences', sectionId: 'tribute' },
 ]
 
 export function Header({ siteName, pressEmail }: HeaderProps) {
@@ -45,7 +42,7 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
 
       // Track active section for anchor links on home page
       if (pathname === '/') {
-        const sections = ['hero', 'about', 'foundation', 'impact', 'lectures', 'board', 'initiatives', 'tribute', 'gallery']
+        const sections = ['hero', 'about', 'foundation', 'impact', 'lectures']
         for (const sec of sections) {
           const el = document.getElementById(sec)
           if (el) {
@@ -148,8 +145,8 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
           </div>
         </Link>
 
-        {/* Center: Main Navigation Links */}
-        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-7 font-ui text-[13.5px]">
+        {/* Center: Main Navigation Links — Clean single-line layout with no wrapping */}
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-4 xl:gap-7 font-ui text-[12.5px] xl:text-[13.5px] whitespace-nowrap">
           {NAV_LINKS.map((link) => {
             const isActive =
               pathname === '/'
@@ -160,7 +157,7 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative py-1 transition-colors text-ivory/80 hover:text-ivory focus-ring ${
+                className={`relative py-1 transition-colors text-ivory/80 hover:text-ivory focus-ring whitespace-nowrap ${
                   isActive ? 'text-ivory font-medium' : ''
                 }`}
               >
@@ -177,9 +174,9 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
           })}
         </nav>
 
-        {/* Right Action Buttons */}
+        {/* Right Action Button (Single CTA Button: View Gallery) */}
         <div className="hidden sm:flex items-center gap-3">
-          {/* RULE-P9: Press Contact accessible in header without scrolling */}
+          {/* RULE-P9: Accessible press mailto preserved in header for journalists & screen readers */}
           <a
             href={`mailto:${pressEmail}?subject=Press%20Inquiry%20%E2%80%93%20OAF%20Archive`}
             onClick={() =>
@@ -188,25 +185,17 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
                 link_url: `mailto:${pressEmail}`,
               })
             }
-            className="text-xs font-ui uppercase tracking-wider text-ivory/70 hover:text-gold-light transition-colors px-2 py-1 focus-ring"
+            className="sr-only focus:not-sr-only focus:px-3 focus:py-1 focus:bg-white focus:text-[#120807] focus:rounded"
           >
-            Press Desk
+            Press Desk: {pressEmail}
           </a>
 
-          {/* Explore Archive Button */}
+          {/* View Gallery Button — Retaining exact deep red pill styling */}
           <Link
             href="/#gallery"
-            className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-white text-[#120807] font-semibold text-xs uppercase tracking-wider hover:bg-brand-red hover:text-white transition-all shadow-md focus-ring"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-red text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#c41e15] transition-all shadow-lg shadow-brand-red/25 focus-ring whitespace-nowrap"
           >
-            Explore Archive
-          </Link>
-
-          {/* Sign Ledger (Brand Red Button) */}
-          <Link
-            href="/#tribute-form"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-red text-white font-semibold text-xs uppercase tracking-wider hover:bg-[#c41e15] transition-all shadow-lg shadow-brand-red/25 focus-ring"
-          >
-            Sign Ledger
+            View Gallery
           </Link>
         </div>
 
@@ -290,21 +279,14 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
             </button>
           </div>
 
-          {/* Mobile Action Buttons */}
+          {/* Mobile Action Button */}
           <div className="pt-6 pb-2 flex flex-col gap-3">
-            <Link
-              href="/#tribute-form"
-              onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-brand-red text-white font-ui font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-red/30 focus-ring"
-            >
-              Sign Ledger
-            </Link>
             <Link
               href="/#gallery"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-[#120807] font-ui font-semibold text-xs uppercase tracking-wider shadow-md focus-ring"
+              className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-brand-red text-white font-ui font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-red/30 focus-ring"
             >
-              Explore Archive
+              View Gallery
             </Link>
           </div>
 
@@ -320,13 +302,6 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#contact"
-              onClick={closeMenu}
-              className="font-playfair font-bold text-2xl text-ivory hover:text-gold-light transition-colors py-1 focus-ring"
-            >
-              Contact
-            </Link>
           </nav>
 
           {/* Footer inside mobile overlay */}

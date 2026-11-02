@@ -5,8 +5,9 @@ import { OafCrest, AdireDivider } from './CulturalElements'
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
+  // Temporarily hidden for client presentation - remove style={{ display: 'none' }} to restore
   return (
-    <footer className="bg-[#0e0706] text-white/70 border-t border-white/10 pt-20 pb-12">
+    <footer style={{ display: 'none' }} className="bg-[#0e0706] text-white/70 border-t border-white/10 pt-20 pb-12">
       <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Left Brand & Creed (Placement 5) */}

@@ -76,11 +76,11 @@ export default function HomePage() {
       />
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION (Using hero.png as Background Image) */}
+      {/* 1. HERO SECTION (Takes full viewport height 100vh) */}
       {/* ========================================================================= */}
       <section
         id="hero"
-        className="relative min-h-[100vh] pt-24 pb-12 lg:pt-28 lg:pb-16 bg-[#140b0a] text-white overflow-hidden flex items-center"
+        className="relative h-screen min-h-screen max-h-screen pt-20 pb-6 lg:pt-24 lg:pb-8 bg-[#140b0a] text-white overflow-hidden flex items-center"
       >
         {/* Hero Section Background Image (hero.png from pdf folder) */}
         <div className="absolute inset-0 z-0">
@@ -100,57 +100,50 @@ export default function HomePage() {
         <div className="max-w-[1340px] w-full mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Hero Content — Refined, Dignified & World-Class Editorial Hierarchy */}
-            <div className="lg:col-span-7 flex flex-col gap-5 items-start">
-              {/* Single Refined Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wider text-white/90 font-ui">
-                <span className="w-2 h-2 rounded-full bg-brand-red" aria-hidden="true" />
-                <span>MEMORIAL ARCHIVE &bull; 1948&ndash;2013</span>
-              </div>
-
+            <div className="lg:col-span-7 flex flex-col gap-4 lg:gap-5 items-start">
               {/* Main Headline (RULE-A2: exactly one H1 per page) */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight leading-[1.1] font-display text-white drop-shadow-md">
-                Where Vision &amp; Integrity Endure
-                <span className="block text-tertiary font-serif italic font-normal text-3xl sm:text-4xl lg:text-[44px] mt-1.5">
+              <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-bold tracking-tight leading-[1.12] font-display text-white drop-shadow-md">
+                A Life Given to Service. A Legacy Built to Last.
+                <span className="block text-tertiary font-serif italic font-normal text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] mt-2">
                   Dr. Olusegun Kokumo Agagu, CON
                 </span>
               </h1>
 
-              {/* Concise Subtitle with Sovereign Credo (Placement 1) */}
+              {/* Description */}
               <p className="text-sm sm:text-base text-white/85 max-w-xl font-normal leading-relaxed font-body drop-shadow">
-                Renowned petroleum geologist, Federal Minister, and 2nd Executive Governor of Ondo State. Dedicated to his immortal credo:{' '}
-                <span className="text-white italic font-serif">&ldquo;To leave things better than he met them.&rdquo;</span>
+                Petroleum geologist and Former Governor of Ondo State. He lived by one credo &ldquo;To leave things better than he met them.&rdquo;
               </p>
 
               {/* Dual Call to Action Buttons */}
               <div className="flex flex-wrap items-center gap-3.5 pt-1">
                 <a
                   href="#about"
-                  className="px-7 py-3 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
+                  className="px-6 sm:px-7 py-3 rounded-full bg-brand-red hover:bg-[#c41e15] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 focus-ring"
                 >
-                  <span>Explore Biography</span>
+                  <span>DISCOVER HIS STORY</span>
                   <ArrowForwardIcon className="w-4 h-4" />
                 </a>
                 <a
                   href="#foundation"
-                  className="px-7 py-3 rounded-full bg-black/40 hover:bg-black/60 text-white border border-white/25 backdrop-blur-sm font-bold text-xs uppercase tracking-wider transition-all focus-ring"
+                  className="px-6 sm:px-7 py-3 rounded-full bg-black/40 hover:bg-black/60 text-white border border-white/25 backdrop-blur-sm font-bold text-xs uppercase tracking-wider transition-all focus-ring"
                 >
-                  The Foundation
+                  THE FOUNDATION
                 </a>
               </div>
 
               {/* Empirical Micro Stats Row directly from PDF */}
-              <div className="grid grid-cols-3 gap-6 pt-5 border-t border-white/15 w-full max-w-md mt-1 backdrop-blur-sm">
+              <div className="grid grid-cols-3 gap-6 pt-4 border-t border-white/15 w-full max-w-md mt-1 backdrop-blur-sm">
                 <div>
-                  <div className="text-2xl font-bold font-display text-white">9+</div>
-                  <div className="text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Memorial Lectures</div>
+                  <div className="text-xl sm:text-2xl font-bold font-display text-white">9+</div>
+                  <div className="text-[10px] sm:text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Memorial Lectures</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold font-display text-tertiary">400+</div>
-                  <div className="text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Scholars Awarded</div>
+                  <div className="text-xl sm:text-2xl font-bold font-display text-tertiary">400+</div>
+                  <div className="text-[10px] sm:text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">Scholars Awarded</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold font-display text-white">&#8358;25M</div>
-                  <div className="text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">E-Library Fund</div>
+                  <div className="text-xl sm:text-2xl font-bold font-display text-white">&#8358;25M</div>
+                  <div className="text-[10px] sm:text-[11px] text-white/70 uppercase tracking-wider font-semibold font-ui">E-Library Fund</div>
                 </div>
               </div>
             </div>
@@ -498,9 +491,14 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ABOUT THE FOUNDATION & 8 FOCAL AREAS (PDF Page 4) */}
+      {/* TEMPORARILY HIDDEN SECTIONS FOR CLIENT PRESENTATION */}
+      {/* Remove style={{ display: 'none' }} to restore all sections below */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-surface-container-low text-on-surface" id="foundation">
+      <div style={{ display: 'none' }} aria-hidden="true">
+        {/* ========================================================================= */}
+        {/* 3. ABOUT THE FOUNDATION & 8 FOCAL AREAS (PDF Page 4) */}
+        {/* ========================================================================= */}
+        <section style={{ display: 'none' }} className="py-24 bg-surface-container-low text-on-surface" id="foundation">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           {/* Eyebrow & Mission Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -720,7 +718,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 4. OUR ACTIVITIES & EMPIRICAL IMPACT (PDF Pages 6 & 7) */}
       {/* ========================================================================= */}
-      <section className="py-20 bg-white border-y border-outline-variant/60" id="impact">
+      <section style={{ display: 'none' }} className="py-20 bg-white border-y border-outline-variant/60" id="impact">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
@@ -842,7 +840,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 5. MEMORIAL LECTURES ARCHIVE (2014 – 2023 Decade of Legacy) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-surface-container-low text-on-surface" id="lectures">
+      <section style={{ display: 'none' }} className="py-24 bg-surface-container-low text-on-surface" id="lectures">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 mb-3">
@@ -1020,7 +1018,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 6. BOARD OF TRUSTEES (PDF Page 5) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-white text-on-surface" id="board">
+      <section style={{ display: 'none' }} className="py-24 bg-white text-on-surface" id="board">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <div>
@@ -1108,7 +1106,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 7. FUTURE INITIATIVES (PDF Page 18) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-surface-container-low text-on-surface" id="initiatives">
+      <section style={{ display: 'none' }} className="py-24 bg-surface-container-low text-on-surface" id="initiatives">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 mb-2">
@@ -1228,7 +1226,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 8. PHOTOGRAPHIC MEMOIR ARCHIVE */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-[#140b0a] text-white" id="gallery">
+      <section style={{ display: 'none' }} className="py-24 bg-[#140b0a] text-white" id="gallery">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-12">
             <div className="flex items-center gap-2 mb-2">
@@ -1252,7 +1250,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 9. CLOSING TRIBUTE, OUR THANKS & DIGITAL CONDOLENCE BOOK (PDF Page 19) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-[#140b0a] text-white relative overflow-hidden" id="tribute">
+      <section style={{ display: 'none' }} className="py-24 bg-[#140b0a] text-white relative overflow-hidden" id="tribute">
         <div
           className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-brand-red/20 blur-[100px] pointer-events-none"
           aria-hidden="true"
@@ -1328,7 +1326,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 10. OFFICIAL SECRETARIAT CONTACT (PDF Page 20) */}
       {/* ========================================================================= */}
-      <section className="py-20 bg-surface-container-low text-on-surface border-t border-outline-variant/60" id="contact">
+      <section style={{ display: 'none' }} className="py-20 bg-surface-container-low text-on-surface border-t border-outline-variant/60" id="contact">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 mb-2">
@@ -1411,6 +1409,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </div>
     </>
   )
 }
