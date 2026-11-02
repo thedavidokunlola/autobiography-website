@@ -7,18 +7,16 @@ import { biography } from '@/data/biography'
 import { contactInfo } from '@/data/contact'
 import '@/styles/globals.css'
 
-const playfairDisplay = Playfair_Display({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  display: 'swap',
   variable: '--font-playfair',
+  display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  display: 'swap',
   variable: '--font-inter',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -60,7 +58,7 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID
 
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         {/* Suppress unhandled errors from conflicting third-party browser extensions (e.g. EVM wallet evmMask.js) in dev mode */}
         <script
@@ -92,7 +90,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-[#140b0a]">
+      <body className={`${playfair.variable} ${inter.variable} min-h-screen flex flex-col antialiased bg-[#140b0a]`}>
         <Header siteName={biography.name} pressEmail={contactInfo.pressEmail} />
         <main className="flex-1 bg-[#140b0a]">{children}</main>
         <Footer />
