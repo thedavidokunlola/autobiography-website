@@ -18,6 +18,7 @@ const PAGE_TITLES: Record<string, string> = {
   foundation: 'The Foundation \u2013 OAF Archive',
   impact: 'Impact & Endowments \u2013 OAF Archive',
   lectures: 'Memorial Lectures \u2013 OAF Archive',
+  gallery: 'Photo Gallery \u2013 OAF Archive',
 }
 
 const NAV_LINKS = [
@@ -41,7 +42,7 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
   useEffect(() => {
     function handleScroll() {
       if (pathname === '/') {
-        const sections = ['hero', 'about', 'foundation', 'impact', 'lectures']
+        const sections = ['hero', 'about', 'foundation', 'impact', 'lectures', 'gallery']
         for (const sec of sections) {
           const el = document.getElementById(sec)
           if (el) {

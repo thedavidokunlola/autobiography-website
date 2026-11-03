@@ -88,6 +88,66 @@
   contain-intrinsic-size: 1px 800px;
 }
 
+/* FIX 4: Dignified Presidential Hero Entrance Animation */
+@keyframes heroWordEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-word-1 {
+  opacity: 0;
+  animation: heroWordEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+.animate-hero-word-2 {
+  opacity: 0;
+  animation: heroWordEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+}
+.animate-hero-word-3 {
+  opacity: 0;
+  animation: heroWordEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.31s forwards;
+}
+.animate-hero-word-4 {
+  opacity: 0;
+  animation: heroWordEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.44s forwards;
+}
+.animate-hero-word-5 {
+  opacity: 0;
+  animation: heroWordEntrance 0.58s cubic-bezier(0.16, 1, 0.3, 1) 0.57s forwards;
+}
+.animate-hero-name {
+  opacity: 0;
+  animation: heroFadeSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+}
+.animate-hero-desc {
+  opacity: 0;
+  animation: heroFadeSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) 1.85s forwards;
+}
+.animate-hero-buttons {
+  opacity: 0;
+  animation: heroFadeSmooth 0.55s cubic-bezier(0.16, 1, 0.3, 1) 2.45s forwards;
+}
+.animate-hero-stats {
+  opacity: 0;
+  animation: heroFadeSmooth 0.65s cubic-bezier(0.16, 1, 0.3, 1) 2.95s forwards;
+}
+
 /* RULE-A8: Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -101,5 +161,7 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
