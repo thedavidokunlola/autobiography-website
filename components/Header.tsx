@@ -147,7 +147,7 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
       className={`absolute top-0 left-0 right-0 w-full z-20 ${
         pathname !== '/'
           ? 'bg-crimson text-ivory shadow-lg border-b border-gold/20'
-          : 'bg-transparent text-ivory border-b border-white/10'
+          : 'bg-transparent text-ivory'
       }`}
     >
       <div className="max-w-container mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
