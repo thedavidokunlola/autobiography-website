@@ -13,11 +13,11 @@ interface HeaderProps {
 }
 
 const PAGE_TITLES: Record<string, string> = {
-  hero: 'Home | Dr. Olusegun Kokumo Agagu, CON',
-  about: 'Biography | Dr. Olusegun Kokumo Agagu, CON',
-  foundation: 'The Foundation | OAF Archive',
-  impact: 'Impact & Endowments | OAF Archive',
-  lectures: 'Memorial Lectures | OAF Archive',
+  hero: 'Home \u2013 Dr. Olusegun Kokumo Agagu, CON',
+  about: 'Biography \u2013 Dr. Olusegun Kokumo Agagu, CON',
+  foundation: 'The Foundation \u2013 OAF Archive',
+  impact: 'Impact & Endowments \u2013 OAF Archive',
+  lectures: 'Memorial Lectures \u2013 OAF Archive',
 }
 
 const NAV_LINKS = [

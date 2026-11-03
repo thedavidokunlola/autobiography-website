@@ -19,8 +19,9 @@ const inter = Inter({
   display: 'swap',
 })
 
+// RULE-S3: en dash U+2013 separator with one space each side
 export const metadata: Metadata = {
-  title: 'Home | Dr. Olusegun Kokumo Agagu, CON',
+  title: 'Home \u2013 Dr. Olusegun Kokumo Agagu, CON',
   description: `The official website of ${biography.name}. Honouring the legacy of ${biography.personName} through intellectual excellence, good governance and national development.`,
   icons: {
     icon: '/images/logo.png',
@@ -90,9 +91,16 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${playfair.variable} ${inter.variable} min-h-screen flex flex-col antialiased bg-[#140b0a]`}>
+      <body className={`${playfair.variable} ${inter.variable} min-h-screen flex flex-col antialiased bg-ivory text-charcoal`}>
+        {/* Skip to Main Content Link (Heuristic #7: Flexibility & Efficiency of Use) */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-crimson focus:font-bold focus:shadow-xl focus:rounded-lg focus-ring"
+        >
+          Skip to main content
+        </a>
         <Header siteName={biography.name} pressEmail={contactInfo.pressEmail} />
-        <main className="flex-1 bg-[#140b0a]">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>

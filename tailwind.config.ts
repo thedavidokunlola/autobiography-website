@@ -46,6 +46,7 @@ const config: Config = {
         border: '#E2DED8',
         'border-gold': '#B8933A',
         'border-crimson': '#7A1418',
+        'link-hover': '#333333',
         focus: '#0057FF',
       },
       fontFamily: {

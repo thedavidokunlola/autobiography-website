@@ -93,8 +93,14 @@ export function PressFilter({ entries, onFilterChange }: PressFilterProps) {
                   // filter_value: e.target.value ← intentionally omitted — PRIVACY HOLD
                 })
               }}
-              placeholder="Search by title, publication, or summary..."
-              className="w-full px-4 py-3 bg-ivory/50 border border-border rounded-xl text-sm font-ui text-charcoal focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition-all"
+              onKeyDown={(e) => {
+                // Heuristic #3 & #7: Support Escape key to instantly reset search input
+                if (e.key === 'Escape') {
+                  setKeyword('')
+                }
+              }}
+              placeholder="Search by title, publication, or summary... (Esc to clear)"
+              className="w-full px-4 py-3 bg-ivory/50 border border-border rounded-xl text-sm font-ui text-charcoal focus-ring focus:border-crimson focus:bg-white transition-all"
             />
           </div>
 
@@ -116,7 +122,7 @@ export function PressFilter({ entries, onFilterChange }: PressFilterProps) {
                   filter_value: e.target.value,
                 })
               }}
-              className="w-full px-4 py-3 bg-ivory/50 border border-border rounded-xl text-sm font-ui text-charcoal focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition-all"
+              className="w-full px-4 py-3 bg-ivory/50 border border-border rounded-xl text-sm font-ui text-charcoal focus-ring focus:border-crimson focus:bg-white transition-all"
             >
               <option value="">All publications</option>
               {publications.map((pub) => (
@@ -145,7 +151,7 @@ export function PressFilter({ entries, onFilterChange }: PressFilterProps) {
                   filter_value: e.target.value,
                 })
               }}
-              className="w-full px-4 py-3 bg-ivory/50 border border-border rounded-xl text-sm font-ui text-charcoal focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 transition-all"
+              className="w-full px-4 py-3 bg-ivory/50 border border-border rounded-xl text-sm font-ui text-charcoal focus-ring focus:border-crimson focus:bg-white transition-all"
             >
               <option value="">All years</option>
               {years.map((y) => (

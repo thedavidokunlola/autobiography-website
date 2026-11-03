@@ -28,7 +28,7 @@ import {
 } from '@/components/Icons'
 
 export const metadata: Metadata = {
-  title: 'Home | Dr. Olusegun Kokumo Agagu, CON',
+  title: 'Home \u2013 Dr. Olusegun Kokumo Agagu, CON',
   description: `Official Presidential Memorial Archive & Foundation for ${biography.personName} (1948\u20132013). Renowned petroleum geologist, Federal Minister, 2nd Executive Governor of Ondo State.`,
   openGraph: {
     type: 'website',
@@ -491,9 +491,7 @@ export default function HomePage() {
           </div>
 
           {/* Interactive Biographical Chapters (Preserved in Dark Luxury Theme) */}
-          <div className="mt-20 pt-16 border-t border-white/10">
-            <BiographicalChapters />
-          </div>
+          <BiographicalChapters />
         </div>
       </section>
 

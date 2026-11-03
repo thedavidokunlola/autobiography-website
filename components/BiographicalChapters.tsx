@@ -74,7 +74,7 @@ const CHAPTERS: Chapter[] = [
     id: 'ch5',
     numeral: 'V',
     shortTitle: 'The Patriarch',
-    period: 'The Patriarch',
+    period: '2009 \u2013 2013',
     code: 'BIO-05',
     headline: 'The Gentle Patriarch, Devoted Husband & Mentor',
     content:
