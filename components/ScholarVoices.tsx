@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 interface ScholarTestimonial {
   name: string
   institution: string
@@ -42,12 +40,12 @@ export function ScholarVoices() {
         <span className="font-ui font-semibold text-xs text-gold uppercase tracking-[0.2em] block mb-2">
           Living Beneficiaries
         </span>
+        {/* STRATEGY & IA REVIEW: Replaced corporate buzzword 'Human Proof' with dignified 'Scholar Reflections' and simplified introductory copy */}
         <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-ivory">
-          Scholar Voices &amp; Human Proof
+          Scholar Reflections
         </h3>
         <p className="text-sm font-ui text-ivory/70 mt-1 max-w-xl">
-          Generations of Nigerian youths whose academic and vocational journeys have been propelled by
-          endowed tuition, bursaries, and institutional grants.
+          Students and graduates whose education has been supported through Foundation bursaries and endowed scholarships.
         </p>
       </div>
 
@@ -90,17 +88,17 @@ export function ScholarVoices() {
         ))}
       </div>
 
-      {/* Gold Link to Section 12 Apply / Support */}
+      {/* STRATEGY & IA REVIEW / FIX 2: Pointed previously broken anchor #apply-support to #contact where Secretariat handles scholarship and bursary correspondence */}
       <div className="mt-8 text-center sm:text-left">
-        <Link
-          href="#apply-support"
+        <a
+          href="#contact"
           className="inline-flex items-center gap-2 text-sm font-ui font-semibold text-gold hover:text-gold-light transition-colors group focus-ring rounded"
         >
-          <span>Apply for a Scholarship</span>
+          <span>Inquire About Scholarships</span>
           <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">
             &rarr;
           </span>
-        </Link>
+        </a>
       </div>
     </div>
   )

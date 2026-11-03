@@ -53,17 +53,11 @@ export default function WorkPage() {
         </p>
       </div>
 
-      {/* Condition: if entire work data file is empty */}
+      {/* Condition 4: if entire work data file is empty (RULE-P8) */}
       {workEntries.length === 0 ? (
-        <div className="bg-white rounded-3xl border border-border p-12 text-center max-w-xl">
-          <div className="w-12 h-12 rounded-full bg-crimson/10 text-crimson flex items-center justify-center mx-auto mb-4 font-playfair font-bold text-xl">
-            OAF
-          </div>
-          <h2 className="text-xl font-bold font-playfair text-charcoal mb-2">
-            Civic Records in Archival Preparation
-          </h2>
-          <p className="font-body text-charcoal/70 text-sm">
-            Work history entries and advisory portfolios are currently being digitized by the Secretariat.
+        <div className="bg-white rounded-3xl border border-border p-12 text-center max-w-xl mx-auto">
+          <p className="font-playfair italic text-text-secondary text-base sm:text-lg">
+            Work history coming soon.
           </p>
         </div>
       ) : (

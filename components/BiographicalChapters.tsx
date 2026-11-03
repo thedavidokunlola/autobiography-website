@@ -15,6 +15,7 @@ interface Chapter {
   quote?: string
 }
 
+// STRATEGY & IA REVIEW: Streamlined chapter narratives into clear, dignified English; removed corporate buzzwords and em dashes per FIX 4
 const CHAPTERS: Chapter[] = [
   {
     id: 'ch1',
@@ -22,12 +23,12 @@ const CHAPTERS: Chapter[] = [
     shortTitle: 'Early Roots',
     period: '1948 \u2013 1971',
     code: 'BIO-01',
-    headline: 'Early Life, Heritage & Intellectual Genesis in Okitipupa',
+    headline: 'Early Life, Education & Roots in Okitipupa',
     content:
-      'Born on 16 February 1948 in the vibrant historical settlement of Okitipupa in Ondo State, Olusegun Kokumo Agagu demonstrated an extraordinary intellectual aptitude from boyhood. Raised with unyielding discipline, his formative schooling at St. Dominic’s Primary School and Ebenezer Grammar School set the stage for an academic genius destined to shape Nigeria’s post-colonial geological understanding.',
+      'Born on 16 February 1948 in Okitipupa, Ondo State, Olusegun Kokumo Agagu was a dedicated student from his youth. His schooling at St. Dominic’s Primary School and Ebenezer Grammar School prepared him for a distinguished career in geology and public service.',
     highlights: [
-      { label: 'Top honors in Natural Sciences (1967)' },
-      { label: 'Mentoring youth across Ikale land' },
+      { label: 'Honours in Natural Sciences (1967)' },
+      { label: 'Youth mentorship across Ikale land' },
     ],
   },
   {
@@ -36,9 +37,9 @@ const CHAPTERS: Chapter[] = [
     shortTitle: 'Geologist & Don',
     period: '1972 \u2013 1998',
     code: 'BIO-02',
-    headline: 'The Pioneering Petroleum Geologist & University Don',
+    headline: 'Petroleum Geologist & University Lecturer',
     content:
-      'For sixteen dedicated years, Dr. Agagu served on the faculty of the Department of Geology at the University of Ibadan, mentoring generations of earth scientists who went on to lead major oil majors globally. His seminal papers on Nigerian sedimentary basins, deep-water stratigraphy, and petroleum reservoirs remain masterworks cited worldwide.',
+      'For sixteen years, Dr. Agagu taught at the Department of Geology at the University of Ibadan, training many of Nigeria’s leading earth scientists and publishing widely on Nigerian sedimentary basins and petroleum geology.',
     quote:
       '“The earth does not yield its riches to reckless guesswork; it surrenders to rigorous measurement and patient scientific insight.”',
   },
@@ -48,9 +49,9 @@ const CHAPTERS: Chapter[] = [
     shortTitle: 'Federal Minister',
     period: '1999 \u2013 2002',
     code: 'BIO-03',
-    headline: 'Statesman at the National Helm: Aviation, Power & Steel',
+    headline: 'Federal Minister: Aviation, Power & Steel',
     content:
-      'At the dawn of Nigeria’s Fourth Republic, President Olusegun Obasanjo called upon Dr. Agagu’s scientific mind. As Minister of Aviation, he instituted vital radar overhauls and safety audits. In Power and Steel, he laid the framework for landmark energy unbundling, championing sustainable electrical grids for emerging industrial hubs.',
+      'In 1999, President Olusegun Obasanjo appointed Dr. Agagu to the Federal Cabinet. As Minister of Aviation, he led improvements in air safety. As Minister of Power and Steel, he oversaw a rise in national power generation from 1,425 MW to over 4,000 MW alongside transmission improvements.',
     highlights: [
       { label: 'Aviation Safety Modernization (1999\u20132000)' },
       { label: 'Power grid capacity scaled to 4,000+ MW' },
@@ -62,12 +63,12 @@ const CHAPTERS: Chapter[] = [
     shortTitle: 'Executive Governor',
     period: '2003 \u2013 2009',
     code: 'BIO-04',
-    headline: 'The Executive Governor & Architect of Ondo Modernity',
+    headline: 'Governor of Ondo State (2003\u20132009)',
     content:
-      'Assuming the mantle as Governor of Ondo State in May 2003, Dr. Agagu instituted the famous "Roadmap to Progress" \u2014 a scientifically budgeted masterplan. He established Ondo State University of Science and Technology (OSUTECH, now OAUSTECH in his honor), paved thousands of kilometers of coastal and highland roads, and left an unprecedented fiscal surplus.',
+      'As Governor of Ondo State from 2003 to 2009, Dr. Agagu introduced the Roadmap to Progress, a clear development plan for the state. He founded the Ondo State University of Science and Technology (now OAUSTECH), built critical road networks, and managed public funds with prudence.',
     highlights: [
       { label: 'Establishment of OAUSTECH' },
-      { label: 'Roadmap to Progress Masterplan' },
+      { label: 'Roadmap to Progress Plan' },
     ],
   },
   {
@@ -76,12 +77,12 @@ const CHAPTERS: Chapter[] = [
     shortTitle: 'The Patriarch',
     period: '2009 \u2013 2013',
     code: 'BIO-05',
-    headline: 'The Gentle Patriarch, Devoted Husband & Mentor',
+    headline: 'Family Life & Devotion to Community',
     content:
-      'Beyond the corridors of power, Dr. Agagu was a gentle patriarch of unflinching kindness. Married to his beloved life partner, Her Excellency Chief (Mrs.) Olufunke Agagu, their union was a bedrock of grace and hospitality for nearly 40 years. He was an approachable mentor to young scholars and a devout believer who lived to uplift fellow human beings.',
+      'Dr. Agagu was a devoted family man married to his wife, Mrs. Olufunke Agagu, for more than 39 years. Together they raised three children and were blessed with grandchildren. Throughout his life, he remained an approachable mentor and a community leader who sought to leave things better than he met them.',
     highlights: [
-      { label: 'Beloved father of 3, grandfather of 7+' },
-      { label: 'Enduring creed of philanthropy & service' },
+      { label: 'Father of 3 and grandfather of 7' },
+      { label: 'Enduring credo of service to others' },
     ],
   },
 ]

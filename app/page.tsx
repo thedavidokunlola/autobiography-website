@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { biography } from '@/data/biography'
 import { contactInfo } from '@/data/contact'
+import { galleryPhotos } from '@/data/photos'
 import { AdireBackground } from '@/components/CulturalElements'
 import { PowerCounter } from '@/components/PowerCounter'
 import { BiographicalChapters } from '@/components/BiographicalChapters'
 import { MemorialLectureStrip } from '@/components/MemorialLectureStrip'
 import { ScholarVoices } from '@/components/ScholarVoices'
 import { TributeRegistry } from '@/components/TributeRegistry'
+import { PhotoGallery } from '@/components/PhotoGallery'
 import {
   SchoolIcon,
   BankIcon,
@@ -202,31 +204,32 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Curated Honors & National Recognition (Modeled after Weblium Awards List) */}
+              {/* Curated Honors & National Recognition */}
               <div className="bg-[#140b0a]/90 border border-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-sm">
                 <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                   <VerifiedIcon className="w-4 h-4 text-tertiary" />
                   <span className="text-xs font-bold uppercase tracking-wider text-white font-ui">
-                    National Honours &amp; Institutional Distinctions
+                    National Honours &amp; Distinctions
                   </span>
                 </div>
+                {/* STRATEGY & IA REVIEW: Removed em dashes per FIX 4, simplified honor descriptions */}
                 <ul className="space-y-3 text-xs text-white/80 font-ui">
                   <li className="flex items-start gap-2.5">
                     <span className="text-tertiary font-bold">&bull;</span>
                     <span>
-                      <strong className="text-white">Commander of the Order of the Niger (CON)</strong> &mdash; National Honour of the Federal Republic of Nigeria.
+                      <strong className="text-white">Commander of the Order of the Niger (CON)</strong>: National Honour of the Federal Republic of Nigeria.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-tertiary font-bold">&bull;</span>
                     <span>
-                      <strong className="text-white">Doctor of Science (Honoris Causa)</strong> &mdash; In recognition of landmark public governance &amp; institution building.
+                      <strong className="text-white">Doctor of Science (Honoris Causa)</strong>: Awarded for landmark public service and institution building.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-tertiary font-bold">&bull;</span>
                     <span>
-                      <strong className="text-white">Fellow, Nigerian Mining &amp; Geosciences Society (NMGS)</strong> &mdash; For seminal contributions to earth sciences.
+                      <strong className="text-white">Fellow, Nigerian Mining &amp; Geosciences Society (NMGS)</strong>: For contributions to earth sciences.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -238,49 +241,49 @@ export default function HomePage() {
                   <li className="flex items-start gap-2.5">
                     <span className="text-tertiary font-bold">&bull;</span>
                     <span>
-                      <strong className="text-white">Pioneer Deputy Governor (1992)</strong> &mdash; Architect of untiring efforts that secured Ondo&apos;s Oil-Producing Status.
+                      <strong className="text-white">Pioneer Deputy Governor (1992)</strong>: Led the efforts that secured oil-producing status for Ondo State.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-tertiary font-bold">&bull;</span>
                     <span>
-                      <strong className="text-white">National Power Turnaround (1999&ndash;2002)</strong> &mdash; Grew grid generation from 1,425 MW to 4,000+ MW.
+                      <strong className="text-white">National Power Turnaround (1999&ndash;2002)</strong>: Increased power generation from 1,425 MW to over 4,000 MW.
                     </span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Right Column: Narrative Autobiography (Weblium Typography & Flow) */}
+            {/* Right Column: Narrative Autobiography */}
             <div className="lg:col-span-7 flex flex-col gap-6">
-              {/* Lead Highlight Statement */}
+              {/* Lead Highlight Statement — STRATEGY & IA REVIEW: Removed em dash and simplified lead copy */}
               <p className="text-xl sm:text-2xl font-serif text-white/95 leading-relaxed font-normal">
-                Born on 16 February 1948, Dr. Olusegun Kokumo Agagu&apos;s life was a testament to academic rigor, industrial enterprise, and selfless public stewardship &mdash; dedicated to leaving every institution and community better than he met it.
+                Born on 16 February 1948, Dr. Olusegun Kokumo Agagu dedicated his life to scholarship, industry, and public service, guided by the credo to leave every community better than he met it.
               </p>
 
-              {/* Narrative Paragraphs Direct from Official PDF Record */}
+              {/* Narrative Paragraphs — STRATEGY & IA REVIEW: Removed corporate buzzwords, streamlined into clear plain English */}
               <div className="space-y-4 text-sm sm:text-base text-[#c1c0c0] leading-relaxed font-body">
                 <p>
-                  As a scholar with an unyielding passion for education, Olusegun Agagu obtained a Master&apos;s degree in Geology from the University of Texas, Austin, USA in 1974. He then served as a Research Scientist with the University of Texas for the United States Atomic Energy Commission on Geothermal Energy. Returning to Nigeria, he joined the faculty of the Geology Department at the University of Ibadan, where he earned his Ph.D. in Petroleum Geology in 1978 and trained a generation of Nigeria&apos;s leading earth scientists.
+                  With a lifelong dedication to education, Olusegun Agagu obtained a Master&apos;s degree in Geology from the University of Texas, Austin in 1974. He worked as a Research Scientist with the University of Texas for the United States Atomic Energy Commission on Geothermal Energy. Returning to Nigeria, he joined the faculty of the Geology Department at the University of Ibadan, where he earned his Ph.D. in Petroleum Geology in 1978 and trained many of Nigeria&apos;s leading earth scientists.
                 </p>
                 <p>
-                  Dr. Agagu served as a geological consultant to numerous multinational corporations and sovereign governments, including Shell Petroleum Development Company, Mobil Producing Nigeria, Texaco, Nigeria Agip Oil Company, Lexington Exploration U.S.A., Nitex Exploration U.S.A., and the Governments of Oyo, Ogun, Osun, and Ondo States.
+                  Dr. Agagu served as a geological consultant to major companies and state governments, including Shell Petroleum Development Company, Mobil Producing Nigeria, Texaco, Nigeria Agip Oil Company, Lexington Exploration U.S.A., Nitex Exploration U.S.A., and the Governments of Oyo, Ogun, Osun, and Ondo States.
                 </p>
                 <p>
-                  A visionary industrialist, he founded successful private enterprises across Nigeria, including a commercial water borehole drilling enterprise, a kaolin mining and processing company, and multiple quarrying ventures in marble, feldspar, and granite.
+                  In the private sector, he founded successful businesses across Nigeria, including water borehole drilling, kaolin processing, and mining in marble, feldspar, and granite.
                 </p>
                 <p>
-                  In public service, he made indelible national impacts: as Deputy Governor of Ondo State (1992), Federal Minister of Aviation (1999&ndash;2000), Federal Minister of Power and Steel (2000&ndash;2002), and Executive Governor of Ondo State (2003&ndash;2009), where he founded the Ondo State University of Science and Technology (now OAUSTECH) and instituted the visionary &ldquo;Roadmap to Progress&rdquo;.
+                  In public service, he served as Deputy Governor of Ondo State (1992), Federal Minister of Aviation (1999&ndash;2000), Federal Minister of Power and Steel (2000&ndash;2002), and Governor of Ondo State (2003&ndash;2009), where he founded the Ondo State University of Science and Technology (now OAUSTECH) and created the Roadmap to Progress.
                 </p>
               </div>
 
-              {/* Family & Devotion Tribute Card (Direct from PDF Page 3) */}
+              {/* Family & Devotion Tribute Card — STRATEGY & IA REVIEW: Removed em dash and PDF Page 3 reference per FIX 1 */}
               <div className="p-6 rounded-2xl bg-[#0c0805] border border-white/10 shadow-lg mt-2">
                 <blockquote className="font-serif italic text-base sm:text-lg text-white/95 leading-snug mb-3">
                   &ldquo;Until he passed on, Dr. Olusegun Agagu was a loving family man married to his school sweetheart and dance partner, Mrs. Olufunke Agagu, for more than 39 years. Their union was blessed with three children. He is also survived by seven grandchildren...and counting.&rdquo;
                 </blockquote>
                 <div className="flex items-center justify-between text-xs font-mono text-tertiary">
-                  <span>&mdash; Official Biography Record, Page 3</span>
+                  <span>Official Biography Record</span>
                   <span className="text-white/50">39+ Years of Devotion</span>
                 </div>
               </div>
@@ -306,15 +309,15 @@ export default function HomePage() {
           </div>
 
           {/* ========================================================================= */}
-          {/* EDUCATION & PEDIGREE (Weblium #education Section Layout) */}
+          {/* EDUCATION & RESEARCH — STRATEGY & IA REVIEW: Simplified heading and body copy, removed pretentious vocabulary like 'Pedigree' */}
           {/* ========================================================================= */}
           <div className="mt-24 pt-16 border-t border-white/10" id="education">
             <div className="mb-10">
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-tertiary font-ui mb-2">
-                | EDUCATION &amp; PEDIGREE |
+                | EDUCATION &amp; RESEARCH |
               </p>
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
-                Academic Pedigree &amp; Scientific Research
+                Academic Background &amp; Scientific Research
               </h3>
             </div>
 
@@ -333,11 +336,11 @@ export default function HomePage() {
                     M.Sc. in Geology
                   </p>
                   <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                    Appointed Research Scientist for the United States Atomic Energy Commission on Geothermal Energy, pioneering high-temperature energy reservoir analysis.
+                    Worked as a Research Scientist with the University of Texas for the United States Atomic Energy Commission on Geothermal Energy.
                   </p>
                 </div>
                 <div className="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono text-white/60">
-                  Atomic Energy Commission Scholar
+                  Atomic Energy Commission Researcher
                 </div>
               </div>
 
@@ -355,7 +358,7 @@ export default function HomePage() {
                     Ph.D. in Petroleum Geology
                   </p>
                   <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                    Earned doctorate in Petroleum Geology and lectured for sixteen years at the prestigious Department of Geology, authoring seminal sedimentary papers.
+                    Earned his doctorate in Petroleum Geology and lectured for sixteen years at the Department of Geology, training many of Nigeria&apos;s leading earth scientists.
                   </p>
                 </div>
                 <div className="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono text-white/60">
@@ -377,7 +380,7 @@ export default function HomePage() {
                     B.Sc. (Hons) in Geology
                   </p>
                   <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                    Graduated with top academic honours in Geology, laying the empirical foundation for a pioneering scientific, commercial, and political career.
+                    Graduated with honours in Geology, establishing the scientific foundation for his research and public service career.
                   </p>
                 </div>
                 <div className="pt-4 mt-6 border-t border-white/10 text-[11px] font-mono text-white/60">
@@ -388,7 +391,7 @@ export default function HomePage() {
           </div>
 
           {/* ========================================================================= */}
-          {/* CORE ATTRIBUTES & ASPECTS (Weblium #features-icons Layout) */}
+          {/* CORE ATTRIBUTES — STRATEGY & IA REVIEW: Replaced pretentious headline and simplified card text */}
           {/* ========================================================================= */}
           <div className="mt-20 pt-16 border-t border-white/10" id="features">
             <div className="mb-10">
@@ -396,7 +399,7 @@ export default function HomePage() {
                 | CORE ATTRIBUTES |
               </p>
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
-                Highlighting Key Aspects of a Consequential Life
+                Key Aspects of Dr. Agagu&apos;s Life and Work
               </h3>
             </div>
 
@@ -410,10 +413,10 @@ export default function HomePage() {
                   Scientific Rigour
                 </h4>
                 <p className="text-xs text-tertiary font-ui font-semibold mb-2">
-                  Empirical precision in all things
+                  Precision in research and governance
                 </p>
                 <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                  Whether analyzing geothermal reservoirs at UT Austin or managing public budgets in Ondo State, he brought data-driven scientific integrity to every challenge.
+                  From his geological research to public budget management in Ondo State, he brought scientific rigour and care to every challenge.
                 </p>
               </div>
 
@@ -426,10 +429,10 @@ export default function HomePage() {
                   Industrial Enterprise
                 </h4>
                 <p className="text-xs text-tertiary font-ui font-semibold mb-2">
-                  Building indigenous industry
+                  Building local industry
                 </p>
                 <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                  Founded thriving private ventures in borehole drilling, kaolin processing, and granite mining across Nigeria, generating jobs and domestic industrial value.
+                  Founded private companies in water drilling, kaolin processing, and granite mining across Nigeria, creating jobs and supporting local industry.
                 </p>
               </div>
 
@@ -442,10 +445,10 @@ export default function HomePage() {
                   Technocratic Vision
                 </h4>
                 <p className="text-xs text-tertiary font-ui font-semibold mb-2">
-                  Transforming public administration
+                  Serving the public
                 </p>
                 <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                  Spearheaded national electric power capacity scaling, instituted the &lsquo;Roadmap to Progress&rsquo;, and established OAUSTECH for sustainable youth advancement.
+                  Led the expansion of national electric power generation, introduced the Roadmap to Progress, and founded OAUSTECH.
                 </p>
               </div>
 
@@ -458,19 +461,19 @@ export default function HomePage() {
                   Patriarch &amp; Philanthropist
                 </h4>
                 <p className="text-xs text-tertiary font-ui font-semibold mb-2">
-                  Compassionate family legacy
+                  Devotion to family and community
                 </p>
                 <p className="text-xs text-[#c1c0c0] leading-relaxed font-body">
-                  A loving husband of 39+ years, father, grandfather, and approachable mentor who touched thousands of lives with quiet generosity and unwavering moral dignity.
+                  A loving husband of more than 39 years, father, grandfather, and mentor who supported many through quiet generosity and personal care.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Geological Consulting Clients in Sleek Capsules (Direct from PDF Page 3) */}
+          {/* Geological Consulting Clients — STRATEGY & IA REVIEW: Removed internal parenthetical note and PDF Page 3 reference per FIX 1 */}
           <div className="mt-16 pt-10 border-t border-white/10 text-center">
             <p className="text-xs uppercase tracking-widest text-tertiary font-semibold mb-4 font-ui">
-              Geological Consultant to Governments &amp; Industry (Official Record)
+              Geological Consultant to Governments &amp; Industry
             </p>
             <div className="flex flex-wrap justify-center gap-2.5">
               {[
@@ -501,7 +504,7 @@ export default function HomePage() {
       </section>
 
         {/* ========================================================================= */}
-        {/* 3. ABOUT THE FOUNDATION & 8 FOCAL AREAS (PDF Page 4) — White Background */}
+        {/* 3. ABOUT THE FOUNDATION & 8 FOCAL AREAS — White Background */}
         {/* ========================================================================= */}
         <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-b border-[#e5e5e5]" id="foundation">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
@@ -521,7 +524,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 3 Mission Points (PDF Page 4) */}
+          {/* 3 Mission Points — STRATEGY & IA REVIEW: Streamlined mission points, tightened phrasing */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             <div className="bg-[#fcfbf9] p-7 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between">
               <div>
@@ -530,7 +533,7 @@ export default function HomePage() {
                 </span>
                 <h3 className="text-lg font-bold font-display text-[#111111] mb-2">Immortalise His Name &amp; Legacy</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed font-body">
-                  Immortalise the name and legacy of the late Dr. Olusegun Agagu through enduring institutions, archives, and academic endowments.
+                  Preserve the memory and public service legacy of Dr. Olusegun Agagu through enduring archives and academic endowments.
                 </p>
               </div>
             </div>
@@ -542,7 +545,7 @@ export default function HomePage() {
                 </span>
                 <h3 className="text-lg font-bold font-display text-[#111111] mb-2">Actualise His Personal Credo</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed font-body">
-                  Live up to and seek to actualise his personal credo which was{' '}
+                  Live up to and actualise his personal credo:{' '}
                   <strong className="text-brand-red italic">&lsquo;to leave things better than he met them&rsquo;</strong>.
                 </p>
               </div>
@@ -553,9 +556,9 @@ export default function HomePage() {
                 <span className="w-8 h-8 rounded-full bg-brand-red/10 text-brand-red font-bold text-xs flex items-center justify-center mb-4 font-ui">
                   03
                 </span>
-                <h3 className="text-lg font-bold font-display text-[#111111] mb-2">Further His Passionate Ideals</h3>
+                <h3 className="text-lg font-bold font-display text-[#111111] mb-2">Further His Ideals</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed font-body">
-                  Further the ideals he lived by and worked passionately towards, particularly intellectual excellence, good governance and national development.
+                  Promote the ideals he worked towards: academic excellence, transparent governance, and national development.
                 </p>
               </div>
             </div>
@@ -571,7 +574,7 @@ export default function HomePage() {
             </h3>
           </div>
 
-          {/* 8 Focal Areas Grid (Directly from PDF Page 4) */}
+          {/* 8 Focal Areas Grid — STRATEGY & IA REVIEW: Crisp, dignified descriptions of the 8 pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Focal Area 1: Academia */}
             <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
@@ -721,7 +724,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. OUR ACTIVITIES & EMPIRICAL IMPACT (PDF Pages 6 & 7) — Dark Background */}
+      {/* 4. OUR ACTIVITIES & EMPIRICAL IMPACT — Dark Background */}
       {/* ========================================================================= */}
       <section className="py-24 bg-[#140b0a] text-white scroll-mt-20 border-b border-white/10" id="impact">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
@@ -729,8 +732,9 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+                {/* STRATEGY & IA REVIEW: Replaced PDF page reference with clear descriptive eyebrow */}
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-tertiary font-ui">
-                  Our Activities [1/12 &amp; 2/12]
+                  Our Impact
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold font-display text-white">
@@ -742,7 +746,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 5 Impact Metrics from PDF Pages 6 & 7 */}
+          {/* 5 Impact Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             <div className="bg-[#1e110b] p-6 rounded-2xl border border-white/10 text-center flex flex-col justify-center items-center hover:border-tertiary/40 transition-all">
               <span className="text-4xl lg:text-5xl font-bold font-display text-brand-red">9+</span>
@@ -771,15 +775,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Tertiary Endowment Fund Detail Box (PDF Page 7) */}
+          {/* Tertiary Endowment Fund Detail Box */}
           <div className="mt-12 p-8 bg-[#1e110b] rounded-3xl border border-white/10">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
               <div>
+                {/* STRATEGY & IA REVIEW: Removed PDF Page 7 label per FIX 1 */}
                 <span className="text-xs font-bold uppercase tracking-wider text-tertiary block mb-1 font-ui">
-                  Permanent University Endowment Fund (PDF Page 7)
+                  Permanent University Endowment Fund
                 </span>
                 <h3 className="text-2xl font-bold font-display text-white">
-                  Geology Cash Awards Across Four Tertiary Institutions
+                  Geology Cash Awards Across Four Universities
                 </h3>
               </div>
               <div className="flex items-center gap-4 text-xs font-ui">
@@ -818,8 +823,9 @@ export default function HomePage() {
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-white">
                 Scaling National Electrical Generation Capacity
               </h3>
+              {/* STRATEGY & IA REVIEW: Removed PDF Page 2 reference and simplified to authoritative historical statement */}
               <p className="text-sm text-white/80 mt-1 font-body">
-                As recorded in the official biography (PDF Page 2): power generation increased dramatically from 1,425 MW in 2000 to over 4,000 MW in 2002 with complementary reinforcement of transmission and distribution networks.
+                As Federal Minister for Power and Steel (2000–2002), he oversaw a rise in national power generation from 1,425 MW to over 4,000 MW, alongside improvements to transmission and distribution networks.
               </p>
             </div>
             <PowerCounter />
@@ -850,8 +856,9 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              {/* STRATEGY & IA REVIEW: Replaced internal PDF page index with descriptive title */}
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
-                Our Activities [3/12 to 12/12]
+                Annual Memorial Lectures
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#111111]">
@@ -862,9 +869,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Key Editions Cards (Direct from PDF Pages 8-17) */}
+          {/* Key Editions Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {/* 2014 Inaugural Lecture (PDF Page 8) */}
+            {/* 2014 Inaugural Lecture */}
             <div className="bg-[#fcfbf9] p-7 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -890,7 +897,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2016 3rd Lecture (PDF Page 10) */}
+            {/* 2016 3rd Lecture */}
             <div className="bg-[#fcfbf9] p-7 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -917,7 +924,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2018 5th Lecture (PDF Page 12) */}
+            {/* 2018 5th Lecture */}
             <div className="bg-[#fcfbf9] p-7 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -944,7 +951,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2019 6th Lecture (PDF Page 13) */}
+            {/* 2019 6th Lecture */}
             <div className="bg-[#fcfbf9] p-7 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -971,7 +978,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2023 Decennial Milestone & Book Launch (PDF Page 17 - Double Width) */}
+            {/* 2023 Decennial Milestone & Book Launch */}
             <div className="bg-[#fcfbf9] p-7 rounded-3xl border-2 border-brand-red shadow-lg flex flex-col justify-between hover:shadow-xl transition-shadow md:col-span-2">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -979,25 +986,25 @@ export default function HomePage() {
                     <StarIcon className="w-3.5 h-3.5" />
                     Decennial Milestone &bull; 2023
                   </span>
-                  <span className="text-xs font-mono text-brand-red font-bold">PDF Page 17</span>
+                  {/* STRATEGY & IA REVIEW: Removed internal PDF Page 17 tag per FIX 1 */}
                 </div>
                 <h3 className="text-2xl font-bold font-display text-[#111111] mb-2">
-                  Compendium Launch &amp; Highlife Talent Show (2023)
+                  Compendium Launch &amp; Highlife Concert (2023)
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed mb-4 font-body">
-                  Marking a decade of legacy with two historic cultural and policy milestones celebrating Dr. Agagu&apos;s enduring impact on good governance and African heritage.
+                  Marking a decade of legacy with cultural and policy milestones celebrating Dr. Agagu&apos;s impact on governance and African heritage.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 font-ui">
                   <div className="p-4 bg-white border border-[#e5e5e5] rounded-2xl text-xs text-[#111111]">
                     <strong className="text-brand-red block mb-1 text-sm font-display">Book Launch: A DECADE OF LEGACY</strong>
                     <p className="text-[#444444] leading-relaxed">
-                      A Compendium of Policy Papers from the Olusegun Agagu Memorial Lectures was curated and launched with the aim of having it be a reference book and critical resource on good governance.
+                      A Compendium of Policy Papers from the Olusegun Agagu Memorial Lectures was published as a permanent reference resource on good governance.
                     </p>
                   </div>
                   <div className="p-4 bg-white border border-[#e5e5e5] rounded-2xl text-xs text-[#111111]">
                     <strong className="text-brand-red block mb-1 text-sm font-display">Highlife Music Concert</strong>
                     <p className="text-[#444444] leading-relaxed">
-                      Featured and supported young Nigerian Highlife musicians, showcasing the richness of African heritage through electrifying performances, live instrumentation, and soulful melodies.
+                      Featured and supported young Nigerian Highlife musicians, celebrating African heritage through live instrumentation and song.
                     </p>
                   </div>
                 </div>
@@ -1021,16 +1028,17 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. BOARD OF TRUSTEES (PDF Page 5) — White Background */}
+      {/* 6. BOARD OF TRUSTEES — White Background */}
       {/* ========================================================================= */}
       <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-b border-[#e5e5e5]" id="board">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+                {/* STRATEGY & IA REVIEW: Replaced PDF page reference with Governance eyebrow */}
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
-                  About The Foundation &bull; PDF Page 5
+                  Governance &amp; Leadership
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#111111]">
@@ -1042,94 +1050,79 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Active Trustees Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* FIX 6: Clean minimal 2-column table/list layout — no avatar circles, no repetitive descriptions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {biography.boardOfTrustees
               .filter((t) => !t.role.includes('Emeritus') && !t.role.includes('Memoriam'))
               .map((trustee, idx) => {
-                const initials = trustee.name
-                  .replace(/^(Dr\.|Chief|Mrs\.|Alhaji|Ms\.|Mr\.|Prof\.)\s*/g, '')
-                  .split(' ')
-                  .map((w) => w[0])
-                  .filter(Boolean)
-                  .slice(0, 2)
-                  .join('')
-
+                const isExecutive = trustee.role === 'Chairman' || trustee.role === 'Secretary'
                 return (
                   <div
                     key={idx}
-                    className="bg-[#fcfbf9] p-6 rounded-3xl border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg transition-all group"
+                    className={`p-5 rounded-2xl border transition-all flex items-center justify-between gap-4 ${
+                      isExecutive
+                        ? 'bg-[#fcf9f8] border-[#e5e5e5] border-l-4 border-l-brand-red shadow-sm'
+                        : 'bg-white border-[#e5e5e5] shadow-sm hover:border-[#cccccc]'
+                    }`}
                   >
                     <div>
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-14 h-14 rounded-2xl bg-white border border-[#e5e5e5] flex items-center justify-center font-display font-bold text-xl text-brand-red shadow-sm group-hover:bg-brand-red group-hover:text-white transition-colors">
-                          {initials}
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block font-ui">
-                            {trustee.role}
-                          </span>
-                          <h3 className="font-bold text-base text-[#111111] font-display">
-                            {trustee.name}
-                          </h3>
-                        </div>
-                      </div>
-                      <p className="text-xs text-[#444444] leading-relaxed font-body">
-                        {trustee.role === 'Chairman' &&
-                          'Providing overarching fiduciary direction, institutional partnerships, and endowment leadership.'}
-                        {trustee.role === 'Secretary' &&
-                          'Directing secretariat operations, tertiary scholarship verifications, and administrative compliance.'}
-                        {trustee.role === 'Trustee' &&
-                          'Contributing strategic oversight, educational endowment governance, and civic stewardship.'}
-                      </p>
+                      <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui block mb-1">
+                        {trustee.role}
+                      </span>
+                      <h3 className="font-bold text-base sm:text-lg text-[#111111] font-display">
+                        {trustee.name}
+                      </h3>
                     </div>
-                    <div className="text-[11px] font-mono text-[#777777] pt-3 border-t border-[#e5e5e5] mt-4">
-                      {trustee.note ? trustee.note : 'Board of Trustees &bull; Active'}
+                    <div>
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium font-ui bg-[#f4f4f4] text-[#444444] whitespace-nowrap">
+                        {trustee.note ? trustee.note : 'Active'}
+                      </span>
                     </div>
                   </div>
                 )
               })}
           </div>
 
-          {/* Historic & Emeritus Trustees (PDF Page 5) */}
-          <div className="mt-12 p-6 bg-[#fcfbf9] rounded-2xl border border-[#e5e5e5] text-xs font-ui text-[#444444] flex flex-wrap items-center justify-between gap-4">
+          {/* Historic & Emeritus Trustees — STRATEGY & IA REVIEW: Clean compact summary without internal PDF references */}
+          <div className="mt-8 p-5 bg-[#fcfbf9] rounded-2xl border border-[#e5e5e5] text-xs font-ui text-[#444444] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
-              <span className="font-bold uppercase tracking-wider text-[#111111] block mb-1">
-                Historic Trustees &bull; PDF Page 5:
+              <span className="font-bold uppercase tracking-wider text-[#111111] mr-2">
+                Historic &amp; Emeritus Trustees:
               </span>
               <span>
                 Professor Dele Fawole (stepped down 2018) &bull; Prince Yemi Adefulu MFR (Late)
               </span>
             </div>
-            <div className="text-[#777777] font-mono">
-              In Perpetual Honor of Foundation Founders
+            <div className="text-[#777777] font-mono text-[11px]">
+              In Perpetual Honour
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 7. FUTURE INITIATIVES (PDF Page 18) — White Background */}
+      {/* 7. FUTURE INITIATIVES — White Background */}
       {/* ========================================================================= */}
       <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-b border-[#e5e5e5]" id="initiatives">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 mb-2">
               <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              {/* STRATEGY & IA REVIEW: Replaced internal PDF page index with descriptive title */}
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
-                Strategic Horizons &bull; PDF Page 18
+                Future Initiatives
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#111111]">
               Future Initiatives
             </h2>
             <p className="text-base text-[#444444] mt-3 font-body">
-              Expanding the Foundation&apos;s reach through multi-year strategic programmes across universities, literature, and aviation safety.
+              Expanding the Foundation&apos;s reach through multi-year strategic programmes across universities, archives, and public service.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            {/* Initiative 1: Scholarships and Awards Programme (PDF Page 18) */}
+            {/* Initiative 1: Scholarships and Awards Programme */}
             <div className="bg-[#fcfbf9] p-8 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
@@ -1153,7 +1146,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Initiative 2: Autobiography (PDF Page 18) */}
+            {/* Initiative 2: Autobiography */}
             <div className="bg-[#fcfbf9] p-8 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
@@ -1177,7 +1170,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Initiative 3: Other Initiatives (PDF Page 18) */}
+            {/* Initiative 3: Other Initiatives */}
             <div className="bg-[#fcfbf9] p-8 rounded-3xl border border-[#e5e5e5] shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
@@ -1221,53 +1214,42 @@ export default function HomePage() {
             <blockquote className="font-playfair italic text-2xl sm:text-3xl lg:text-4xl text-gold-light leading-relaxed max-w-3xl mx-auto">
               &ldquo;Together, we hope we can continue to do more &lsquo;to leave things better than we met them&rsquo;.&rdquo;
             </blockquote>
+            {/* STRATEGY & IA REVIEW: Removed em dash and PDF page 19 reference */}
             <span className="font-ui text-xs uppercase tracking-widest text-ivory/80 block mt-4 font-semibold">
-              &mdash; Our Thanks &bull; PDF Page 19
+              - The Olusegun Agagu Foundation
             </span>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 8. DEDICATED VIEW GALLERY SECTION (FIX 5) — White Background */}
+      {/* 8. DEDICATED VIEW GALLERY SECTION (Condition 5: conditional rendering) — White Background */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-b border-[#e5e5e5]" id="gallery">
-        <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-12">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
-                Visual Archive
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#111111]">
-              Photo Gallery
-            </h2>
-            <p className="text-base sm:text-lg text-[#444444] mt-2 font-body">
-              A visual record of the Foundation’s journey
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <div
-                key={index}
-                className="aspect-[4/3] rounded-2xl bg-[#140b0a] border border-[#2d1b17] shadow-md flex flex-col items-center justify-center p-6 text-center group hover:border-tertiary transition-all"
-              >
-                <span className="text-xs sm:text-sm font-ui font-semibold uppercase tracking-wider text-white/90 group-hover:text-tertiary transition-colors">
-                  INSERT: Event photo
-                </span>
-                <span className="text-[11px] font-mono text-white/50 mt-1">
-                  Archive Photo #{index + 1}
+      {galleryPhotos.length > 0 && (
+        <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-b border-[#e5e5e5]" id="gallery">
+          <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
+            <div className="max-w-3xl mb-12">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
+                  Visual Archive
                 </span>
               </div>
-            ))}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#111111]">
+                Photo Gallery
+              </h2>
+              <p className="text-base sm:text-lg text-[#444444] mt-2 font-body">
+                A visual record of the Foundation&apos;s journey
+              </p>
+            </div>
+
+            <PhotoGallery photos={galleryPhotos} />
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ========================================================================= */}
-      {/* 9. CLOSING TRIBUTE, OUR THANKS & DIGITAL CONDOLENCE BOOK (PDF Page 19) */}
+      {/* 9. CLOSING TRIBUTE, OUR THANKS & DIGITAL CONDOLENCE BOOK */}
       {/* ========================================================================= */}
       <section className="py-24 bg-[#140b0a] text-white relative overflow-hidden scroll-mt-20 border-b border-white/10" id="tribute">
         <div
@@ -1280,9 +1262,10 @@ export default function HomePage() {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-neutral-900 group">
                 <div className="relative w-full h-[480px]">
+                  {/* FIX 3: Replaced image with living.jpeg from pdf directory */}
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIPECvsJpvYgoRST1FZfWB1eXmmON9fG3faID-CV55j_FKp8IWk3fWoPj3b-Ixr2eERC8S17MOkHhLPeI0ZiU3YDI7IJaUZlEgx3FBMf3QuU6qmf0Kt3fcGYqnQ77rCNPFZApmpTrVltqx36OpU9P4Td3ZNaPOuCEywH1hRbhVrAdj_W_nfMOafm6Woi91wO9vP7_yOUzj9E6P9H3W3tifeXOPyrJ1bAUNvDyhojdB"
-                    alt="Archival Memorial Portrait of Dr. Olusegun Kokumo Agagu CON"
+                    src="/pdf/living.jpeg"
+                    alt="Memorial portrait of Dr. Olusegun Kokumo Agagu CON"
                     fill
                     sizes="(max-width: 1024px) 100vw, 420px"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -1292,16 +1275,18 @@ export default function HomePage() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <span className="text-xs uppercase tracking-widest text-tertiary font-bold block mb-1 font-ui">In Loving Memory</span>
                   <p className="text-xl font-bold font-headline">H.E. Dr. Olusegun Kokumo Agagu, CON</p>
-                  <p className="text-xs text-white/70 font-mono mt-1">16 February 1948 &mdash; 13 September 2013</p>
+                  {/* STRATEGY & IA REVIEW: Removed em dash, formatted with en dash */}
+                  <p className="text-xs text-white/70 font-mono mt-1">16 February 1948 – 13 September 2013</p>
                 </div>
               </div>
             </div>
 
-            {/* Memorial Text & Our Thanks (PDF Page 19) */}
+            {/* Memorial Text & Our Thanks */}
             <div className="lg:col-span-7 flex flex-col gap-6 items-start">
+              {/* STRATEGY & IA REVIEW: Removed PDF Page 19 reference from eyebrow */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-tertiary text-xs uppercase font-bold tracking-wider font-ui">
                 <CandleIcon className="w-4 h-4" />
-                Perpetual Remembrance &bull; Our Thanks (PDF Page 19)
+                Perpetual Remembrance
               </div>
               <h2 className="text-3xl sm:text-5xl font-bold font-display text-white leading-tight">
                 Our Thanks &amp; Living Tribute
@@ -1313,25 +1298,21 @@ export default function HomePage() {
                 <blockquote className="text-xl sm:text-2xl font-headline italic text-tertiary leading-snug">
                   &ldquo;Together, we hope we can continue to do more &lsquo;to leave things better than we met them&rsquo;.&rdquo;
                 </blockquote>
+                {/* STRATEGY & IA REVIEW: Removed em dash */}
                 <span className="text-xs uppercase tracking-wider text-white/60 block mt-2 font-bold font-ui">
-                  &mdash; The Olusegun Agagu Foundation
+                  - The Olusegun Agagu Foundation
                 </span>
               </div>
               <p className="text-sm sm:text-base text-white/75 leading-relaxed font-body">
                 Visitors, scholars, and citizens are warmly invited to inscribe their personal reflections, reminiscences, and tributes into the permanent digital memorial registry.
               </p>
-              <div className="flex items-center gap-4 pt-2">
+              {/* FIX 2: Removed redundant 'Contact Secretariat' button sitting directly above the contact section */}
+              <div className="pt-2">
                 <a
-                  className="px-8 py-3.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md focus-ring"
+                  className="px-8 py-3.5 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md focus-ring inline-block"
                   href="#tribute-form"
                 >
                   Inscribe in Condolence Book
-                </a>
-                <a
-                  className="text-xs uppercase tracking-wider font-semibold text-white/80 hover:text-white transition-colors focus-ring"
-                  href="#contact"
-                >
-                  Contact Secretariat &rarr;
                 </a>
               </div>
             </div>
@@ -1343,15 +1324,16 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 10. OFFICIAL SECRETARIAT CONTACT (PDF Page 20) — White Background */}
+      {/* 10. OFFICIAL SECRETARIAT CONTACT — White Background */}
       {/* ========================================================================= */}
       <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-t border-[#e5e5e5]" id="contact">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <div className="inline-flex items-center gap-2 mb-2">
               <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              {/* STRATEGY & IA REVIEW: Replaced PDF Page 20 label with clean Contact Information eyebrow */}
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
-                Contact Us &bull; PDF Page 20
+                Contact Information
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#111111]">

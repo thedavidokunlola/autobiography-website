@@ -25,8 +25,9 @@ export function Footer() {
               </div>
             </div>
 
+            {/* STRATEGY & IA REVIEW: Simplified mission summary, removed corporate buzzwords */}
             <p className="text-sm text-white/70 max-w-md leading-relaxed mt-2 font-body">
-              Perpetuating the intellectual scholarship, governance tenets, and philanthropic endowments of Dr. Olusegun Kokumo Agagu for future generations of public leaders.
+              Preserving the memory, public service values, and educational endowments of Dr. Olusegun Kokumo Agagu for future generations.
             </p>
 
             {/* Credo Placement 5 — Framed Credo */}
@@ -34,8 +35,9 @@ export function Footer() {
               <blockquote className="text-xs italic font-serif text-white/90">
                 &ldquo;To leave things better than we met them.&rdquo;
               </blockquote>
+              {/* STRATEGY & IA REVIEW: Removed em dash per FIX 4 */}
               <span className="block text-[10px] uppercase font-bold text-tertiary tracking-widest mt-1 font-ui">
-                &mdash; H.E. Dr. Olusegun Kokumo Agagu, CON
+                - H.E. Dr. Olusegun Kokumo Agagu, CON
               </span>
             </div>
           </div>
@@ -59,10 +61,14 @@ export function Footer() {
                 Annual Memorial Lectures
               </Link>
               <Link href="/#board" className="hover:text-white transition-colors focus-ring rounded">
-                Board of Trustees &amp; Governance
+                Board of Trustees
               </Link>
               <Link href="/#initiatives" className="hover:text-white transition-colors focus-ring rounded">
                 Future Initiatives
+              </Link>
+              {/* STRATEGY & IA REVIEW / FIX 5: Added Photo Gallery to ensure complete archive navigation */}
+              <Link href="/#gallery" className="hover:text-white transition-colors focus-ring rounded">
+                Photo Gallery
               </Link>
               <Link href="/work" className="hover:text-white transition-colors focus-ring rounded">
                 Civic History &amp; Endowments

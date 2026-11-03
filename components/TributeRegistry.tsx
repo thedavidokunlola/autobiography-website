@@ -148,8 +148,9 @@ export function TributeRegistry() {
           <p className="text-base font-headline italic text-on-surface">
             &ldquo;{inscribed.message}&rdquo;
           </p>
+          {/* STRATEGY & IA REVIEW: Removed em dash per FIX 4 */}
           <div className="text-xs text-outline font-mono">
-            &mdash; Inscribed by {inscribed.name} ({inscribed.affiliation}) on {inscribed.date}
+            Inscribed by {inscribed.name} ({inscribed.affiliation}) on {inscribed.date}
           </div>
           <div className="pt-2">
             <a

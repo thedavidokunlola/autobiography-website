@@ -13,7 +13,7 @@ export function PressEntryList({ entries, totalEntriesCount }: PressEntryListPro
         <p className="font-playfair italic text-text-secondary">
           {totalEntriesCount > 0
             ? 'No press entries match your search. Try adjusting the filters.'
-            : 'Press archive in preparation by the Secretariat.'}
+            : 'Press archive coming soon.'}
         </p>
       </div>
     )
