@@ -215,11 +215,9 @@ export function MemorialLectureStrip() {
                 <span className="font-playfair font-bold text-3xl text-crimson">
                   {lec.year}
                 </span>
-                {lec.isVirtual && (
-                  <span className="px-2.5 py-0.5 rounded-full bg-slate text-ivory text-[10px] font-ui uppercase tracking-wider">
-                    Virtual
-                  </span>
-                )}
+                <span className="px-2 py-0.5 rounded-full bg-ivory text-charcoal border border-border text-[9.5px] font-ui uppercase tracking-wider font-semibold max-w-[160px] truncate">
+                  {lec.lectureNumber}
+                </span>
               </div>
 
               <h4 className="font-playfair italic text-sm text-charcoal leading-snug line-clamp-2 mb-3">
@@ -278,7 +276,7 @@ export function MemorialLectureStrip() {
               <div className="flex items-center justify-between border-b border-ivory/20 pb-4 mb-6">
                 <div>
                   <span className="text-gold text-xs font-ui uppercase tracking-widest font-semibold block">
-                    Memorial Lecture Series
+                    {selectedLecture.lectureNumber}
                   </span>
                   <span
                     id="lecture-panel-title"

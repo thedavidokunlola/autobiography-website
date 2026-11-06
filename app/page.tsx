@@ -17,7 +17,6 @@ import {
   ArrowForwardIcon,
   VerifiedIcon,
   StarIcon,
-  DownloadIcon,
   CandleIcon,
   MusicNoteIcon,
   VolunteerActivismIcon,
@@ -577,147 +576,107 @@ export default function HomePage() {
           {/* 8 Focal Areas Grid — STRATEGY & IA REVIEW: Crisp, dignified descriptions of the 8 pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Focal Area 1: Academia */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <SchoolIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Academia
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Promoting intellectual excellence, tertiary research bursaries, and faculty awards across Nigerian universities.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <SchoolIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 01
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Academia
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Promoting intellectual excellence, tertiary research bursaries, and faculty awards across Nigerian universities.
+              </p>
             </div>
 
             {/* Focal Area 2: Geology */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <MicroscopeIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Geology
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Endowing prizes and scholarships for undergraduate and postgraduate earth sciences scholars (UI, AAUA, FUTA, OAUSTECH).
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <MicroscopeIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 02
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Geology
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Endowing prizes and scholarships for undergraduate and postgraduate earth sciences scholars (UI, AAUA, FUTA, OAUSTECH).
+              </p>
             </div>
 
             {/* Focal Area 3: Petroleum Engineering */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <FactoryIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Petroleum Engineering
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Fostering technical engineering education, exploration research, and local content capacity in hydrocarbons.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <FactoryIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 03
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Petroleum Engineering
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Fostering technical engineering education, exploration research, and local content capacity in hydrocarbons.
+              </p>
             </div>
 
             {/* Focal Area 4: Energy */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <ZapIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Energy
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Advancing sustainable power infrastructure, transmission policy, and rural electrification initiatives.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <ZapIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 04
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Energy
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Advancing sustainable power infrastructure, transmission policy, and rural electrification initiatives.
+              </p>
             </div>
 
             {/* Focal Area 5: Politics / Good Governance */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <BankIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Politics / Good Governance
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Convening policy dialogues, publishing policy compendiums, and mentoring leaders in transparent public administration.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <BankIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 05
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Politics / Good Governance
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Convening policy dialogues, publishing policy compendiums, and mentoring leaders in transparent public administration.
+              </p>
             </div>
 
             {/* Focal Area 6: Culture and Arts (Highlife Music) */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <MusicNoteIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Culture &amp; Arts (Highlife)
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Honoring African heritage through Highlife music talent shows, live instrumentation, and youth artistic empowerment.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <MusicNoteIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 06
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Culture &amp; Arts (Highlife)
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Honoring African heritage through Highlife music talent shows, live instrumentation, and youth artistic empowerment.
+              </p>
             </div>
 
             {/* Focal Area 7: Service */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <VolunteerActivismIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Service
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Upholding community welfare, secondary school bursaries, youth mentorship, and selfless civic stewardship.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <VolunteerActivismIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 07
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Service
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Upholding community welfare, secondary school bursaries, youth mentorship, and selfless civic stewardship.
+              </p>
             </div>
 
             {/* Focal Area 8: Aviation Trauma */}
-            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col justify-between hover:shadow-lg hover:border-gold transition-all group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <FlightTakeoffIcon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
-                  Aviation Trauma
-                </h4>
-                <p className="text-xs text-[#444444] leading-relaxed font-body">
-                  Advancing air travel safety research, passenger advocacy, and trauma support systems across Nigeria.
-                </p>
+            <div className="bg-[#fcfbf9] rounded-3xl p-6 shadow-sm border border-[#e5e5e5] flex flex-col hover:shadow-lg hover:border-gold transition-all group">
+              <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-4 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                <FlightTakeoffIcon className="w-6 h-6" />
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] text-[11px] font-mono text-[#777777]">
-                Focal Pillar 08
-              </div>
+              <h4 className="text-lg font-bold font-display text-[#111111] mb-1 group-hover:text-brand-red transition-colors">
+                Aviation Trauma
+              </h4>
+              <p className="text-xs text-[#444444] leading-relaxed font-body">
+                Advancing air travel safety research, passenger advocacy, and trauma support systems across Nigeria.
+              </p>
             </div>
           </div>
         </div>
@@ -804,9 +763,6 @@ export default function HomePage() {
                 { name: 'Olusegun Agagu University of Science & Technology (OAUSTECH)', desc: 'Okitipupa, Ondo State' },
               ].map((inst, i) => (
                 <div key={i} className="p-4 bg-[#140b0a] rounded-2xl border border-white/10">
-                  <span className="text-[10px] uppercase font-bold text-tertiary font-ui block mb-1">
-                    Endowed Institution 0{i + 1}
-                  </span>
                   <h4 className="font-bold text-sm text-white font-display">{inst.name}</h4>
                   <p className="text-xs text-white/75 mt-1 font-body">{inst.desc}</p>
                 </div>
@@ -876,24 +832,22 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider font-ui">
-                    Inaugural &bull; 2014
+                    1st Memorial Lecture &bull; 2014
                   </span>
-                  <span className="text-xs font-mono text-[#777777]">LEC-2014-01</span>
                 </div>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-2">Keynote Address on Good Governance</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed mb-4 font-body">
                   Delivered by H.E. Festus Gontebanye Mogae, Former President of Botswana (represented by the Ambassador of Botswana to Nigeria).
                 </p>
                 <div className="p-3 bg-white border border-[#e5e5e5] rounded-xl text-xs text-[#111111] mb-2 font-ui space-y-1">
-                  <div><strong className="text-brand-red">Chaired by:</strong> H.E. Chief Olusegun Obasanjo (GCON), Former President of Nigeria</div>
-                  <div><strong className="text-[#111111]">Guest Speakers:</strong> Mrs. Omobola Johnson, Mr. A. Oba Otudeko (CFR), Chief Olusola Oke</div>
+                  <div><strong className="text-[#111111] font-semibold">Chairman:</strong> H.E. Chief Olusegun Obasanjo (GCON), Former President of Nigeria</div>
+                  <div><strong className="text-[#111111] font-semibold">Guest Speakers:</strong> Mrs. Omobola Johnson, Mr. A. Oba Otudeko (CFR), Chief Olusola Oke</div>
                 </div>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+              <div className="pt-4 mt-4 border-t border-[#e5e5e5]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#555555] font-ui">
                   Inaugural Convocation
                 </span>
-                <span className="text-[10px] font-mono text-[#777777]">Lagos, Nigeria</span>
               </div>
             </div>
 
@@ -902,25 +856,23 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full bg-brand-red/10 text-brand-red text-[11px] font-bold uppercase tracking-wider font-ui">
-                    3rd Lecture &bull; 2016
+                    3rd Memorial Lecture &bull; 2016
                   </span>
-                  <span className="text-xs font-mono text-[#777777]">LEC-2016-03</span>
                 </div>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-2">Regional Cooperation &amp; Integration in Africa</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed mb-4 font-body">
                   Keynote Address by H.E. Benjamin Mkapa, Former President of Tanzania.
                 </p>
                 <div className="p-3 bg-white border border-[#e5e5e5] rounded-xl text-xs text-[#111111] mb-2 font-ui space-y-1">
-                  <div><strong className="text-brand-red">Chaired by:</strong> H.E. Asiwaju Bola Ahmed Tinubu</div>
-                  <div><strong className="text-[#111111]">Special Guest:</strong> H.E. Ambassador Baba Gana Kingibe</div>
-                  <div><strong className="text-[#111111]">Goodwill Message:</strong> H.E. Chief Olusegun Obasanjo, GCFR</div>
+                  <div><strong className="text-[#111111] font-semibold">Chairman:</strong> H.E. Asiwaju Bola Ahmed Tinubu</div>
+                  <div><strong className="text-[#111111] font-semibold">Special Guest:</strong> H.E. Ambassador Baba Gana Kingibe</div>
+                  <div><strong className="text-[#111111] font-semibold">Goodwill Message:</strong> H.E. Chief Olusegun Obasanjo, GCFR</div>
                 </div>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+              <div className="pt-4 mt-4 border-t border-[#e5e5e5]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#555555] font-ui">
                   Continental Forum
                 </span>
-                <span className="text-[10px] font-mono text-[#777777]">Lagos, Nigeria</span>
               </div>
             </div>
 
@@ -929,25 +881,23 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full bg-brand-red/10 text-brand-red text-[11px] font-bold uppercase tracking-wider font-ui">
-                    5th Lecture &bull; 2018
+                    5th Memorial Lecture &bull; 2018
                   </span>
-                  <span className="text-xs font-mono text-[#777777]">LEC-2018-05</span>
                 </div>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-2">Women: A Needed Force in Politics and the Polity</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed mb-4 font-body">
                   Keynote Address by Her Excellency, Former President Dr. Joyce Banda of Malawi.
                 </p>
                 <div className="p-3 bg-white border border-[#e5e5e5] rounded-xl text-xs text-[#111111] mb-2 font-ui space-y-1">
-                  <div><strong className="text-brand-red">Chairman:</strong> H.R.H. Muhammadu Sanusi II (The Emir of Kano)</div>
-                  <div><strong className="text-[#111111]">Guest Speakers:</strong> Chief Folake Solanke SAN CON, Prof. Sheila Tlou (UN)</div>
-                  <div><strong className="text-[#111111]">Grand Patron:</strong> Chief Olusegun Obasanjo, GCFR</div>
+                  <div><strong className="text-[#111111] font-semibold">Chairman:</strong> H.R.H. Muhammadu Sanusi II (The Emir of Kano)</div>
+                  <div><strong className="text-[#111111] font-semibold">Guest Speakers:</strong> Chief Folake Solanke SAN CON, Prof. Sheila Tlou (UN)</div>
+                  <div><strong className="text-[#111111] font-semibold">Grand Patron:</strong> Chief Olusegun Obasanjo, GCFR</div>
                 </div>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+              <div className="pt-4 mt-4 border-t border-[#e5e5e5]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#555555] font-ui">
                   Women in Leadership
                 </span>
-                <span className="text-[10px] font-mono text-[#777777]">Lagos, Nigeria</span>
               </div>
             </div>
 
@@ -956,25 +906,23 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full bg-brand-red/10 text-brand-red text-[11px] font-bold uppercase tracking-wider font-ui">
-                    6th Lecture &bull; 2019
+                    6th Memorial Lecture &bull; 2019
                   </span>
-                  <span className="text-xs font-mono text-[#777777]">LEC-2019-06</span>
                 </div>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-2">Climate Change &amp; Population Migration in Africa</h3>
                 <p className="text-xs sm:text-sm text-[#444444] leading-relaxed mb-4 font-body">
                   Keynote Address by Her Excellency, Former President Dr. Ameenah Fakim-Gurib of Mauritius.
                 </p>
                 <div className="p-3 bg-white border border-[#e5e5e5] rounded-xl text-xs text-[#111111] mb-2 font-ui space-y-1">
-                  <div><strong className="text-brand-red">Chairman:</strong> Chief Emeka Anyaoku (Former Commonwealth Sec-Gen)</div>
-                  <div><strong className="text-[#111111]">Chief Host:</strong> H.E. Babajide Sanwo-Olu (Governor of Lagos)</div>
-                  <div><strong className="text-[#111111]">Goodwill:</strong> Ms. Amina Mohammed OFR (UN Deputy Sec-General)</div>
+                  <div><strong className="text-[#111111] font-semibold">Chairman:</strong> Chief Emeka Anyaoku (Former Commonwealth Sec-Gen)</div>
+                  <div><strong className="text-[#111111] font-semibold">Chief Host:</strong> H.E. Babajide Sanwo-Olu (Governor of Lagos)</div>
+                  <div><strong className="text-[#111111] font-semibold">Goodwill:</strong> Ms. Amina Mohammed OFR (UN Deputy Sec-General)</div>
                 </div>
               </div>
-              <div className="pt-4 mt-4 border-t border-[#e5e5e5] flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui">
+              <div className="pt-4 mt-4 border-t border-[#e5e5e5]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#555555] font-ui">
                   Climate &amp; Migration
                 </span>
-                <span className="text-[10px] font-mono text-[#777777]">Lagos, Nigeria</span>
               </div>
             </div>
 
@@ -984,9 +932,8 @@ export default function HomePage() {
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 font-ui">
                     <StarIcon className="w-3.5 h-3.5" />
-                    Decennial Milestone &bull; 2023
+                    Compendium Launch and Highlife Concert &bull; 2023
                   </span>
-                  {/* STRATEGY & IA REVIEW: Removed internal PDF Page 17 tag per FIX 1 */}
                 </div>
                 <h3 className="text-2xl font-bold font-display text-[#111111] mb-2">
                   Compendium Launch &amp; Highlife Concert (2023)
@@ -996,13 +943,13 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-2 font-ui">
                   <div className="p-4 bg-white border border-[#e5e5e5] rounded-2xl text-xs text-[#111111]">
-                    <strong className="text-brand-red block mb-1 text-sm font-display">Book Launch: A DECADE OF LEGACY</strong>
+                    <strong className="text-[#111111] font-semibold block mb-1 text-sm font-display">Book Launch: A DECADE OF LEGACY</strong>
                     <p className="text-[#444444] leading-relaxed">
-                      A Compendium of Policy Papers from the Olusegun Agagu Memorial Lectures was published as a permanent reference resource on good governance.
+                      A Compendium of Policy Papers from the Olusegun Agagu Memorial Lectures was published as a reference resource on good governance.
                     </p>
                   </div>
                   <div className="p-4 bg-white border border-[#e5e5e5] rounded-2xl text-xs text-[#111111]">
-                    <strong className="text-brand-red block mb-1 text-sm font-display">Highlife Music Concert</strong>
+                    <strong className="text-[#111111] font-semibold block mb-1 text-sm font-display">Highlife Music Concert</strong>
                     <p className="text-[#444444] leading-relaxed">
                       Featured and supported young Nigerian Highlife musicians, celebrating African heritage through live instrumentation and song.
                     </p>
@@ -1012,12 +959,10 @@ export default function HomePage() {
               <div className="pt-4 mt-4 border-t border-[#e5e5e5] flex items-center justify-between">
                 <a
                   href={`mailto:${contactInfo.pressEmail}?subject=Compendium%20Inquiry%20%E2%80%93%20A%20Decade%20of%20Legacy`}
-                  className="px-5 py-2 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md flex items-center gap-1.5 focus-ring"
+                  className="px-5 py-2 rounded-full bg-brand-red hover:bg-[#c41e15] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md focus-ring"
                 >
-                  <DownloadIcon className="w-4 h-4" />
-                  Inquire For Compendium Book
+                  Inquire for Compendium Book
                 </a>
-                <span className="text-xs text-[#777777] font-semibold font-ui">Permanent Policy Reference</span>
               </div>
             </div>
           </div>
@@ -1128,9 +1073,6 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
                   <SchoolIcon className="w-7 h-7" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
-                  Initiative I
-                </span>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-3">
                   Scholarships &amp; Awards Expansion
                 </h3>
@@ -1152,9 +1094,6 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
                   <HistoryEduIcon className="w-7 h-7" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
-                  Initiative II
-                </span>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-3">
                   Official Autobiography Publication
                 </h3>
@@ -1176,9 +1115,6 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center mb-6">
                   <FlightTakeoffIcon className="w-7 h-7" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-1 font-ui">
-                  Initiative III
-                </span>
                 <h3 className="text-xl font-bold font-display text-[#111111] mb-3">
                   Research &amp; Aviation Safety Interventions
                 </h3>

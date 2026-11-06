@@ -37,10 +37,10 @@ export function TributeRegistry() {
 
   const mailtoUrl = inscribed
     ? `mailto:secretariat@olusegunagagufoundation.org?subject=${encodeURIComponent(
-        `Memorial Tribute from ${inscribed.name}`
-      )}&body=${encodeURIComponent(
-        `Full Name: ${inscribed.name}\nAffiliation: ${inscribed.affiliation}\nDate: ${inscribed.date}\n\nTribute Inscription:\n"${inscribed.message}"`
-      )}`
+      `Memorial Tribute from ${inscribed.name}`
+    )}&body=${encodeURIComponent(
+      `Full Name: ${inscribed.name}\nAffiliation: ${inscribed.affiliation}\nDate: ${inscribed.date}\n\nTribute Inscription:\n"${inscribed.message}"`
+    )}`
     : ''
 
   return (
