@@ -42,7 +42,15 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
   // Track active section and scroll position for sticky navbar transition
   useEffect(() => {
     function handleScroll() {
-      setIsScrolled(window.scrollY > 20)
+      const scrollY =
+        typeof window !== 'undefined'
+          ? window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0
+          : 0
+
+      // Immediately activate solid background when scrolled or when URL has an in-page section hash
+      const currentHash = typeof window !== 'undefined' ? window.location.hash.replace('#', '') : ''
+      const hasNonHeroHash = currentHash && currentHash !== 'hero'
+      setIsScrolled(scrollY > 20 || !!hasNonHeroHash)
 
       if (pathname === '/') {
         const sections = ['hero', 'about', 'foundation', 'impact', 'lectures', 'gallery']
@@ -59,9 +67,20 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
       }
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('hashchange', handleScroll, { passive: true })
+
+    // Additional checks to guarantee solid background on smooth-scrolling or browser anchor jumps
+    const timer1 = setTimeout(handleScroll, 100)
+    const timer2 = setTimeout(handleScroll, 400)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('hashchange', handleScroll)
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+    }
   }, [pathname])
 
   // Dynamic document title update based on active page/section
@@ -78,9 +97,14 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
   useEffect(() => {
     function handleHash() {
       const hash = window.location.hash.replace('#', '')
-      if (hash && PAGE_TITLES[hash]) {
-        setActiveSection(hash)
-        document.title = PAGE_TITLES[hash]
+      if (hash) {
+        if (hash !== 'hero') {
+          setIsScrolled(true)
+        }
+        if (PAGE_TITLES[hash]) {
+          setActiveSection(hash)
+          document.title = PAGE_TITLES[hash]
+        }
       }
     }
     handleHash()
@@ -148,13 +172,13 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-colors duration-300 ease-in-out ${
         pathname === '/'
           ? isScrolled
-            ? 'bg-[#0d0000] supports-[backdrop-filter]:bg-[#0d0000]/95 backdrop-blur-md text-ivory border-b border-[#8B0000]/50 shadow-[0_2px_20px_rgba(0,0,0,0.3)]'
+            ? 'bg-[#0d0000] text-ivory border-b border-[#8B0000]/60 shadow-[0_4px_25px_rgba(0,0,0,0.5)]'
             : 'bg-transparent text-ivory border-b border-transparent shadow-none'
           : isScrolled
-            ? 'bg-[#0d0000] supports-[backdrop-filter]:bg-[#0d0000]/95 backdrop-blur-md text-ivory border-b border-[#8B0000]/50 shadow-[0_2px_20px_rgba(0,0,0,0.3)]'
+            ? 'bg-[#0d0000] text-ivory border-b border-[#8B0000]/60 shadow-[0_4px_25px_rgba(0,0,0,0.5)]'
             : 'bg-crimson text-ivory border-b border-gold/20 shadow-lg'
       }`}
     >
