@@ -977,26 +977,24 @@ export default function HomePage() {
       {/* ========================================================================= */}
       <section className="py-24 bg-white text-[#111111] scroll-mt-20 border-b border-[#e5e5e5]" id="board">
         <div className="max-w-[1340px] mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
-                {/* STRATEGY & IA REVIEW: Replaced PDF page reference with Governance eyebrow */}
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
-                  Governance &amp; Leadership
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#111111]">
-                The Board of Trustees
-              </h2>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 bg-brand-red rounded-[2px]" aria-hidden="true" />
+              {/* STRATEGY & IA REVIEW: Replaced PDF page reference with Governance eyebrow */}
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#111111] font-ui">
+                Governance &amp; Leadership
+              </span>
             </div>
-            <p className="text-sm text-[#444444] max-w-md mt-2 md:mt-0 font-body">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#111111]">
+              The Board of Trustees
+            </h2>
+            <p className="text-sm sm:text-base text-[#444444] mt-3 font-body">
               The assiduous team that keeps this legacy going, stewarding Dr. Agagu&apos;s philanthropic vision and fiduciary excellence.
             </p>
           </div>
 
-          {/* FIX 6: Clean minimal 2-column table/list layout — no avatar circles, no repetitive descriptions */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Board of Trustees — Floating Pill Cloud Layout inspired by reference */}
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 max-w-5xl mx-auto">
             {biography.boardOfTrustees
               .filter((t) => !t.role.includes('Emeritus') && !t.role.includes('Memoriam'))
               .map((trustee, idx) => {
@@ -1004,42 +1002,47 @@ export default function HomePage() {
                 return (
                   <div
                     key={idx}
-                    className={`p-5 rounded-2xl border transition-all flex items-center justify-between gap-4 ${
+                    className={`inline-flex items-center gap-2.5 sm:gap-3 px-5 sm:px-6 py-3 rounded-full transition-all shadow-sm hover:shadow-md ${
                       isExecutive
-                        ? 'bg-[#fcf9f8] border-[#e5e5e5] border-l-4 border-l-brand-red shadow-sm'
-                        : 'bg-white border-[#e5e5e5] shadow-sm hover:border-[#cccccc]'
+                        ? 'bg-[#fcf8f7] border-2 border-brand-red/50 hover:border-brand-red'
+                        : 'bg-[#fcfbf9] border border-[#e5e5e5] hover:border-brand-red'
                     }`}
                   >
-                    <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-brand-red font-ui block mb-1">
-                        {trustee.role}
-                      </span>
-                      <h3 className="font-bold text-base sm:text-lg text-[#111111] font-display">
-                        {trustee.name}
-                      </h3>
-                    </div>
-                    <div>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium font-ui bg-[#f4f4f4] text-[#444444] whitespace-nowrap">
-                        {trustee.note ? trustee.note : 'Active'}
-                      </span>
-                    </div>
+                    <span
+                      className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider font-ui ${
+                        isExecutive
+                          ? 'bg-brand-red text-white'
+                          : 'bg-[#eae8e3] text-[#555555]'
+                      }`}
+                    >
+                      {trustee.role}
+                    </span>
+                    <h3 className="font-semibold text-sm sm:text-base text-[#111111] font-display whitespace-nowrap">
+                      {trustee.name}
+                    </h3>
                   </div>
                 )
               })}
           </div>
 
-          {/* Historic & Emeritus Trustees — STRATEGY & IA REVIEW: Clean compact summary without internal PDF references */}
-          <div className="mt-8 p-5 bg-[#fcfbf9] rounded-2xl border border-[#e5e5e5] text-xs font-ui text-[#444444] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div>
-              <span className="font-bold uppercase tracking-wider text-[#111111] mr-2">
-                Historic &amp; Emeritus Trustees:
-              </span>
-              <span>
-                Professor Dele Fawole (stepped down 2018) &bull; Prince Yemi Adefulu MFR (Late)
-              </span>
-            </div>
-            <div className="text-[#777777] font-mono text-[11px]">
-              In Perpetual Honour
+          {/* Historic & Emeritus Trustees */}
+          <div className="mt-14 pt-8 border-t border-[#e5e5e5] text-center max-w-2xl mx-auto">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#777777] font-ui block mb-3">
+              Historic &amp; Emeritus Trustees &bull; In Perpetual Honour
+            </span>
+            <div className="flex flex-wrap justify-center items-center gap-3">
+              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-[#e5e5e5] text-xs font-ui text-[#555555] shadow-xs">
+                <span className="px-2 py-0.5 rounded-full bg-[#f4f4f4] text-[#666666] text-[10px] font-bold uppercase tracking-wider">
+                  Emeritus
+                </span>
+                <span className="font-medium text-[#111111]">Professor Dele Fawole</span>
+              </div>
+              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-[#e5e5e5] text-xs font-ui text-[#555555] shadow-xs">
+                <span className="px-2 py-0.5 rounded-full bg-[#f4f4f4] text-[#666666] text-[10px] font-bold uppercase tracking-wider">
+                  In Memoriam
+                </span>
+                <span className="font-medium text-[#111111]">Prince Yemi Adefulu MFR</span>
+              </div>
             </div>
           </div>
         </div>
