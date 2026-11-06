@@ -5,6 +5,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 
 interface LectureYear {
   year: string
+  lectureNumber: string
   theme: string
   keynote: string
   country: string
@@ -21,6 +22,7 @@ interface LectureYear {
 const LECTURES: LectureYear[] = [
   {
     year: '2014',
+    lectureNumber: '1st Memorial Lecture',
     theme: 'Good Governance and National Integrity',
     keynote: 'H.E. Festus Gontebanye Mogae',
     country: 'Former President of Botswana',
@@ -30,10 +32,11 @@ const LECTURES: LectureYear[] = [
       'Mr. A. Oba Otudeko, CFR, Chairman, Honeywell Group',
       'Chief Olusola Oke',
     ],
-    location: 'Nigerian Institute of International Affairs (NIIA), Lagos',
+    location: 'Nigerian Institute of International Affairs (NIIA)',
   },
   {
     year: '2015',
+    lectureNumber: '2nd Memorial Lecture',
     theme: 'Resources, Policy and the Economics',
     keynote: 'H.E. Edem Kodjo (rep. Cornelius Aidam)',
     country: 'Former Prime Minister of Togo',
@@ -41,20 +44,20 @@ const LECTURES: LectureYear[] = [
     specialGuests: [
       'Professor Ibrahim Agboola Gambari, Former Foreign Minister & UN Under-Secretary General',
     ],
-    location: 'Lagos, Nigeria',
   },
   {
     year: '2016',
+    lectureNumber: '3rd Memorial Lecture',
     theme: 'Imperatives of Regional Cooperation and Integration in Africa',
     keynote: 'H.E. Benjamin Mkapa',
     country: 'Former President of Tanzania',
     chair: 'H.E. Asiwaju Bola Ahmed Tinubu',
     specialGuests: ['H.E. Ambassador Baba Gana Kingibe'],
     goodwill: 'H.E. Chief Olusegun Obasanjo, GCFR',
-    location: 'Lagos, Nigeria',
   },
   {
     year: '2017',
+    lectureNumber: '4th Memorial Lecture',
     theme: 'Wealth Creation through Entrepreneurship in Changing Economic Cycles',
     keynote: 'H.E. Joaquim Alberto Chissano',
     country: 'Former President of Mozambique',
@@ -62,10 +65,11 @@ const LECTURES: LectureYear[] = [
     guestSpeakers: ['H.E. Dr. Kayode Fayemi, CON (Minister of Mines & Steel)'],
     specialGuests: ['H.E. Chief (Dr.) E. A. O. Shonekan, GCFR, CBE'],
     grandPatron: 'H.E. Chief Olusegun Obasanjo, GCFR',
-    location: 'Civic Centre, Victoria Island, Lagos',
+    location: 'Civic Centre, Victoria Island',
   },
   {
     year: '2018',
+    lectureNumber: '5th Memorial Lecture',
     theme: 'Women: a Needed Force in Politics and the Polity',
     keynote: 'H.E. Dr. Joyce Banda',
     country: 'Former President of Malawi',
@@ -75,10 +79,11 @@ const LECTURES: LectureYear[] = [
       'Prof. Sheila Tlou (United Nations Director)',
     ],
     grandPatron: 'H.E. Chief Olusegun Obasanjo, GCFR',
-    location: 'Civic Centre, Victoria Island, Lagos',
+    location: 'Civic Centre, Victoria Island',
   },
   {
     year: '2019',
+    lectureNumber: '6th Memorial Lecture',
     theme: 'Climate Change and the Problem of Population Migration in Africa',
     keynote: 'H.E. Dr. Ameenah Fakim-Gurib',
     country: 'Former President of Mauritius',
@@ -88,10 +93,11 @@ const LECTURES: LectureYear[] = [
       'Ms. Amina Mohammed, OFR (UN Deputy Secretary-General - Goodwill Message)',
       'Prof. Oye Ibidapo-Obe (Former Vice-Chancellor, UNILAG)',
     ],
-    location: 'Civic Centre, Lagos',
+    location: 'Civic Centre, Victoria Island',
   },
   {
     year: '2020',
+    lectureNumber: '7th Memorial Lecture (Virtual)',
     theme: 'Embracing Culture as a Driver of Progress',
     keynote: 'H.E. Rosalía Arteaga Serrano',
     country: 'Former President of Ecuador',
@@ -105,6 +111,7 @@ const LECTURES: LectureYear[] = [
   },
   {
     year: '2021',
+    lectureNumber: '8th Memorial Lecture (Virtual)',
     theme: 'Entrepreneurship: Intergenerational Approaches to Building Wealth',
     keynote: 'High-Level Colloquium on African Enterprise',
     country: 'African Diaspora Network & Tech Innovation',
@@ -118,6 +125,7 @@ const LECTURES: LectureYear[] = [
   },
   {
     year: '2022',
+    lectureNumber: '9th Memorial Lecture',
     theme: 'Leadership, Continental Transformation & Sovereign Stewardship',
     keynote: 'H.E. Dr. Ernest Bai Koroma',
     country: 'Former President of Sierra Leone',
@@ -127,7 +135,14 @@ const LECTURES: LectureYear[] = [
       'Akindele Phillips: Co-Founder & CEO, Farmcrowdy',
       'Prof. Lateef Sanni: Renowned Post-Harvest & Food Security Expert',
     ],
-    location: 'Lagos, Nigeria',
+  },
+  {
+    year: '2023',
+    lectureNumber: 'Compendium Launch and Highlife Concert',
+    theme: 'A Decade of Legacy: Policy Compendium Launch & Highlife Music Concert',
+    keynote: 'Launch of Policy Compendium & Youth Highlife Showcase',
+    country: 'Marking 10 Years of Enduring Legacy',
+    chair: 'The Olusegun Agagu Foundation Board of Trustees',
   },
 ]
 

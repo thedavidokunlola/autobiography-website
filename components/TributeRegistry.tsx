@@ -45,7 +45,7 @@ export function TributeRegistry() {
 
   return (
     <div
-      className="bg-white text-on-surface p-8 sm:p-12 rounded-3xl shadow-2xl max-w-3xl mx-auto border border-white/20"
+      className="bg-white text-on-surface p-8 sm:p-12 rounded-3xl shadow-2xl max-w-3xl mx-auto border border-white/20 scroll-mt-24"
       id="tribute-form"
     >
       <div className="text-center mb-8">

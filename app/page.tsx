@@ -171,7 +171,7 @@ export default function HomePage() {
       {/* ========================================================================= */}
       {/* 2. AUTOBIOGRAPHY & LIFE RECORD (Inspired by Weblium Actor Portfolio Design) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-[#1e110b] text-white relative overflow-hidden" id="about">
+      <section className="py-24 bg-[#1e110b] text-white relative overflow-hidden scroll-mt-20" id="about">
         {/* Subtle background ambient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#140b0a] via-[#1e110b] to-[#140b0a] pointer-events-none" />
         <AdireBackground className="absolute inset-0 pointer-events-none opacity-[0.03]" />

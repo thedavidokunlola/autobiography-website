@@ -92,7 +92,7 @@ export function BiographicalChapters() {
   const activeChapter = CHAPTERS.find((c) => c.id === activeChapterId) || CHAPTERS[0]
 
   return (
-    <div className="mt-20 pt-16 border-t border-white/10" id="chapters">
+    <div className="mt-20 pt-16 border-t border-white/10 scroll-mt-24" id="chapters">
       <div className="flex flex-wrap items-center justify-between gap-6 mb-8">
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-tertiary font-ui block mb-2">
@@ -137,9 +137,6 @@ export function BiographicalChapters() {
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-tertiary">
             Chapter {activeChapter.numeral} &bull; {activeChapter.period}
-          </span>
-          <span className="text-xs text-white/50 font-mono">
-            ARCHIVE CODE: {activeChapter.code}
           </span>
         </div>
 

@@ -51,7 +51,7 @@ export function PressEntryList({ entries, totalEntriesCount }: PressEntryListPro
               {entry.summary}
             </p>
           </div>
-          <div className="pt-4 mt-4 border-t border-border flex items-center justify-between text-xs font-ui">
+          <div className="pt-4 mt-4 border-t border-border flex items-center text-xs font-ui">
             <a
               href={entry.url}
               target="_blank"
@@ -61,9 +61,6 @@ export function PressEntryList({ entries, totalEntriesCount }: PressEntryListPro
               <span>Read Full Article &rarr;</span>
               <span className="sr-only">(opens in new tab)</span>
             </a>
-            <span className="text-[10px] text-text-secondary/70 uppercase tracking-widest">
-              Verified Source
-            </span>
           </div>
         </article>
       ))}

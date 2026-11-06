@@ -28,7 +28,7 @@ export function WorkEntryItem({ entry }: WorkEntryProps) {
       </div>
 
       {entry.learnMoreUrl && (
-        <div className="pt-4 border-t border-border flex items-center justify-between font-ui">
+        <div className="pt-4 border-t border-border flex items-center font-ui">
           <a
             href={entry.learnMoreUrl}
             target="_blank"
@@ -39,9 +39,6 @@ export function WorkEntryItem({ entry }: WorkEntryProps) {
             {/* RULE-A4: sr-only span is required pattern, not aria-label */}
             <span className="sr-only">(opens in new tab)</span>
           </a>
-          <span className="text-[10px] text-text-secondary/70 uppercase tracking-widest">
-            Institutional Record
-          </span>
         </div>
       )}
     </div>

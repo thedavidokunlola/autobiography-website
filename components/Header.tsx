@@ -33,14 +33,17 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
   const pathname = usePathname()
   const [activeSection, setActiveSection] = useState('hero')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const menuRef = useRef<HTMLDivElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
 
-  // Track active section for anchor links on home page
+  // Track active section and scroll position for sticky navbar transition
   useEffect(() => {
     function handleScroll() {
+      setIsScrolled(window.scrollY > 20)
+
       if (pathname === '/') {
         const sections = ['hero', 'about', 'foundation', 'impact', 'lectures', 'gallery']
         for (const sec of sections) {
@@ -145,10 +148,14 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
 
   return (
     <header
-      className={`absolute top-0 left-0 right-0 w-full z-20 ${
-        pathname !== '/'
-          ? 'bg-crimson text-ivory shadow-lg border-b border-gold/20'
-          : 'bg-transparent text-ivory'
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out ${
+        pathname === '/'
+          ? isScrolled
+            ? 'bg-[#0d0000] supports-[backdrop-filter]:bg-[#0d0000]/95 backdrop-blur-md text-ivory border-b border-[#8B0000]/50 shadow-[0_2px_20px_rgba(0,0,0,0.3)]'
+            : 'bg-transparent text-ivory border-b border-transparent shadow-none'
+          : isScrolled
+            ? 'bg-[#0d0000] supports-[backdrop-filter]:bg-[#0d0000]/95 backdrop-blur-md text-ivory border-b border-[#8B0000]/50 shadow-[0_2px_20px_rgba(0,0,0,0.3)]'
+            : 'bg-crimson text-ivory border-b border-gold/20 shadow-lg'
       }`}
     >
       <div className="max-w-container mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
@@ -271,7 +278,7 @@ export function Header({ siteName, pressEmail }: HeaderProps) {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
-          className="fixed inset-0 z-50 bg-crimson text-ivory flex flex-col p-6 overflow-y-auto lg:hidden"
+          className="fixed inset-0 z-[60] bg-crimson text-ivory flex flex-col p-6 overflow-y-auto lg:hidden"
         >
           {/* Top Bar with OAF crest & Close button */}
           <div className="flex items-center justify-between h-14 border-b border-ivory/15 pb-4">
